@@ -8,6 +8,7 @@ public class PlayerProgress : MonoBehaviour
 
     public Slider StressSlider;
     public Slider TrustSlider;
+    // ASFDASFA 
     
 
     public float StressBar;
