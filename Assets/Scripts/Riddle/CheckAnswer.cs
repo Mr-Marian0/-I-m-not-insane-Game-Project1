@@ -41,7 +41,14 @@ public class CheckAnswer : MonoBehaviour
 
     private void Start()
     {
-        
+        // Load saved values into the sliders so rewards increment properly
+        PlayerData data = SaveData.LoadPlayer();
+        if (data != null)
+        {
+            TrustReward.value = data.TrustData;
+            StressReward.value = data.StressData;
+            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
+        }
     }
 
     void Update()

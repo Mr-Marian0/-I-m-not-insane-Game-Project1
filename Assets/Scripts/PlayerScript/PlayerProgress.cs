@@ -37,6 +37,7 @@ public class PlayerProgress : MonoBehaviour
             // Apply values to the sliders
             StressSlider.value = data.StressData;
             TrustSlider.value = data.TrustData;
+            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
         }
     }
     
