@@ -610,8 +610,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209920110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.878371, y: 1.712469, z: 2.6663477}
-  m_LocalScale: {x: 3.773435, y: 3.773435, z: 3.773435}
+  m_LocalPosition: {x: 0.89, y: 1.64, z: 1.833174}
+  m_LocalScale: {x: 1.33101, y: 1.33101, z: 1.33101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1428357637}
@@ -658,7 +658,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c831b15e81f4ef04d8ffd04cf7d6a882, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed604b52d3d4c4840952c5876e563b32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -698,11 +698,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.8200592, y: 0.7624149}
-  - {x: 0.82607293, y: 0.106834024}
-  - {x: 1.0718055, y: 0.07229035}
-  - {x: 1.2960232, y: 0.101412654}
-  - {x: 1.3080957, y: 0.73825634}
+  - {x: 2.3892274, y: 1.0619471}
+  - {x: 2.3933024, y: 0.30470285}
+  - {x: 3.6620538, y: 0.30426228}
+  - {x: 3.6585357, y: 0.58158267}
+  - {x: 3.647202, y: 1.0761272}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -3160,8 +3160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980466537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.878371, y: 1.7124693, z: 1.8331738}
-  m_LocalScale: {x: 3.7734354, y: 3.7734354, z: 3.7734354}
+  m_LocalPosition: {x: 0.89, y: 1.64, z: 1.8331738}
+  m_LocalScale: {x: 1.3310095, y: 1.3310095, z: 1.3310095}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1428357637}
@@ -3208,7 +3208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e77d93dd9a682a4fa82027668a84f7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04a38da1948eb1141bc149e53756176b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3235,13 +3235,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.5304012, y: -1.4759493}
-  - {x: -1.7406939, y: -0.47085723}
-  - {x: -1.2879524, y: -0.47812125}
-  - {x: -0.8570767, y: 0.13603365}
-  - {x: 1.4799008, y: 0.12874943}
-  - {x: 2.3970451, y: -1.3763471}
-  - {x: -2.4195204, y: -1.3448858}
+  - {x: -6.9852767, y: -4.0612974}
+  - {x: -4.9860206, y: -1.3381606}
+  - {x: -3.5965295, y: -1.4441216}
+  - {x: -2.396128, y: 0.39799988}
+  - {x: 4.1978, y: 0.35796988}
+  - {x: 6.764168, y: -3.8495638}
+  - {x: -6.764362, y: -3.7735403}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
