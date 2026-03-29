@@ -100,8 +100,8 @@ public class CheckAnswer : MonoBehaviour
                 Enemy1.SetActive(false);
         }
 
-            MoveTrustPosition.anchoredPosition = new Vector2(996.23f, -584f);
-            MoveStressPosition.anchoredPosition = new Vector2(-973f, 614f);
+            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
             
             // Save the reward values
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
@@ -151,10 +151,6 @@ public class CheckAnswer : MonoBehaviour
 
     public void OnDisable(){
         InheritEnemyScript.speed = 1.5f;
-     
-        //RESET THE DEFAULT POSITION
-        MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
-        MoveStressPosition.anchoredPosition = StressDefaultPosXY;
     }
 
 }
