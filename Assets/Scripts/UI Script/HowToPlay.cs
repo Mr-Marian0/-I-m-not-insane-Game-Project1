@@ -14,11 +14,14 @@ public class HowToPlay : MonoBehaviour
   public GameObject Icon4;
   public GameObject Description;
   public GameObject Description1;
+  public GameObject StressBarHeader;
+  public GameObject TrustBarHeader;
 
   public void Instruction(){
    Show_Stress_Trust_info.SetActive(true);
    Icon2.SetActive(true);
    Description.SetActive(true);
+   StressBarHeader.SetActive(true);
    Signal1 = true;
 
    Icon4.SetActive(false);
@@ -28,13 +31,16 @@ public class HowToPlay : MonoBehaviour
   public void Instruction1(){
    Icon4.SetActive(true);
    Description1.SetActive(true);
+   TrustBarHeader.SetActive(true);
 
    Icon2.SetActive(false);
    Description.SetActive(false);
+   StressBarHeader.SetActive(false);
   }
 
   public void Resume1(){
     Show_Stress_Trust_info.SetActive(false);
+    OnDisable();
   }
 
   void Update(){
@@ -59,6 +65,8 @@ public class HowToPlay : MonoBehaviour
    Description.SetActive(false);
    Icon4.SetActive(false);
    Description1.SetActive(false);
+   TrustBarHeader.SetActive(false);
+   StressBarHeader.SetActive(false);
   }
 
 }
