@@ -77,39 +77,32 @@ public class PuzzleReward : MonoBehaviour
     public void ConvertTimeToReward(int sec)
     {
         
-        if (sec >= 50 && sec <= 60)
+        if (sec >= 45 && sec <= 60)
         {
             TrustReward.value += 10;
             TrustTextPoints.text = "+10";
 
-            StressReward.value -= 7;
-            StressTextPoints.text = "-5";
+            StressReward.value -= 10;
+            StressTextPoints.text = "-10";
             StressTextPoints.color = Color.green;
         }
-        else if(sec >= 40 && sec <= 49)
+        else if(sec >= 30 && sec <= 44)
         {
-            TrustReward.value += 7;
-            TrustTextPoints.text = "+7";
-
-            TrustReward.value -= 5;
-            StressTextPoints.text = "-5";
-            StressTextPoints.color = Color.green;
-        }
-        else if(sec >= 30 && sec <= 39)
-        {
-            TrustReward.value += 3;
+            TrustReward.value += 5;
             TrustTextPoints.text = "+5";
 
             StressReward.value += 5;
             StressTextPoints.text = "+5";
+            StressTextPoints.color = Color.green;
         }
         else if(sec <= 29)
         {
-            TrustReward.value += 1;
-            TrustTextPoints.text = "+1";
+            TrustReward.value += 0;
+            TrustTextPoints.text = "+0";
+            TrustTextPoints.color = Color.gray;
 
-            StressReward.value += 1;
-            StressTextPoints.text = "+1";
+            StressReward.value += 20;
+            StressTextPoints.text = "+20";
         }
     }
 
@@ -125,6 +118,7 @@ public class PuzzleReward : MonoBehaviour
         TrustTextPoints.text = "";
         StressTextPoints.text = "";
         StressTextPoints.color = Color.red;
+        TrustTextPoints.color = Color.green;
     }
 
     public void OnDisable()

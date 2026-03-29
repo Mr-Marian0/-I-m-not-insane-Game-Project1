@@ -55,6 +55,10 @@ public class StartTimer : MonoBehaviour
             TimeLimit = 0;
             TimerMission.color = Color.red;
             ActivateCongratulation();
+
+            // Save the reward values directly
+            SaveData.SavePlayer(TrustReward.value, StressReward.value);
+            
             YouWinReference.SetActive(true);
             ConfettiReference.SetActive(true);
         }
@@ -90,40 +94,10 @@ public class StartTimer : MonoBehaviour
 
     public void ConvertTimeToReward(int sec)
     {
-        
-        if (sec >= 50 && sec <= 60)
-        {
-            TrustReward.value += 10;
-            TrustTextPoints.text = "+10";
+            TrustReward.value += 0;
+            TrustTextPoints.text = "+0";
 
-            StressReward.value -= 7;
-            StressTextPoints.text = "-5";
-            StressTextPoints.color = Color.green;
-        }
-        else if(sec >= 40 && sec <= 49)
-        {
-            TrustReward.value += 7;
-            TrustTextPoints.text = "+7";
-
-            TrustReward.value -= 5;
-            StressTextPoints.text = "-5";
-            StressTextPoints.color = Color.green;
-        }
-        else if(sec >= 30 && sec <= 39)
-        {
-            TrustReward.value += 3;
-            TrustTextPoints.text = "+5";
-
-            StressReward.value += 5;
-            StressTextPoints.text = "+5";
-        }
-        else if(sec <= 29)
-        {
-            TrustReward.value += 1;
-            TrustTextPoints.text = "+1";
-
-            StressReward.value += 1;
-            StressTextPoints.text = "+1";
-        }
+            StressReward.value += 30;
+            StressTextPoints.text = "+30";
     }
 }

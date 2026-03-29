@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -18,6 +20,19 @@ public class EnemyScript : MonoBehaviour
     public GameObject Door1Col;
     public GameObject Door2Col;
     public GameObject Door3Col;
+
+    //UI and game state references
+    public Slider TrustReward;
+    public TextMeshProUGUI TrustTextPoints;
+    public Slider StressReward;
+    public TextMeshProUGUI StressTextPoints;
+    public GameObject Enemy1;
+
+    //Move Stress and Trust
+    public RectTransform MoveStressPosition;
+    public RectTransform MoveTrustPosition;
+    public Vector3 TrustDefaultPosXY;
+    public Vector3 StressDefaultPosXY;
 
     //Run it once
     int ToggleOnce = 0;
@@ -69,6 +84,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
         {
+            CinemachineShake.Instance.ShakeCamera(5f, .1f);
             if (collision.gameObject.CompareTag("Player")) {
                 Debug.Log("ENEMY COLLIDES WITH PLAYER");
 
@@ -81,8 +97,37 @@ public class EnemyScript : MonoBehaviour
                 Door3Col.SetActive(false);
 
                 STOP_PLAYER.SetActive(false);
-                
+
+                if(Congratulation.activeSelf == true){
+                TrustReward.value += 0;
+                TrustTextPoints.text = "+0";
+                TrustTextPoints.color = Color.gray;
+
+                StressReward.value += 20;
+                StressTextPoints.text = "+20";
+
+                Enemy1.SetActive(false);
+            }
+
+            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
+
+            // Save the reward values
+            SaveData.SavePlayer(TrustReward.value, StressReward.value);
             }
         }
 
+        public void OnEnable()
+    {
+        //RESET
+        TrustTextPoints.text = "";
+        StressTextPoints.text = "";
+        TrustTextPoints.color = Color.green;
+    }
+
+    public void OnDisable(){
+        MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
+        MoveStressPosition.anchoredPosition = StressDefaultPosXY;
+
+    }
 }

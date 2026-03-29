@@ -16,7 +16,6 @@ public class CheckAnswer : MonoBehaviour
     public GameObject Door1Col;
     public GameObject Door2Col;
     public GameObject Door3Col;
-    public int Mistakes = 0;
 
     public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
@@ -30,8 +29,10 @@ public class CheckAnswer : MonoBehaviour
     public GameObject Enemy1;
 
     //Move Stress and Trust
-    public RectTransform MoveStressPos;
-    public RectTransform MoveTrustPos;
+    public RectTransform MoveTrustPosition;
+    public RectTransform MoveStressPosition;
+    public Vector3 TrustDefaultPosXY;
+    public Vector3 StressDefaultPosXY;
 
     public EnemyScript InheritEnemyScript;
 
@@ -89,24 +90,18 @@ public class CheckAnswer : MonoBehaviour
             Door3Col.SetActive(false);
 
         if(Congratulation.activeSelf == true){
-           if(Mistakes == 0){
-             TrustReward.value += 10;
-             TrustTextPoints.text = "+10";
-           }
-           else if(Mistakes == 1){
-             StressReward.value += 2;
-             StressTextPoints.text = "+2";
-           }
-           else if(Mistakes >= 2){
-             StressReward.value += 10;
-             StressTextPoints.text = "+10";
-           }
+                TrustReward.value += 10;
+                TrustTextPoints.text = "+10";
 
-            Enemy1.SetActive(false);
+                StressReward.value -= 10;
+                StressTextPoints.text = "-10";
+                StressTextPoints.color = Color.green;
+
+                Enemy1.SetActive(false);
         }
 
-            MoveStressPos.anchoredPosition = new Vector2(996.23f, -584f);
-            MoveTrustPos.anchoredPosition = new Vector2(-973f, 614f);
+            MoveTrustPosition.anchoredPosition = new Vector2(996.23f, -584f);
+            MoveStressPosition.anchoredPosition = new Vector2(-973f, 614f);
             
             // Save the reward values
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
@@ -114,11 +109,9 @@ public class CheckAnswer : MonoBehaviour
         }
         else
         {
-            //TO BE CONTINUED!!!!!!!!!!!!!!
             Debug.Log("WRONG!!!");
             InheritEnemyScript.speed = 2f;
             CinemachineShake.Instance.ShakeCamera(5f, .1f);
-            Mistakes += 1;
 
             Congratulation.SetActive(true);
             YouLose.SetActive(true);
@@ -129,28 +122,39 @@ public class CheckAnswer : MonoBehaviour
             Door3Col.SetActive(false);
 
             if(Congratulation.activeSelf == true){
-           if(Mistakes == 0){
-             TrustReward.value += 0;
-             TrustTextPoints.text = "+0";
-           }
-           else if(Mistakes == 1){
-             StressReward.value += 5;
-             StressTextPoints.text = "+5";
-           }
-           else if(Mistakes >= 2){
-             StressReward.value += 10;
-             StressTextPoints.text = "+10";
-           }
+                TrustReward.value += 0;
+                TrustTextPoints.text = "+0";
+                TrustTextPoints.color = Color.gray;
+
+                StressReward.value += 20;
+                StressTextPoints.text = "+20";
+
+                Enemy1.SetActive(false);
+            }
+
+            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
         }
 
-        }
+        // Save the reward values
+            SaveData.SavePlayer(TrustReward.value, StressReward.value);
+    }
 
-        
+    public void OnEnable()
+    {
+        //RESET
+        TrustTextPoints.text = "";
+        StressTextPoints.text = "";
+        StressTextPoints.color = Color.red;
+        TrustTextPoints.color = Color.green;
     }
 
     public void OnDisable(){
-     InheritEnemyScript.speed = 1.5f;
+        InheritEnemyScript.speed = 1.5f;
      
+        //RESET THE DEFAULT POSITION
+        MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
+        MoveStressPosition.anchoredPosition = StressDefaultPosXY;
     }
 
 }
