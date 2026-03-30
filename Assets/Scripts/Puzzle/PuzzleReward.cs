@@ -95,7 +95,7 @@ public class PuzzleReward : MonoBehaviour
             StressTextPoints.text = "+5";
             StressTextPoints.color = Color.green;
         }
-        else if(sec <= 29)
+        else if(sec <= 5)
         {
             TrustReward.value += 0;
             TrustTextPoints.text = "+0";

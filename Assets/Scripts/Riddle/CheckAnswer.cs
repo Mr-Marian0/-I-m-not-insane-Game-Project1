@@ -16,6 +16,8 @@ public class CheckAnswer : MonoBehaviour
     public GameObject Door1Col;
     public GameObject Door2Col;
     public GameObject Door3Col;
+    public GameObject PauseButton;
+    public GameObject PauseCanvas;
 
     public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
@@ -36,7 +38,7 @@ public class CheckAnswer : MonoBehaviour
 
     public EnemyScript InheritEnemyScript;
 
-    int PresentPosition;
+    int PresentPosition = 4; //SET TO 4 INCASE PLAYER DIDN"T CHOSE THE A DOOR.
     //Take the Answer key from RandomQuestion(Script)
     int RealAnswer;
 
@@ -106,6 +108,36 @@ public class CheckAnswer : MonoBehaviour
             // Save the reward values
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
             Debug.Log("Riddle completed - saved Trust: " + TrustReward.value + ", Stress: " + StressReward.value);
+        }
+        else if(PresentPosition == 4 || Choice1.PlayerChooseDoor1 == false && Choice2.PlayerChooseDoor2 == false && Choice3.PlayerChooseDoor3 == false)
+        {
+            
+            PauseButton.SetActive(false); //Remove the PauseMenu
+            PauseCanvas.SetActive(false);
+
+            CinemachineShake.Instance.ShakeCamera(5f, .1f);
+
+            Congratulation.SetActive(true);
+            YouLose.SetActive(true);
+            Confetti.SetActive(true);
+
+            Door1Col.SetActive(false);
+            Door2Col.SetActive(false);
+            Door3Col.SetActive(false);
+            
+            if(Congratulation.activeSelf == true){
+                TrustReward.value += 0;
+                TrustTextPoints.text = "+0";
+                TrustTextPoints.color = Color.gray;
+
+                StressReward.value += 20;
+                StressTextPoints.text = "+20";
+
+                Enemy1.SetActive(false);
+            }
+
+            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
         }
         else
         {

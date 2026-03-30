@@ -26,6 +26,8 @@ public class RandomQuestion : MonoBehaviour
     public GameObject Joysick1;
     public Slider TrustReward;
     public Slider StressReward;
+    public GameObject PauseButton;
+
 
     public int[] AnswerKey50 = new int[50] {0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1};
 
@@ -103,6 +105,7 @@ public class RandomQuestion : MonoBehaviour
             {
                 RunOnce = false;
                 Joysick1.SetActive(true);
+                if (PauseButton) PauseButton.SetActive(true);
                 SpawnEnemy = true;
             }
         }

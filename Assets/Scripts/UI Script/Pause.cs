@@ -3,20 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
+
+  public GameObject CheckCongratulation;
+  
 
   public RectTransform Back2;
   float yScale = 0;
   bool Signal1 = false;
   public GameObject Show_Pause_Menu;
   public GameObject Mute;
+  public GameObject Restart;
+  public GameObject Surrender;
   public GameObject ResetData;
   public GameObject Exit;
   public GameObject Pause_Button;
   public Image Pause_Button_Image;
+  public GameObject YouLose;
   
+
+  //RESTART FUNCTIONS TO UPDATE THE SLIDERS
+   public TextMeshProUGUI TrustTextPoints;
+    public TextMeshProUGUI StressTextPoints;
+    public RectTransform MoveTrustPosition;
+    public Vector3 TrustDefaultPosXY;
+    public RectTransform MoveStressPosition;
+    public Vector3 StressDefaultPosXY;
+    public Slider TrustReward;
+    public Slider StressReward;
+
   private bool isSoundMuted = false;
   private Image MuteButtonImage;
   public Sprite SoundOnSprite;
@@ -27,7 +45,6 @@ public class Pause : MonoBehaviour
   public void PausePressed()
   {
 
-    Pause_Button_Image = Pause_Button.GetComponent<Image>();
     Pause_Button_Image.enabled = false;
 
     Time.timeScale = 0;
@@ -45,7 +62,11 @@ public class Pause : MonoBehaviour
     Pause_Button.SetActive(true);
     Show_Pause_Menu.SetActive(false);
     Mute.SetActive(false);
-    ResetData.SetActive(false);
+
+    if(ResetData) ResetData.SetActive(false);
+    if(Restart) Restart.SetActive(false);
+    if(Surrender) Surrender.SetActive(false);
+
     Exit.SetActive(false);
     StopAllCoroutines();
   }
@@ -57,6 +78,11 @@ public class Pause : MonoBehaviour
     MuteButtonImage.sprite = isSoundMuted ? SoundOffSprite : SoundOnSprite;
     SoundButton_text.text = isSoundMuted ? "Sound OFF" : "Sound ON";
   }
+
+  public void RestartPressed()
+    {
+        SceneManager.LoadScene("JigsawPuzz");
+    }
 
   public void ResetDataPressed()
   {
@@ -72,6 +98,31 @@ public class Pause : MonoBehaviour
     // Save the reset data
     SaveData.SavePlayer(0f, 0f);
     Debug.Log("Player data has been reset to zero");
+  }
+
+  public void SurrenderPressed()
+  {
+
+    Pause_Button.SetActive(false);
+    Show_Pause_Menu.SetActive(false);
+    YouLose.SetActive(true);
+    CinemachineShake.Instance.ShakeCamera(5f, .1f);
+
+    Time.timeScale = 0;
+
+    MoveTrustPosition.anchoredPosition = new Vector2(-968f, 619f);
+    MoveStressPosition.anchoredPosition = new Vector2(994f, -583f);
+    
+    CheckCongratulation.SetActive(true);
+
+    TrustReward.value += 0;
+    TrustTextPoints.text = "+0";
+    TrustTextPoints.color = Color.gray;
+
+    StressReward.value += 20;
+    StressTextPoints.text = "+20";
+
+    SaveData.SavePlayer(TrustReward.value, StressReward.value);
   }
 
   public void ExitPressed()
@@ -98,6 +149,8 @@ public class Pause : MonoBehaviour
 
   void Start()
   {
+
+    Pause_Button_Image = Pause_Button.GetComponent<Image>();
     // Get the PlayerProgress component from the scene
     playerProgress = FindObjectOfType<PlayerProgress>();
     
@@ -116,6 +169,16 @@ public class Pause : MonoBehaviour
 
   void Update()
   {
+
+    if(CheckCongratulation != null && CheckCongratulation.activeSelf)
+    {
+      Pause_Button.SetActive(false);
+    }
+    else
+    {
+      Pause_Button.SetActive(true);
+    }
+
     if (Signal1 == true)
     {
       if (yScale >= 1)
@@ -136,7 +199,16 @@ public class Pause : MonoBehaviour
   {
     yield return new WaitForSecondsRealtime(delay);
     Mute.SetActive(true);
-    ResetData.SetActive(true);
-    Exit.SetActive(true);
+
+    if(ResetData) ResetData.SetActive(true);
+    if(Restart) Restart.SetActive(true);
+    if(Exit) Exit.SetActive(true);
+    if(Surrender) Surrender.SetActive(true);
   }
+
+    void OnDisable()
+    {
+        Time.timeScale = 1; // Ensure time scale is reset when the Restart is pressed
+        TrustTextPoints.color = Color.green;
+    }
 }

@@ -2494,7 +2494,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1908686150}
+  m_TargetGraphic: {fileID: 838059168}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3570,7 +3570,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1908686150}
+  m_TargetGraphic: {fileID: 1105677034}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -6121,13 +6121,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa374ad5b9831c409b7cdf626863eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CheckCongratulation: {fileID: 0}
   Back2: {fileID: 838059166}
   Show_Pause_Menu: {fileID: 693919694}
   Mute: {fileID: 801798963}
+  Restart: {fileID: 0}
+  Surrender: {fileID: 0}
   ResetData: {fileID: 346133191}
   Exit: {fileID: 854704981}
   Pause_Button: {fileID: 1900782585}
   Pause_Button_Image: {fileID: 0}
+  TrustTextPoints: {fileID: 0}
+  StressTextPoints: {fileID: 0}
+  MoveTrustPosition: {fileID: 0}
+  TrustDefaultPosXY: {x: 0, y: 0, z: 0}
+  MoveStressPosition: {fileID: 0}
+  StressDefaultPosXY: {x: 0, y: 0, z: 0}
+  TrustReward: {fileID: 0}
+  StressReward: {fileID: 0}
   SoundOnSprite: {fileID: 21300000, guid: 99dcbdea6ebe2fc46a78d9ef58fc1650, type: 3}
   SoundOffSprite: {fileID: 21300000, guid: 0e829642eda51f143bc9b4543be42203, type: 3}
   SoundButton_text: {fileID: 1723968122}
