@@ -209,6 +209,6 @@ public class Pause : MonoBehaviour
     void OnDisable()
     {
         Time.timeScale = 1; // Ensure time scale is reset when the Restart is pressed
-        TrustTextPoints.color = Color.green;
+        if(TrustTextPoints != null) TrustTextPoints.color = Color.green;
     }
 }

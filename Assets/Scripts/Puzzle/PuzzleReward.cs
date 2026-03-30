@@ -126,7 +126,7 @@ public class PuzzleReward : MonoBehaviour
         InheritPuzzleKeyColliders.IsFinished = false;
 
         //RESET THE DEFAULT POSITION
-        MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
-        MoveStressPosition.anchoredPosition = StressDefaultPosXY;
+        if(MoveTrustPosition != null) MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
+        if(MoveStressPosition != null) MoveStressPosition.anchoredPosition = StressDefaultPosXY;
     }
 }
