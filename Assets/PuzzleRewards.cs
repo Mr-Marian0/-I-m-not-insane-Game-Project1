@@ -12,8 +12,8 @@ public class PuzzleRewards : MonoBehaviour
 
     public void OnDisable() 
     {
-     MoveTrustPosition.anchoredPosition = TrustDefaultPosition;
-     MoveStressPosition.anchoredPosition = StressDefualtPosition;
+    if (MoveTrustPosition != null) MoveTrustPosition.anchoredPosition = TrustDefaultPosition;
+    if (MoveStressPosition != null) MoveStressPosition.anchoredPosition = StressDefualtPosition;
     }
 
 }

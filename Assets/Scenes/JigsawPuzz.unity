@@ -48098,7 +48098,6 @@ GameObject:
   - component: {fileID: 1500287679}
   - component: {fileID: 1500287678}
   - component: {fileID: 1500287677}
-  - component: {fileID: 1500287682}
   m_Layer: 0
   m_Name: Puzz1 (8)
   m_TagString: Untagged
@@ -48248,21 +48247,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1500287682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500287675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
-  CheckCongratulation: {fileID: 0}
 --- !u!1 &1502481268
 GameObject:
   m_ObjectHideFlags: 0

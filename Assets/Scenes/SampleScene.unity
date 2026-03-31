@@ -6131,6 +6131,7 @@ MonoBehaviour:
   Exit: {fileID: 854704981}
   Pause_Button: {fileID: 1900782585}
   Pause_Button_Image: {fileID: 0}
+  YouLose: {fileID: 0}
   TrustTextPoints: {fileID: 0}
   StressTextPoints: {fileID: 0}
   MoveTrustPosition: {fileID: 0}

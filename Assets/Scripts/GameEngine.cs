@@ -24,6 +24,8 @@ public class GameEngine : MonoBehaviour
     void Start()
     {
 
+        Time.timeScale = 1; //In case the game is paused, it will unpause when you start the game
+
         GenerateMissionStart = Random.Range(3, 11);
         Debug.Log("MISSION: " + GenerateMissionStart);
 
