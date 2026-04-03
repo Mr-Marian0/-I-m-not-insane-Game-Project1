@@ -20,12 +20,11 @@ public class InteractToSleep : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter Trigger!");
+    
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         SleepButton.SetActive(true);
-        Debug.Log("Stay");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

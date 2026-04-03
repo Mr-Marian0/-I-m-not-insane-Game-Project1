@@ -15,13 +15,13 @@ public class Timer : MonoBehaviour
     public int seconds;
 
     [SerializeField] public float elapsedTime;
-    public int FastForward = 1;
+    public int FastForward = 8;
 
     void Update()
     {
         elapsedTime += Time.deltaTime * FastForward;
-        minutes = Mathf.FloorToInt(elapsedTime / 2);
-        seconds = Mathf.FloorToInt(elapsedTime % 2);
+        minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        seconds = Mathf.FloorToInt(elapsedTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         if(minutes == 12)

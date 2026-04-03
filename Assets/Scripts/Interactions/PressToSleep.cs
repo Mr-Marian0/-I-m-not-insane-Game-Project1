@@ -33,7 +33,7 @@ public class PressToSleep : MonoBehaviour
 
         StartCoroutine(StartDelay());
 
-        FastForwardTime.FastForward = 4;
+        FastForwardTime.FastForward = 16;
 
         Debug.Log("Fast foward...");
 
@@ -44,7 +44,7 @@ public class PressToSleep : MonoBehaviour
 
             Debug.Log("Sleep Canceled");
             delayStarter = false;
-            FastForwardTime.FastForward = 1;
+            FastForwardTime.FastForward = 8;
         }
         
     }
