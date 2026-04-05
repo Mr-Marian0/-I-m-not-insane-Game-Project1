@@ -19,18 +19,20 @@ MonoBehaviour:
   - choiceText: Ignore it and stay quiet
     stressChange: -15
     trustChange: 10
-    positiveFollowUp: {fileID: 0}
-    negativeFollowUp: {fileID: 0}
+    positiveOutcome: The noise stops. You manage to sleep peacefully.
+    negativeOutcome: The screaming continues all night and you can't sleep.
     positiveChance: 0.5
-  - choiceText: 
-    stressChange: 0
-    trustChange: 0
-    positiveFollowUp: {fileID: 0}
-    negativeFollowUp: {fileID: 0}
-    positiveChance: 0
-  - choiceText: 
-    stressChange: 0
-    trustChange: 0
-    positiveFollowUp: {fileID: 0}
-    negativeFollowUp: {fileID: 0}
-    positiveChance: 0
+  - choiceText: Knock on the wall and ask
+    stressChange: 20
+    trustChange: 15
+    positiveOutcome: "A calm voice answers, \u201CI\u2019m fine\u2026 thank you.\u201D
+      You feel less alone."
+    negativeOutcome: A guard hears you and opens your door for a surprise check.
+    positiveChance: 0.5
+  - choiceText: Try to sneak out
+    stressChange: 35
+    trustChange: -20
+    positiveOutcome: The door is unlocked! You get a quick look at the empty hallway.
+    negativeOutcome: You accidentally step on a nail and make a loud noise. Guards
+      come running.
+    positiveChance: 0.5

@@ -72,9 +72,11 @@ public class EventManager : MonoBehaviour
         continueButton.onClick.AddListener(OnContinue);
     }
 
-    private void OnContinue()
+    public void OnContinue()
     {
         continueButton.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        StartEventStarter.SetActive(false);
         // Go back to waiting / idle state in your room
         // You can call TriggerRandomEvent() again after some time, or show "waiting..." text
     }

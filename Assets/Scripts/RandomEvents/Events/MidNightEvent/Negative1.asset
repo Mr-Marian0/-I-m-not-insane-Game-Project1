@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: Negative1
   m_EditorClassIdentifier: 
   eventTitle: Event Title
-  eventDescription: What happens...
-  choices: []
+  eventDescription: The patient next door starts screaming your name. It keeps you
+    awake all night.
+  choices:
+  - choiceText: Continue
+    stressChange: 20
+    trustChange: -15
+    positiveOutcome: Good result description...
+    negativeOutcome: Bad result description...
+    positiveChance: 0.5

@@ -22,7 +22,7 @@ public class GameEngine : MonoBehaviour
     public int GenerateChallenge;
     public GameObject EnableDoor;
     public int TimeToTriggerEvent;
-    bool flagEventTriggered = false;
+    bool flagEventAndMissionTriggered = false;
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class GameEngine : MonoBehaviour
         }
 
         //Used to Restart Missions/Challenge
-        if(timer.minutes == 12)
+        if(!flagEventAndMissionTriggered && timer.minutes == 24)
         {
             GenerateMissionStart = Random.Range(3, 11);
             TimeToTriggerEvent = Random.Range(3, 11);
@@ -56,17 +56,20 @@ public class GameEngine : MonoBehaviour
         if(timer.minutes == GenerateMissionStart)
         {
             EnableDoor.SetActive(true);
+        } else
+        {
+            EnableDoor.SetActive(false);
         }
         // close the door again
-        if(timer.minutes == 12)
+        if(timer.minutes == 24)
         {
             EnableDoor.SetActive(false);
         }
 
         //timer to start the random event
-        if(!flagEventTriggered && timer.minutes == TimeToTriggerEvent)
+        if(!flagEventAndMissionTriggered && timer.minutes == TimeToTriggerEvent)
         {
-            flagEventTriggered = true;
+            flagEventAndMissionTriggered = true;
             eventManager.TriggerRandomEvent();
             Debug.Log("Event Triggered");
             Time.timeScale = 0;
@@ -75,6 +78,6 @@ public class GameEngine : MonoBehaviour
 
     public void ResetFlagEventTriggered()
     {
-        flagEventTriggered = false;
+        flagEventAndMissionTriggered = false;
     }
 }

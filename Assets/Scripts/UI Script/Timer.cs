@@ -13,39 +13,61 @@ public class Timer : MonoBehaviour
     public int PM = 0;
     public int minutes;
     public int seconds;
+    public GameEngine gameEngineReference;
 
     [SerializeField] public float elapsedTime;
     public int FastForward = 8;
 
-    void Update()
+    public float waitMin = 1f;
+    public float waitMax = 3f;
+
+    void Start()
+{
+    StartCoroutine(UpdateTimeRandomly());
+}
+
+IEnumerator UpdateTimeRandomly()
+{
+    while (true)
     {
-        elapsedTime += Time.deltaTime * FastForward;
+        yield return new WaitForSeconds(Random.Range(waitMin, waitMax));
+
+        // Advance time
+        elapsedTime += Random.Range(30f, 40f);
+
         minutes = Mathf.FloorToInt(elapsedTime / 60f);
         seconds = Mathf.FloorToInt(elapsedTime % 60f);
+
+        // Skip minutes 30–40
+        if (minutes >= 30 && minutes < 40)
+        {
+            int extraSkip = 40 - minutes;
+            minutes += extraSkip;
+
+            elapsedTime = minutes * 60f + seconds;
+        }
+
+        // 24-hour format (HH:mm)
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        if(minutes == 12)
+        // Check if we reached or exceeded 24 hours
+        if (minutes >= 24)
         {
+            // Force exact 24:00 display
+            minutes = 24;
+            seconds = 0;
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+            yield return new WaitForSeconds(1f);
+
+            // Reset to next day
+            gameEngineReference.ResetFlagEventTriggered();
             DayAdder += 1;
             elapsedTime = 0;
             Days.text = "DAY " + DayAdder;
-        }
 
-        //Change the AM and PM text in UI
-        if(minutes == 12 & PM == 1)
-        {
-            PM = 0;
-            AM += 1;
-            AmPm.text = "AM";
-            Debug.Log("' Set to AM '");
+            continue;
         }
-        else if(minutes == 12 & AM == 1)
-        {
-            AM = 0;
-            PM += 1;
-            AmPm.text = "PM";
-            Debug.Log("' Set to PM '");
-        }
-
     }
+}
 }
