@@ -7,6 +7,9 @@ public class EventData : ScriptableObject
     public string eventTitle = "Event Title";
     public string eventDescription = "What happens...";
 
+    [Header("Image")]
+    public Sprite eventImage;        // ← Drag your picture here
+
     public List<Choice> choices = new List<Choice>();
 }
 
@@ -17,7 +20,7 @@ public class Choice
     public int stressChange = 0;
     public int trustChange = 0;
 
-    public string positiveOutcome = "Good result description...";
-    public string negativeOutcome = "Bad result description...";
-    public float positiveChance = 0.5f;   // Chance to get positive outcome
+    public string positiveOutcome = "Good result...";
+    public string negativeOutcome = "Bad result...";
+    public float positiveChance = 0.5f;
 }

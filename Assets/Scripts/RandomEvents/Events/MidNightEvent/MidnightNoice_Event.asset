@@ -15,14 +15,15 @@ MonoBehaviour:
   eventTitle: Midnight Noise
   eventDescription: You hear loud banging and screaming from the next room. It suddenly
     stops.
+  eventImage: {fileID: 21300000, guid: 111ea6da7fa94dc4f8d5302b7183cd8b, type: 3}
   choices:
   - choiceText: Ignore it and stay quiet
     stressChange: -15
     trustChange: 10
     positiveOutcome: The noise stops. You manage to sleep peacefully.
     negativeOutcome: The screaming continues all night and you can't sleep.
-    positiveChance: 0.5
-  - choiceText: Knock on the wall and ask
+    positiveChance: 0.8
+  - choiceText: Knock on the wall and ask, "are you okay"
     stressChange: 20
     trustChange: 15
     positiveOutcome: "A calm voice answers, \u201CI\u2019m fine\u2026 thank you.\u201D
@@ -35,4 +36,4 @@ MonoBehaviour:
     positiveOutcome: The door is unlocked! You get a quick look at the empty hallway.
     negativeOutcome: You accidentally step on a nail and make a loud noise. Guards
       come running.
-    positiveChance: 0.5
+    positiveChance: 0.2
