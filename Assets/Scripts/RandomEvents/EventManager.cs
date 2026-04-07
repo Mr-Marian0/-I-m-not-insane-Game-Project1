@@ -1,12 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.Collections;
 
 public class EventManager : MonoBehaviour
 {
     [Header("Events")]
-    public EventData[] allEvents;                 // ← This is back where it should be
+    public EventData[] allEvents;
 
     [Header("Main Event References")]
     public TextMeshProUGUI titleText;
@@ -22,14 +21,9 @@ public class EventManager : MonoBehaviour
     public GameObject resultPanel;
     public TextMeshProUGUI stressChangeText;
     public TextMeshProUGUI trustChangeText;
-    
-    //TRUST RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
-    public RectTransform MoveTrustPosition;
-    public Vector3 TrustDefaultPosXY;
 
-    //STRESS RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
+    public RectTransform MoveTrustPosition;
     public RectTransform MoveStressPosition;
-    public Vector3 StressDefaultPosXY;
 
     [Header("Bars")]
     public Slider stressBar;
@@ -38,21 +32,23 @@ public class EventManager : MonoBehaviour
     public GameObject StartEventStarter;
 
     private EventData currentEvent;
-    private Vector2 originalImagePosition;
+    private Vector2 originalImagePos;
+    private Vector2 originalTrustPos;
+    private Vector2 originalStressPos;
+
+    private bool isMovingImage = false;
+    private float moveSpeed = 800f;        // Adjust this value (higher = faster)
 
     private void Awake()
     {
-        if (eventImageRect != null)
-            originalImagePosition = eventImageRect.anchoredPosition;
+        if (eventImageRect != null) originalImagePos = eventImageRect.anchoredPosition;
+        if (MoveTrustPosition != null) originalTrustPos = MoveTrustPosition.anchoredPosition;
+        if (MoveStressPosition != null) originalStressPos = MoveStressPosition.anchoredPosition;
     }
 
     public void TriggerRandomEvent()
     {
-        if (allEvents == null || allEvents.Length == 0)
-        {
-            Debug.LogError("EventManager: No events assigned in 'allEvents' array!");
-            return;
-        }
+        if (allEvents == null || allEvents.Length == 0) return;
 
         StartEventStarter.SetActive(true);
 
@@ -61,8 +57,7 @@ public class EventManager : MonoBehaviour
         titleText.text = currentEvent.eventTitle;
         descriptionText.text = currentEvent.eventDescription;
 
-        if (eventImageRect != null)
-            eventImageRect.anchoredPosition = originalImagePosition;
+        ResetAllPositions();
 
         if (eventImage != null && currentEvent.eventImage != null)
         {
@@ -70,7 +65,6 @@ public class EventManager : MonoBehaviour
             eventImage.gameObject.SetActive(true);
         }
 
-        // Show the 3 choices
         for (int i = 0; i < 3 && i < currentEvent.choices.Count; i++)
         {
             int index = i;
@@ -82,25 +76,43 @@ public class EventManager : MonoBehaviour
 
         continueButton.gameObject.SetActive(false);
         resultPanel.SetActive(false);
+    }
 
-        Debug.Log("Event started: " + currentEvent.eventTitle);
+    private void ResetAllPositions()
+    {
+        if (eventImageRect != null) eventImageRect.anchoredPosition = originalImagePos;
+        if (MoveTrustPosition != null) MoveTrustPosition.anchoredPosition = originalTrustPos;
+        if (MoveStressPosition != null) MoveStressPosition.anchoredPosition = originalStressPos;
     }
 
     public void MakeChoice(int choiceIndex)
     {
+
+        // Load saved values into the sliders so rewards increment properly
+        PlayerData data = SaveData.LoadPlayer();
+
         Choice chosen = currentEvent.choices[choiceIndex];
 
         stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
         trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
 
-        MoveTrustPosition.anchoredPosition = new Vector2(-638f, 606f);
-        MoveStressPosition.anchoredPosition = new Vector2(1332f, -341f);
+        SaveData.SavePlayer(trustBar.value, stressBar.value);
+
+        if (MoveTrustPosition != null)
+            MoveTrustPosition.anchoredPosition = new Vector2(-638.6f, 739.4f);
+
+        if (MoveStressPosition != null)
+            MoveStressPosition.anchoredPosition = new Vector2(1329f, -475f);
 
         foreach (var btn in choiceButtons)
             btn.gameObject.SetActive(false);
 
+        // Start real-time movement to left
         if (eventImageRect != null)
-            StartCoroutine(MoveImageToLeft());
+        {
+            isMovingImage = true;
+            Debug.Log("Starting real-time image move to left");
+        }
 
         resultPanel.SetActive(true);
 
@@ -118,53 +130,41 @@ public class EventManager : MonoBehaviour
         continueButton.onClick.AddListener(OnContinue);
     }
 
-    private IEnumerator MoveImageToLeft()
+    private void Update()
     {
-        if (eventImageRect == null) yield break;
-
-        float duration = 0.6f;
-        Vector2 startPos = eventImageRect.anchoredPosition;
-        Vector2 targetPos = new Vector2(-516.71f, startPos.y);
-
-        float time = 0f;
-        while (time < duration)
+        if (isMovingImage && eventImageRect != null)
         {
-            time += Time.deltaTime;
-            float t = Mathf.SmoothStep(0f, 1f, time / duration);
-            eventImageRect.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
-            yield return null;
-        }
+            // Move left every frame using real time
+            Vector2 current = eventImageRect.anchoredPosition;
+            current.x -= moveSpeed * Time.unscaledDeltaTime;
 
-        eventImageRect.anchoredPosition = targetPos;
+            eventImageRect.anchoredPosition = current;
+
+            // Stop when it reaches target
+            if (current.x <= -516.71f)
+            {
+                current.x = -516.71f;
+                eventImageRect.anchoredPosition = current;
+                isMovingImage = false;
+                Debug.Log("Image reached left position");
+            }
+        }
     }
 
     public void OnContinue()
     {
-        StartCoroutine(FadeOutAndReset());
-    }
-
-    private IEnumerator FadeOutAndReset()
-    {
-        CanvasGroup cg = GetComponent<CanvasGroup>();
-        if (cg == null) cg = gameObject.AddComponent<CanvasGroup>();
-
-        for (float t = 0; t < 0.5f; t += Time.deltaTime)
-        {
-            cg.alpha = 1f - (t / 0.5f);
-            yield return null;
-        }
-
-        cg.alpha = 0f;
+        Debug.Log("Continue clicked");
 
         resultPanel.SetActive(false);
         if (eventImage != null) eventImage.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
         StartEventStarter.SetActive(false);
 
-        if (eventImageRect != null)
-            eventImageRect.anchoredPosition = originalImagePosition;
-
-        cg.alpha = 1f;
+        ResetAllPositions();
         Time.timeScale = 1f;
+
+        isMovingImage = false;   // Stop movement if still running
+
+        Debug.Log("Event reset");
     }
 }

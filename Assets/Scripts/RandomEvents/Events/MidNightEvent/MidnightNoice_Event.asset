@@ -25,7 +25,7 @@ MonoBehaviour:
     positiveChance: 0.8
   - choiceText: Knock on the wall and ask, "are you okay"
     stressChange: 20
-    trustChange: 15
+    trustChange: -10
     positiveOutcome: "A calm voice answers, \u201CI\u2019m fine\u2026 thank you.\u201D
       You feel less alone."
     negativeOutcome: A guard hears you and opens your door for a surprise check.
