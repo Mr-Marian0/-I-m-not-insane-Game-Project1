@@ -87,11 +87,23 @@ public class EventManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-    Choice chosen = currentEvent.choices[choiceIndex];
+        Choice chosen = currentEvent.choices[choiceIndex];
 
-    // Apply changes
-    stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
-    trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
+        // Apply changes from choice
+        stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
+        trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
+
+        // === BONUS: +5 Trust on Positive, +5 Stress on Negative ===
+        bool isPositive = Random.value < chosen.positiveChance;
+
+    if (isPositive)
+    {
+        trustBar.value = Mathf.Clamp(trustBar.value + 5, 0, 100);   // +5 Trust on positive outcome
+    }
+    else
+    {
+        stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100); // +5 Stress on negative outcome
+    }
 
     // Save to file
     SaveData.SavePlayer(trustBar.value, stressBar.value);
@@ -115,18 +127,18 @@ public class EventManager : MonoBehaviour
 
     resultPanel.SetActive(true);
 
-    bool isPositive = Random.value < chosen.positiveChance;
-    descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
+        // Show outcome text
+        descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
 
-    stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
-    stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
+        stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
+        stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
 
-    trustChangeText.text = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
-    trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
+        trustChangeText.text = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
+        trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
 
-    continueButton.gameObject.SetActive(true);
-    continueButton.onClick.RemoveAllListeners();
-    continueButton.onClick.AddListener(OnContinue);
+        continueButton.gameObject.SetActive(true);
+        continueButton.onClick.RemoveAllListeners();
+        continueButton.onClick.AddListener(OnContinue);
     }
 
     private void Update()

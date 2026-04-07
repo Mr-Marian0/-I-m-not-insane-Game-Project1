@@ -188,7 +188,6 @@ public class Pause : MonoBehaviour
       }
       else
       {
-        Debug.Log(Time.unscaledDeltaTime);
         yScale += Time.unscaledDeltaTime * 2;
         Back2.localScale = new Vector3(Back2.localScale.x, yScale, Back2.localScale.z);
 

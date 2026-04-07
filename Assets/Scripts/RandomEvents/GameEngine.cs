@@ -40,64 +40,62 @@ public class GameEngine : MonoBehaviour
     }
 
     void Update()
+{
+    // Show UI after intro
+    if (Mathf.FloorToInt(Time.time) == 39)
     {
-        // Show UI after intro
-        if (Mathf.FloorToInt(Time.time) == 39)
-        {
-            Player.SetActive(true);
-            UI_Object.SetActive(true);
-        }
-
-        // Reset everything at the end of the day (minute 24)
-        if (timer.minutes == 24)
-        {
-            GenerateNewTimes();
-            flagEventAndMissionTriggered = false;
-            hasTriggeredSecondEvent = false;
-            EnableDoor.SetActive(false);
-            Debug.Log("New day started - New missions and events generated");
-        }
-
-        // ==================== MISSION LOGIC ====================
-
-        // First Mission - Active for 2 minutes
-        if (timer.minutes == MissionTime1 || 
-            (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2))
-        {
-            EnableDoor.SetActive(true);
-        }
-
-        // Second Mission - Active for 2 minutes
-        else if (timer.minutes == MissionTime2 || 
-                (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2))
-        {
-            EnableDoor.SetActive(true);
-        }
-        else
-        {
-            EnableDoor.SetActive(false);
-        }
-
-        // ==================== EVENT LOGIC ====================
-
-        // First Event
-        if (!flagEventAndMissionTriggered && timer.minutes == TimeToTriggerEvent1)
-        {
-            flagEventAndMissionTriggered = true;
-            eventManager.TriggerRandomEvent();
-            Debug.Log("First Event Triggered at minute: " + TimeToTriggerEvent1);
-            Time.timeScale = 0;
-        }
-
-        // Second Event
-        if (!hasTriggeredSecondEvent && timer.minutes == TimeToTriggerEvent2)
-        {
-            hasTriggeredSecondEvent = true;
-            eventManager.TriggerRandomEvent();
-            Debug.Log("Second Event Triggered at minute: " + TimeToTriggerEvent2);
-            Time.timeScale = 0;
-        }
+        Player.SetActive(true);
+        UI_Object.SetActive(true);
     }
+
+    if (timer.minutes == 24 && !flagEventAndMissionTriggered)
+    {
+        GenerateNewTimes();
+        flagEventAndMissionTriggered = true;
+        hasTriggeredSecondEvent = false;
+        EnableDoor.SetActive(false);
+        Debug.Log("New day started - New missions and events generated");
+    }
+
+    // ==================== MISSION LOGIC ====================
+
+    // First Mission - Active for 2 minutes
+    if (timer.minutes == MissionTime1 || 
+        (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2))
+    {
+        EnableDoor.SetActive(true);
+    }
+    // Second Mission - Active for 2 minutes
+    else if (timer.minutes == MissionTime2 || 
+             (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2))
+    {
+        EnableDoor.SetActive(true);
+    }
+    else
+    {
+        EnableDoor.SetActive(false);
+    }
+
+    // ==================== EVENT LOGIC ====================
+
+    // First Event
+    if (!flagEventAndMissionTriggered && timer.minutes == TimeToTriggerEvent1)
+    {
+        flagEventAndMissionTriggered = true;
+        eventManager.TriggerRandomEvent();
+        Debug.Log("First Event Triggered at minute: " + TimeToTriggerEvent1);
+        Time.timeScale = 0;
+    }
+
+    // Second Event
+    if (!hasTriggeredSecondEvent && timer.minutes == TimeToTriggerEvent2)
+    {
+        hasTriggeredSecondEvent = true;
+        eventManager.TriggerRandomEvent();
+        Debug.Log("Second Event Triggered at minute: " + TimeToTriggerEvent2);
+        Time.timeScale = 0;
+    }
+}
 
     // Generate new times for both missions and events
     private void GenerateNewTimes()
