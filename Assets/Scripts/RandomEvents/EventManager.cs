@@ -87,47 +87,46 @@ public class EventManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+    Choice chosen = currentEvent.choices[choiceIndex];
 
-        // Load saved values into the sliders so rewards increment properly
-        PlayerData data = SaveData.LoadPlayer();
+    // Apply changes
+    stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
+    trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
 
-        Choice chosen = currentEvent.choices[choiceIndex];
+    // Save to file
+    SaveData.SavePlayer(trustBar.value, stressBar.value);
 
-        stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
-        trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
+    // Move UI positions
+    if (MoveTrustPosition != null)
+        MoveTrustPosition.anchoredPosition = new Vector2(-638.6f, 739.4f);
 
-        SaveData.SavePlayer(trustBar.value, stressBar.value);
+    if (MoveStressPosition != null)
+        MoveStressPosition.anchoredPosition = new Vector2(1329f, -475f);
 
-        if (MoveTrustPosition != null)
-            MoveTrustPosition.anchoredPosition = new Vector2(-638.6f, 739.4f);
+    foreach (var btn in choiceButtons)
+        btn.gameObject.SetActive(false);
 
-        if (MoveStressPosition != null)
-            MoveStressPosition.anchoredPosition = new Vector2(1329f, -475f);
+    // Start image movement
+    if (eventImageRect != null)
+    {
+        isMovingImage = true;
+        Debug.Log("Starting image movement");
+    }
 
-        foreach (var btn in choiceButtons)
-            btn.gameObject.SetActive(false);
+    resultPanel.SetActive(true);
 
-        // Start real-time movement to left
-        if (eventImageRect != null)
-        {
-            isMovingImage = true;
-            Debug.Log("Starting real-time image move to left");
-        }
+    bool isPositive = Random.value < chosen.positiveChance;
+    descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
 
-        resultPanel.SetActive(true);
+    stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
+    stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
 
-        bool isPositive = Random.value < chosen.positiveChance;
-        descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
+    trustChangeText.text = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
+    trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
 
-        stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
-        stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
-
-        trustChangeText.text = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
-        trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
-
-        continueButton.gameObject.SetActive(true);
-        continueButton.onClick.RemoveAllListeners();
-        continueButton.onClick.AddListener(OnContinue);
+    continueButton.gameObject.SetActive(true);
+    continueButton.onClick.RemoveAllListeners();
+    continueButton.onClick.AddListener(OnContinue);
     }
 
     private void Update()
