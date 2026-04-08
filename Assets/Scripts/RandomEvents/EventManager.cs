@@ -110,10 +110,10 @@ public class EventManager : MonoBehaviour
 
     // Move UI positions
     if (MoveTrustPosition != null)
-        MoveTrustPosition.anchoredPosition = new Vector2(-638.6f, 739.4f);
+        MoveTrustPosition.anchoredPosition = new Vector2(-640f, 734.7f);
 
     if (MoveStressPosition != null)
-        MoveStressPosition.anchoredPosition = new Vector2(1329f, -475f);
+        MoveStressPosition.anchoredPosition = new Vector2(1328f, -473f);
 
     foreach (var btn in choiceButtons)
         btn.gameObject.SetActive(false);
@@ -152,9 +152,9 @@ public class EventManager : MonoBehaviour
             eventImageRect.anchoredPosition = current;
 
             // Stop when it reaches target
-            if (current.x <= -516.71f)
+            if (current.x <= -391f)
             {
-                current.x = -516.71f;
+                current.x = -391f;
                 eventImageRect.anchoredPosition = current;
                 isMovingImage = false;
                 Debug.Log("Image reached left position");
