@@ -8,6 +8,9 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI AmPm;
     [SerializeField] TextMeshProUGUI Days;
+    [SerializeField] GameObject DayCountUI;
+    [SerializeField] float fadeInSpeed = 1f;
+    [SerializeField] float textDelay = 3f;
     public int DayAdder = 1;
     public int AM = 1;
     public int PM = 0;
@@ -24,6 +27,40 @@ public class Timer : MonoBehaviour
     void Start()
 {
     StartCoroutine(UpdateTimeRandomly());
+}
+
+public void TriggerDayCount(int nextDay)
+{
+    StartCoroutine(ShowDayCount(nextDay));
+}
+
+public IEnumerator ShowDayCount(int nextDay)
+{
+    Time.timeScale = 0;
+
+    DayCountUI.SetActive(true);
+    CanvasGroup cg = DayCountUI.GetComponent<CanvasGroup>();
+    if (cg != null)
+    {
+        cg.alpha = 0f;
+        while (cg.alpha < 1f)
+        {
+            cg.alpha += Time.unscaledDeltaTime * fadeInSpeed;
+            yield return null;
+        }
+    }
+
+    TextMeshProUGUI dayText = DayCountUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+    if (dayText != null)
+    {
+        dayText.text = "Day";
+        yield return new WaitForSecondsRealtime(textDelay);
+        dayText.text = "Day " + nextDay;
+        yield return new WaitForSecondsRealtime(textDelay);
+    }
+
+    DayCountUI.SetActive(false);
+    Time.timeScale = 1;
 }
 
 IEnumerator UpdateTimeRandomly()
@@ -58,7 +95,7 @@ IEnumerator UpdateTimeRandomly()
             seconds = 0;
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            yield return new WaitForSeconds(1f);
+            yield return StartCoroutine(ShowDayCount(DayAdder + 1));
 
             // Reset to next day
             gameEngineReference.ResetFlagEventTriggered();
