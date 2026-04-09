@@ -37,13 +37,23 @@ public class EventManager : MonoBehaviour
     private Vector2 originalStressPos;
 
     private bool isMovingImage = false;
-    private float moveSpeed = 800f;        // Adjust this value (higher = faster)
+    private float moveSpeed = 800f;
 
     private void Awake()
     {
         if (eventImageRect != null) originalImagePos = eventImageRect.anchoredPosition;
         if (MoveTrustPosition != null) originalTrustPos = MoveTrustPosition.anchoredPosition;
         if (MoveStressPosition != null) originalStressPos = MoveStressPosition.anchoredPosition;
+    }
+
+    private void Start()
+    {
+        // Restore bar values from SessionData when Scene 1 loads
+        if (SessionData.Instance != null)
+        {
+            trustBar.value = SessionData.Instance.Trust;
+            stressBar.value = SessionData.Instance.Stress;
+        }
     }
 
     public void TriggerRandomEvent()
@@ -89,45 +99,46 @@ public class EventManager : MonoBehaviour
     {
         Choice chosen = currentEvent.choices[choiceIndex];
 
-        // Apply changes from choice
         stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
         trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
 
-        // === BONUS: +5 Trust on Positive, +5 Stress on Negative ===
         bool isPositive = Random.value < chosen.positiveChance;
 
-    if (isPositive)
-    {
-        trustBar.value = Mathf.Clamp(trustBar.value + 5, 0, 100);   // +5 Trust on positive outcome
-    }
-    else
-    {
-        stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100); // +5 Stress on negative outcome
-    }
+        if (isPositive)
+        {
+            trustBar.value = Mathf.Clamp(trustBar.value + 5, 0, 100);
+        }
+        else
+        {
+            stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100);
+        }
 
-    // Save to file
-    SaveData.SavePlayer(trustBar.value, stressBar.value);
+        // Update SessionData in memory
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(trustBar.value, stressBar.value);
+        }
 
-    // Move UI positions
-    if (MoveTrustPosition != null)
-        MoveTrustPosition.anchoredPosition = new Vector2(-640f, 734.7f);
+        // Also persist to disk via SaveData
+        SaveData.SavePlayer(trustBar.value, stressBar.value);
 
-    if (MoveStressPosition != null)
-        MoveStressPosition.anchoredPosition = new Vector2(1328f, -473f);
+        if (MoveTrustPosition != null)
+            MoveTrustPosition.anchoredPosition = new Vector2(-640f, 734.7f);
 
-    foreach (var btn in choiceButtons)
-        btn.gameObject.SetActive(false);
+        if (MoveStressPosition != null)
+            MoveStressPosition.anchoredPosition = new Vector2(1328f, -473f);
 
-    // Start image movement
-    if (eventImageRect != null)
-    {
-        isMovingImage = true;
-        Debug.Log("Starting image movement");
-    }
+        foreach (var btn in choiceButtons)
+            btn.gameObject.SetActive(false);
 
-    resultPanel.SetActive(true);
+        if (eventImageRect != null)
+        {
+            isMovingImage = true;
+            Debug.Log("Starting image movement");
+        }
 
-        // Show outcome text
+        resultPanel.SetActive(true);
+
         descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
 
         stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
@@ -145,13 +156,10 @@ public class EventManager : MonoBehaviour
     {
         if (isMovingImage && eventImageRect != null)
         {
-            // Move left every frame using real time
             Vector2 current = eventImageRect.anchoredPosition;
             current.x -= moveSpeed * Time.unscaledDeltaTime;
-
             eventImageRect.anchoredPosition = current;
 
-            // Stop when it reaches target
             if (current.x <= -391f)
             {
                 current.x = -391f;
@@ -173,8 +181,7 @@ public class EventManager : MonoBehaviour
 
         ResetAllPositions();
         Time.timeScale = 1f;
-
-        isMovingImage = false;   // Stop movement if still running
+        isMovingImage = false;
 
         Debug.Log("Event reset");
     }

@@ -99,7 +99,6 @@ public class RandomQuestion : MonoBehaviour
         //Background Move Up
         if (true && RunOnce == true) // ORIGINAL F.((IsAnswerFadeAnimationFinished == true && RunOnce == true))
         {
-            Debug.Log("END ANIM");
             MoveBackImage.position += new Vector3(0, 0.01f, 0);
             if (MoveBackImage.transform.position.y >= 0.03) 
             {

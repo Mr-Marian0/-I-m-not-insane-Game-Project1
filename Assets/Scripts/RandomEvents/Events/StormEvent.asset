@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Strong Storm
   eventDescription: Strong storm with thunders, winds and leaks bothering you.
-  eventImage: {fileID: 0}
+  eventImage: {fileID: 21300000, guid: 94895a846a775414db55e7e7943589ec, type: 3}
   choices:
   - choiceText: Stuff towels and blankets into the leaks to stop the water.
-    stressChange: 0
-    trustChange: 0
+    stressChange: -10
+    trustChange: 5
     positiveOutcome: Leaks stop, you stay dry and feel proud of yourself.
     negativeOutcome: You slip on wet floor and hurt your back.
-    positiveChance: 0
+    positiveChance: 0.4
   - choiceText: Shout loudly for a nurse to come help.
-    stressChange: 0
+    stressChange: 10
     trustChange: 0
     positiveOutcome: A nurse arrives quickly and moves you to a dry bed.
     negativeOutcome: No one hears you because of the thunder; you feel more scared
       and
-    positiveChance: 0
+    positiveChance: 0.5
   - choiceText: Ignore everything and try to sleep anyway.
-    stressChange: 0
+    stressChange: 10
     trustChange: 0
     positiveOutcome: You manage to rest a little and save energy.
     negativeOutcome: You get soaked and catch a bad cold.
-    positiveChance: 0
+    positiveChance: 0.3

@@ -12,7 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: CockroachEvent
   m_EditorClassIdentifier: 
-  eventTitle: Event Title
-  eventDescription: What happens...
-  eventImage: {fileID: 0}
-  choices: []
+  eventTitle: Big cockroach!
+  eventDescription: You saw a big cockroach and feel phobia.
+  eventImage: {fileID: 21300000, guid: 1c8f5d7fb6d718d4cba344c61654fe86, type: 3}
+  choices:
+  - choiceText: Try to ignore it and cover your eyes with the blanket.
+    stressChange: 5
+    trustChange: 0
+    positiveOutcome: Nothing bad happens and you calm down after a minute.
+    negativeOutcome: "You keep imagining more cockroaches and can\u2019t sleep all
+      night."
+    positiveChance: 0.3
+  - choiceText: Scream and throw your pillow at the cockroach.
+    stressChange: 10
+    trustChange: 0
+    positiveOutcome: Cockroach runs away, you feel relieved.
+    negativeOutcome: Cockroach starts flying around the room!
+    positiveChance: 0.2
+  - choiceText: Call the nurse or other staff calmly to remove the insect.
+    stressChange: 5
+    trustChange: 10
+    positiveOutcome: Nurse comes and removes the cockroach; you feel safe.
+    negativeOutcome: "Nurse is busy and tells you to \u201Cjust ignore it\u201D,
+      making you more anxious."
+    positiveChance: 0.5

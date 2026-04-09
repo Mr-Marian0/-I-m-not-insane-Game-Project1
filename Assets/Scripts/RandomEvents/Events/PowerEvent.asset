@@ -12,7 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: PowerEvent
   m_EditorClassIdentifier: 
-  eventTitle: Event Title
-  eventDescription: What happens...
-  eventImage: {fileID: 0}
-  choices: []
+  eventTitle: Darkness
+  eventDescription: "Power went out \u2013 room is completely dark."
+  eventImage: {fileID: 21300000, guid: 49d77e12b61a8b0458d426701a8d88bb, type: 3}
+  choices:
+  - choiceText: Shout for help as loud as you can.
+    stressChange: 10
+    trustChange: -10
+    positiveOutcome: Security guard comes with a flashlight.
+    negativeOutcome: No one comes and your throat hurts from shouting.
+    positiveChance: 0.4
+  - choiceText: Attempt to unlock the door to escape.
+    stressChange: 10
+    trustChange: -10
+    positiveOutcome: The door was locked.
+    negativeOutcome: You luckily unlocked the door, but dogs saw you, and guards
+      rushed on you.
+    positiveChance: 0.4
+  - choiceText: Stay calm and wait quietly for the power to return.
+    stressChange: -10
+    trustChange: 5
+    positiveOutcome: Lights come back after a few minutes and you feel safe.
+    negativeOutcome: You start imagining monsters in the dark and panic.
+    positiveChance: 0.6

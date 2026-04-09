@@ -256,6 +256,9 @@ MonoBehaviour:
   timerText: {fileID: 486499558}
   AmPm: {fileID: 1708577659}
   Days: {fileID: 274047135}
+  DayCountUI: {fileID: 1556127562}
+  fadeInSpeed: 1
+  textDelay: 1.5
   DayAdder: 1
   AM: 1
   PM: 0
@@ -2937,6 +2940,7 @@ GameObject:
   - component: {fileID: 697368885}
   - component: {fileID: 697368884}
   - component: {fileID: 697368886}
+  - component: {fileID: 697368887}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2958,6 +2962,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEvents:
   - {fileID: 11400000, guid: d637a7421edd3144ba9ba0a8fc0b6669, type: 2}
+  - {fileID: 11400000, guid: 03a2ed3011a668d43a7bb1ea415a5c5b, type: 2}
+  - {fileID: 11400000, guid: 956d101488250334c93da1e404a437ec, type: 2}
   titleText: {fileID: 1932465661}
   descriptionText: {fileID: 293029280}
   eventImage: {fileID: 1519895753}
@@ -3002,6 +3008,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &697368887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697368883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5560052c288c3947ade1c61b35cafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trust: 50
+  Stress: 50
+  PlayerPosition: {x: -0.05, y: -2.91, z: 0}
+  ElapsedTime: 0
+  DayAdder: 1
+  DaysText: DAY 1
+  IsMuted: 0
 --- !u!1 &726544030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6070,8 @@ MonoBehaviour:
   Anim: {fileID: 1581657946}
   PlayerPosition: {fileID: 990460090}
   GetGeneratedChallenge: {fileID: 764401900}
+  SceneTimer: {fileID: 11596894}
+  eventManager: {fileID: 697368884}
 --- !u!1 &1428357636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6327,6 +6354,7 @@ GameObject:
   - component: {fileID: 1556127563}
   - component: {fileID: 1556127565}
   - component: {fileID: 1556127564}
+  - component: {fileID: 1556127566}
   m_Layer: 5
   m_Name: DayCountUI
   m_TagString: Untagged
@@ -6393,6 +6421,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556127562}
   m_CullTransparentMesh: 1
+--- !u!225 &1556127566
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556127562}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1581657942
 GameObject:
   m_ObjectHideFlags: 0

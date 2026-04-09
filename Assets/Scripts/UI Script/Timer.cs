@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -25,86 +24,105 @@ public class Timer : MonoBehaviour
     public float waitMax = 3f;
 
     void Start()
-{
-    StartCoroutine(UpdateTimeRandomly());
-}
-
-public void TriggerDayCount(int nextDay)
-{
-    StartCoroutine(ShowDayCount(nextDay));
-}
-
-public IEnumerator ShowDayCount(int nextDay)
-{
-    Time.timeScale = 0;
-
-    DayCountUI.SetActive(true);
-    CanvasGroup cg = DayCountUI.GetComponent<CanvasGroup>();
-    if (cg != null)
     {
-        cg.alpha = 0f;
-        while (cg.alpha < 1f)
+        
+        // Restore timer state from SessionData if returning from a mission
+        if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f)
         {
-            cg.alpha += Time.unscaledDeltaTime * fadeInSpeed;
-            yield return null;
-        }
-    }
+            elapsedTime = SessionData.Instance.ElapsedTime;
+            DayAdder = SessionData.Instance.DayAdder;
 
-    TextMeshProUGUI dayText = DayCountUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-    if (dayText != null)
-    {
-        dayText.text = "Day";
-        yield return new WaitForSecondsRealtime(textDelay);
-        dayText.text = "Day " + nextDay;
-        yield return new WaitForSecondsRealtime(textDelay);
-    }
+            if (Days != null)
+                Days.text = SessionData.Instance.DaysText;
 
-    DayCountUI.SetActive(false);
-    Time.timeScale = 1;
-}
-
-IEnumerator UpdateTimeRandomly()
-{
-    while (true)
-    {
-        yield return new WaitForSeconds(Random.Range(waitMin, waitMax));
-
-        // Advance time
-        elapsedTime += Random.Range(30f, 40f);
-
-        minutes = Mathf.FloorToInt(elapsedTime / 60f);
-        seconds = Mathf.FloorToInt(elapsedTime % 60f);
-
-        // Skip minutes 30–40
-        if (minutes >= 30 && minutes < 40)
-        {
-            int extraSkip = 40 - minutes;
-            minutes += extraSkip;
-
-            elapsedTime = minutes * 60f + seconds;
+            // Update display immediately so it doesn't flash 00:00
+            minutes = Mathf.FloorToInt(elapsedTime / 60f);
+            seconds = Mathf.FloorToInt(elapsedTime % 60f);
+            if (timerText != null)
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
-        // 24-hour format (HH:mm)
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        StartCoroutine(UpdateTimeRandomly());
+    }
 
-        // Check if we reached or exceeded 24 hours
-        if (minutes >= 24)
+    public void TriggerDayCount(int nextDay)
+    {
+        StartCoroutine(ShowDayCount(nextDay));
+    }
+
+    public IEnumerator ShowDayCount(int nextDay)
+    {
+        Time.timeScale = 0;
+
+        DayCountUI.SetActive(true);
+        CanvasGroup cg = DayCountUI.GetComponent<CanvasGroup>();
+        if (cg != null)
         {
-            // Force exact 24:00 display
-            minutes = 24;
-            seconds = 0;
+            cg.alpha = 0f;
+            while (cg.alpha < 1f)
+            {
+                cg.alpha += Time.unscaledDeltaTime * fadeInSpeed;
+                yield return null;
+            }
+        }
+
+        TextMeshProUGUI dayText = DayCountUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        if (dayText != null)
+        {
+            dayText.text = "Day";
+            yield return new WaitForSecondsRealtime(textDelay);
+            dayText.text = "Day " + nextDay;
+            yield return new WaitForSecondsRealtime(textDelay);
+        }
+
+        DayCountUI.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    IEnumerator UpdateTimeRandomly()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(waitMin, waitMax));
+
+            elapsedTime += Random.Range(30f, 40f);
+
+            minutes = Mathf.FloorToInt(elapsedTime / 60f);
+            seconds = Mathf.FloorToInt(elapsedTime % 60f);
+
+            // Skip minutes 30-40
+            if (minutes >= 30 && minutes < 40)
+            {
+                int extraSkip = 40 - minutes;
+                minutes += extraSkip;
+                elapsedTime = minutes * 60f + seconds;
+            }
+
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            yield return StartCoroutine(ShowDayCount(DayAdder + 1));
+            if (minutes >= 24)
+            {
+                minutes = 24;
+                seconds = 0;
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            // Reset to next day
-            gameEngineReference.ResetFlagEventTriggered();
-            DayAdder += 1;
-            elapsedTime = 0;
-            Days.text = "DAY " + DayAdder;
+                yield return StartCoroutine(ShowDayCount(DayAdder + 1));
 
-            continue;
+                gameEngineReference.ResetFlagEventTriggered();
+                DayAdder += 1;
+                elapsedTime = 0;
+                Days.text = "DAY " + DayAdder;
+
+                // Keep SessionData in sync when a new day starts
+                if (SessionData.Instance != null)
+                {
+                    SessionData.Instance.DayAdder = DayAdder;
+                    SessionData.Instance.DaysText = "DAY " + DayAdder;
+                    SessionData.Instance.ElapsedTime = 0f;
+                }
+
+                continue;
+            }
         }
     }
-}
 }

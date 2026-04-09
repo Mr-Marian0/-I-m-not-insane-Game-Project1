@@ -12,7 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: OldNurseEvent
   m_EditorClassIdentifier: 
-  eventTitle: Event Title
-  eventDescription: What happens...
-  eventImage: {fileID: 0}
-  choices: []
+  eventTitle: Nurse Again
+  eventDescription: "Old woman nurse says \u201Ctime for medicine\u201D and gives
+    you red + blue pill."
+  eventImage: {fileID: 21300000, guid: d98a96e315091fa4d9210e4b2a621c3e, type: 3}
+  choices:
+  - choiceText: Take both pills without asking questions.
+    stressChange: 0
+    trustChange: 15
+    positiveOutcome: Medicine works fast and you feel much better.
+    negativeOutcome: You feel extremely sleepy and lose control of your thoughts.
+    positiveChance: 0.6
+  - choiceText: Refuse the pills and hide them under your pillow.
+    stressChange: 10
+    trustChange: -10
+    positiveOutcome: You avoid unknown medicine and stay alert.
+    negativeOutcome: Nurse gets angry and threatens to call the doctor.
+    positiveChance: 0.5
+  - choiceText: Ask the nurse what the pills are for first.
+    stressChange: -5
+    trustChange: 5
+    positiveOutcome: She explains clearly and you feel trusting and calm.
+    negativeOutcome: "She gets annoyed and says \u201Cjust take them\u201D, making
+      you suspicious."
+    positiveChance: 0.6

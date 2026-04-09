@@ -12,7 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: BoredEvent
   m_EditorClassIdentifier: 
-  eventTitle: Event Title
-  eventDescription: What happens...
-  eventImage: {fileID: 0}
-  choices: []
+  eventTitle: What do should I do hmmm...
+  eventDescription: You got bored, ran around, and now have ankle pain.
+  eventImage: {fileID: 21300000, guid: 84ea88d217012e64ba3395e6bf7314f6, type: 3}
+  choices:
+  - choiceText: "Keep moving anyway because you\u2019re still bored."
+    stressChange: 5
+    trustChange: -5
+    positiveOutcome: You find a fun distraction (like a magazine).
+    negativeOutcome: Ankle swells badly.
+    positiveChance: 0.5
+  - choiceText: Sit down immediately and elevate your foot.
+    stressChange: -5
+    trustChange: 5
+    positiveOutcome: Pain slowly goes away and ankle feels better.
+    negativeOutcome: Boredom comes back stronger and you feel depressed.
+    positiveChance: 0.5
+  - choiceText: Call the nurse and ask for pain medicine.
+    stressChange: 5
+    trustChange: 5
+    positiveOutcome: Nurse gives you medicine and wraps your ankle nicely.
+    negativeOutcome: Nurse scolds you for running and you feel embarrassed.
+    positiveChance: 0.5
