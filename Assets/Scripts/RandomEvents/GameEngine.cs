@@ -33,6 +33,7 @@ public class GameEngine : MonoBehaviour
     bool hasTriggeredSecondEvent = false;
     bool event1Triggered = false;
     bool event2Triggered = false;
+    bool hasGeneratedNewDay = false;
     public bool flagMissionDoor = false;
 
     void Start()
@@ -63,10 +64,15 @@ public class GameEngine : MonoBehaviour
         UI_Object.SetActive(true);
     }
 
-    if (timer.minutes == 24 && !flagEventAndMissionTriggered)
+    if (timer.minutes < 24)
+    {
+        hasGeneratedNewDay = false;
+    }
+
+    if (timer.minutes == 24 && !hasGeneratedNewDay)
     {
         GenerateNewTimes();
-        flagEventAndMissionTriggered = true;
+        hasGeneratedNewDay = true;
         hasTriggeredSecondEvent = false;
         EnableDoor.SetActive(false);
         Debug.Log("New day started - New missions and events generated");
