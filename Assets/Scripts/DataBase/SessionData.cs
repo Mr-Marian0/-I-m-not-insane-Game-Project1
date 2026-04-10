@@ -18,6 +18,14 @@ public class SessionData : MonoBehaviour
 
     [Header("Audio")]
     public bool IsMuted = false;
+    public int MissionTime1 = 0;
+    public int MissionTime2 = 0;
+    public int TimeToTriggerEvent1 = 0;
+    public int TimeToTriggerEvent2 = 0;
+    public bool Mission1Entered = false;
+    public bool Mission2Entered = false;
+    public bool Event1Triggered = false;
+    public bool Event2Triggered = false;
 
     private void Awake()
     {
@@ -34,7 +42,8 @@ public class SessionData : MonoBehaviour
     }
 
     // Called by PressDoor before leaving Scene 1
-    public void SaveScene1State(float trust, float stress, Vector3 playerPos, float elapsedTime, int dayAdder, string daysText)
+    public void SaveScene1State(float trust, float stress, Vector3 playerPos, float elapsedTime, int dayAdder, 
+    string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2, bool mission1Entered, bool mission2Entered, bool event1Triggered, bool event2Triggered)
     {
         Trust = trust;
         Stress = stress;
@@ -42,6 +51,14 @@ public class SessionData : MonoBehaviour
         ElapsedTime = elapsedTime;
         DayAdder = dayAdder;
         DaysText = daysText;
+        MissionTime1 = missionTime1;
+        MissionTime2 = missionTime2;
+        TimeToTriggerEvent1 = timeToTriggerEvent1;
+        TimeToTriggerEvent2 = timeToTriggerEvent2;
+        Mission1Entered = mission1Entered;
+        Mission2Entered = mission2Entered;
+        Event1Triggered = event1Triggered;
+        Event2Triggered = event2Triggered;
     }
 
     // Called by EventManager after every choice

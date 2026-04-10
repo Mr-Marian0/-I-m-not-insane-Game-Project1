@@ -10,7 +10,7 @@ public class PressDoor : MonoBehaviour
 
     public Transform PlayerPosition;
 
-    public GameEngine GetGeneratedChallenge;
+    public GameEngine GameEngineReference;
 
     // Reference to Timer so we can save its state
     public Timer SceneTimer;
@@ -20,8 +20,26 @@ public class PressDoor : MonoBehaviour
 
     public void DoorPressed()
     {
-        // Debug.Log("CHALLENGE: " + GetGeneratedChallenge.GenerateChallenge);
-
+        GameEngineReference.flagMissionDoor = true;
+        
+        // Determine which mission is being entered and mark it as entered
+        bool mission1Entered = SessionData.Instance != null ? SessionData.Instance.Mission1Entered : false;
+        bool mission2Entered = SessionData.Instance != null ? SessionData.Instance.Mission2Entered : false;
+        bool event1Triggered = SessionData.Instance != null ? SessionData.Instance.Event1Triggered : false;
+        bool event2Triggered = SessionData.Instance != null ? SessionData.Instance.Event2Triggered : false;
+        
+        if (SceneTimer != null)
+        {
+            if (SceneTimer.minutes >= GameEngineReference.MissionTime1 && SceneTimer.minutes < GameEngineReference.MissionTime1 + 2)
+            {
+                mission1Entered = true;
+            }
+            else if (SceneTimer.minutes >= GameEngineReference.MissionTime2 && SceneTimer.minutes < GameEngineReference.MissionTime2 + 2)
+            {
+                mission2Entered = true;
+            }
+        }
+        
         // Save everything into SessionData before leaving Scene 1
         if (SessionData.Instance != null && SceneTimer != null && eventManager != null)
         {
@@ -32,14 +50,22 @@ public class PressDoor : MonoBehaviour
                 PlayerPosition.position,
                 SceneTimer.elapsedTime,
                 SceneTimer.DayAdder,
-                "DAY " + SceneTimer.DayAdder
+                "DAY " + SceneTimer.DayAdder,
+                GameEngineReference.MissionTime1,
+                GameEngineReference.MissionTime2,
+                GameEngineReference.TimeToTriggerEvent1,
+                GameEngineReference.TimeToTriggerEvent2,
+                mission1Entered,
+                mission2Entered,
+                event1Triggered,
+                event2Triggered
             );
 
             
         }
 
         Anim.SetBool("EnterExitDoor", true);
-        StartCoroutine(Delay());
+        
 
         // Turn Off UI Objects during a Puzzle
         game_engine.Clock.SetActive(false);
@@ -49,8 +75,8 @@ public class PressDoor : MonoBehaviour
 
         game_engine.UI.sortingOrder = 7;
 
-        if (GetGeneratedChallenge.GenerateChallenge == 1) LoadScene("Riddles");
-        else if (GetGeneratedChallenge.GenerateChallenge == 2) LoadScene("JigsawPuzz");
+        if (GameEngineReference.GenerateChallenge == 1) LoadScene("Riddles");
+        else if (GameEngineReference.GenerateChallenge == 2) LoadScene("JigsawPuzz");
     }
 
     public void LoadScene(string sceneName)
@@ -67,6 +93,4 @@ public class PressDoor : MonoBehaviour
         // Transform Player or Reset
         PlayerPosition.transform.position = new Vector3(-0.05f, -2.91f, 0);
     }
-
-    
 }
