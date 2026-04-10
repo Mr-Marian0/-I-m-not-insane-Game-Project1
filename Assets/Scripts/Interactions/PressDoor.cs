@@ -6,8 +6,6 @@ using TMPro;
 public class PressDoor : MonoBehaviour
 {
     public GameEngine game_engine;
-    public Animator Anim;
-
     public Transform PlayerPosition;
 
     public GameEngine GameEngineReference;
@@ -63,8 +61,6 @@ public class PressDoor : MonoBehaviour
 
             
         }
-
-        Anim.SetBool("EnterExitDoor", true);
         
 
         // Turn Off UI Objects during a Puzzle
@@ -87,7 +83,6 @@ public class PressDoor : MonoBehaviour
     private IEnumerator Delay()
     {
         yield return new WaitForSeconds(2);
-        Anim.SetBool("EnterExitDoor", false);
         game_engine.Player.SetActive(false);
         game_engine.Background.SetActive(false);
         // Transform Player or Reset

@@ -126,8 +126,13 @@ public class EnemyScript : MonoBehaviour
     }
 
     public void OnDisable(){
-        MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
-        MoveStressPosition.anchoredPosition = StressDefaultPosXY;
-
+        if (MoveTrustPosition != null)
+        {
+            MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
+        }
+        if (MoveStressPosition != null)
+        {
+            MoveStressPosition.anchoredPosition = StressDefaultPosXY;
+        }
     }
 }

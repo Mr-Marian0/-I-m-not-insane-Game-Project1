@@ -2984,7 +2984,10 @@ MonoBehaviour:
   MissionTime2: 0
   TimeToTriggerEvent1: 0
   TimeToTriggerEvent2: 0
-  TurnOffDoorAfterMission: 1
+  Mission1Entered: 0
+  Mission2Entered: 0
+  Event1Triggered: 0
+  Event2Triggered: 0
 --- !u!1 &726544030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3186,7 @@ MonoBehaviour:
   TimeToTriggerEvent1: 0
   TimeToTriggerEvent2: 0
   GenerateChallenge: 0
-  finishedMissionflag: 0
+  flagMissionDoor: 0
 --- !u!114 &764401901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5803,7 +5806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_engine: {fileID: 764401900}
-  Anim: {fileID: 1581657946}
   PlayerPosition: {fileID: 990460090}
   GameEngineReference: {fileID: 764401900}
   SceneTimer: {fileID: 11596894}
@@ -6278,7 +6280,7 @@ Animator:
   m_GameObject: {fileID: 1581657942}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db4ce1477a8936640a694d8d42122a3a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
