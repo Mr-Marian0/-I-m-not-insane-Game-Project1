@@ -18,6 +18,7 @@ public class EndGameWin : MonoBehaviour
     public GameObject AMPMObject;
     public GameObject FixedJoystickObject;
     public GameObject GameEngineObject;
+    public GameObject GameOverTextObject;
 
     [Header("Endscreen UI")]
     public SpriteRenderer fadeOverlay;
@@ -105,6 +106,7 @@ public class EndGameWin : MonoBehaviour
             return;
 
         gameOverTriggered = true;
+        GameOverTextObject.SetActive(true);
         DisableGameplay();
         StartCoroutine(RunEndGameSequence(trustVictory));
     }

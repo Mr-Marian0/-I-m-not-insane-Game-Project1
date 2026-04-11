@@ -17,6 +17,7 @@ public class GameEngine : MonoBehaviour
     public Timer timer;
     public EventManager eventManager;
     public GameObject EnableDoor;
+    public PressToSleep pressToSleepReference;
 
     // Mission Times
     public int MissionTime1;      // First mission (3-11)
@@ -35,6 +36,8 @@ public class GameEngine : MonoBehaviour
     bool event2Triggered = false;
     bool hasGeneratedNewDay = false;
     public bool flagMissionDoor = false;
+    bool mission1Activated = false;
+    bool mission2Activated = false;
 
     void Start()
     {
@@ -84,17 +87,31 @@ public class GameEngine : MonoBehaviour
     if ((timer.minutes == MissionTime1 || (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2)) && 
         !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission1Entered))
     {
-        EnableDoor.SetActive(true);
-    }
-    // Second Mission - Active for 2 minutes
-    else if ((timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
-             !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered))
-    {
+        if (!mission1Activated)
+        {
+            mission1Activated = true;
+            if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
+        }
         EnableDoor.SetActive(true);
     }
     else
     {
-        EnableDoor.SetActive(false);
+        mission1Activated = false;
+    }
+    // Second Mission - Active for 2 minutes
+    if ((timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
+             !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered))
+    {
+        if (!mission2Activated)
+        {
+            mission2Activated = true;
+            if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
+        }
+        EnableDoor.SetActive(true);
+    }
+    else
+    {
+        mission2Activated = false;
     }
 
     // ==================== EVENT LOGIC ====================
@@ -147,6 +164,9 @@ public class GameEngine : MonoBehaviour
             SessionData.Instance.Event1Triggered = false;
             SessionData.Instance.Event2Triggered = false;
         }
+
+        mission1Activated = false;
+        mission2Activated = false;
 
         Debug.Log("=== New Day Generated ===");
         Debug.Log("Mission 1: " + MissionTime1);
