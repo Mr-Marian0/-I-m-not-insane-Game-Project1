@@ -5,14 +5,11 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] TextMeshProUGUI AmPm;
     [SerializeField] TextMeshProUGUI Days;
     [SerializeField] GameObject DayCountUI;
     [SerializeField] float fadeInSpeed = 1f;
     [SerializeField] float textDelay = 3f;
     public int DayAdder = 1;
-    public int AM = 1;
-    public int PM = 0;
     public int minutes;
     public int seconds;
     public GameEngine gameEngineReference;

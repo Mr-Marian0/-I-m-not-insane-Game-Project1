@@ -9,7 +9,6 @@ public class GameEngine : MonoBehaviour
     public GameObject Trust;
     public GameObject Clock;
     public GameObject Days;
-    public GameObject AmPm;
     public GameObject JoyStick;
     public GameObject Player;
     public GameObject Background;

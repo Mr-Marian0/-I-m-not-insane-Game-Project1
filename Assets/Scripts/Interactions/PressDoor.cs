@@ -66,7 +66,6 @@ public class PressDoor : MonoBehaviour
         // Turn Off UI Objects during a Puzzle
         game_engine.Clock.SetActive(false);
         game_engine.Days.SetActive(false);
-        game_engine.AmPm.SetActive(false);
         game_engine.JoyStick.SetActive(false);
 
         game_engine.UI.sortingOrder = 7;
