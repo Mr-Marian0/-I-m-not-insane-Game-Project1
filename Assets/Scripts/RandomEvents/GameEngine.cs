@@ -42,9 +42,11 @@ public class GameEngine : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        if (timer.minutes == 0) GenerateNewTimes();
-        // Restore generated MISSION and EVENT from SessionData if returning from a mission
-        if (SessionData.Instance != null && SessionData.Instance.MissionTime1 != 0 && SessionData.Instance.MissionTime2 != 0)
+        bool hasSessionTimes = SessionData.Instance != null &&
+            (SessionData.Instance.MissionTime1 != 0 || SessionData.Instance.MissionTime2 != 0 ||
+             SessionData.Instance.TimeToTriggerEvent1 != 0 || SessionData.Instance.TimeToTriggerEvent2 != 0);
+
+        if (hasSessionTimes)
         {
             MissionTime1 = SessionData.Instance.MissionTime1;
             MissionTime2 = SessionData.Instance.MissionTime2;
@@ -52,6 +54,41 @@ public class GameEngine : MonoBehaviour
             TimeToTriggerEvent2 = SessionData.Instance.TimeToTriggerEvent2;
             event1Triggered = SessionData.Instance.Event1Triggered;
             event2Triggered = SessionData.Instance.Event2Triggered;
+        }
+        else if (SaveData.HasSaveFile())
+        {
+            PlayerData save = SaveData.LoadPlayer();
+            if (save != null &&
+                (save.MissionTime1 != 0 || save.MissionTime2 != 0 ||
+                 save.TimeToTriggerEvent1 != 0 || save.TimeToTriggerEvent2 != 0))
+            {
+                MissionTime1 = save.MissionTime1;
+                MissionTime2 = save.MissionTime2;
+                TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
+                TimeToTriggerEvent2 = save.TimeToTriggerEvent2;
+
+                if (SessionData.Instance != null)
+                {
+                    SessionData.Instance.MissionTime1 = save.MissionTime1;
+                    SessionData.Instance.MissionTime2 = save.MissionTime2;
+                    SessionData.Instance.TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
+                    SessionData.Instance.TimeToTriggerEvent2 = save.TimeToTriggerEvent2;
+                }
+            }
+            else
+            {
+                GenerateNewTimes();
+            }
+        }
+        else
+        {
+            GenerateNewTimes();
+        }
+
+        if (timer.minutes == 0 && !hasSessionTimes && !SaveData.HasSaveFile())
+        {
+            // ensure there is always a generated mission/event range on a fresh start
+            GenerateNewTimes();
         }
 
         GenerateChallenge = Random.Range(1, 3);

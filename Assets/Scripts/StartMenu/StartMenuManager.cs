@@ -11,8 +11,7 @@ public class StartMenuManager : MonoBehaviour
     void Start()
     {
         Debug.Log(Application.persistentDataPath);
-        PlayerData data = SaveData.LoadPlayer();
-        if (data != null && (data.TrustData > 0 || data.StressData > 0))
+        if (SaveData.HasSaveFile())
         {
             startFunctions.SetButtonText(mainButton, "CONTINUE");
         }

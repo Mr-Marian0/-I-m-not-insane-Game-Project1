@@ -22,8 +22,8 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        
-        // Restore timer state from SessionData if returning from a mission
+        bool restored = false;
+
         if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f)
         {
             elapsedTime = SessionData.Instance.ElapsedTime;
@@ -32,7 +32,32 @@ public class Timer : MonoBehaviour
             if (Days != null)
                 Days.text = SessionData.Instance.DaysText;
 
-            // Update display immediately so it doesn't flash 00:00
+            restored = true;
+        }
+        else if (SaveData.HasSaveFile())
+        {
+            PlayerData savedData = SaveData.LoadPlayer();
+            if (savedData != null)
+            {
+                elapsedTime = savedData.ElapsedTime;
+                DayAdder = savedData.DayAdder > 0 ? savedData.DayAdder : 1;
+
+                if (Days != null)
+                    Days.text = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
+
+                if (SessionData.Instance != null)
+                {
+                    SessionData.Instance.ElapsedTime = elapsedTime;
+                    SessionData.Instance.DayAdder = DayAdder;
+                    SessionData.Instance.DaysText = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
+                }
+
+                restored = true;
+            }
+        }
+
+        if (restored)
+        {
             minutes = Mathf.FloorToInt(elapsedTime / 60f);
             seconds = Mathf.FloorToInt(elapsedTime % 60f);
             if (timerText != null)

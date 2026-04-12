@@ -37,7 +37,19 @@ public class PlayerProgress : MonoBehaviour
             // Apply values to the sliders
             StressSlider.value = data.StressData;
             TrustSlider.value = data.TrustData;
-            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
+
+            if (SessionData.Instance != null)
+            {
+                SessionData.Instance.ElapsedTime = data.ElapsedTime;
+                SessionData.Instance.DayAdder = data.DayAdder;
+                SessionData.Instance.DaysText = string.IsNullOrEmpty(data.DaysText) ? "DAY " + data.DayAdder : data.DaysText;
+                SessionData.Instance.MissionTime1 = data.MissionTime1;
+                SessionData.Instance.MissionTime2 = data.MissionTime2;
+                SessionData.Instance.TimeToTriggerEvent1 = data.TimeToTriggerEvent1;
+                SessionData.Instance.TimeToTriggerEvent2 = data.TimeToTriggerEvent2;
+            }
+
+            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData + ", Time: " + data.ElapsedTime + ", Day: " + data.DayAdder);
         }
     }
     
