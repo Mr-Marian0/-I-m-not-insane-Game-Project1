@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Button mainButton; // The button that will be "CONTINUE" or "NEW GAME"
+    public StartFunctions startFunctions; // Reference to StartFunctions script
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(Application.persistentDataPath);
+        PlayerData data = SaveData.LoadPlayer();
+        if (data != null && (data.TrustData > 0 || data.StressData > 0))
+        {
+            startFunctions.SetButtonText(mainButton, "CONTINUE");
+        }
+        else
+        {
+            startFunctions.SetButtonText(mainButton, "NEW GAME");
+        }
     }
 }

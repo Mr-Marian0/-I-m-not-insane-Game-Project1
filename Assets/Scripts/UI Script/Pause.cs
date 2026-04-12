@@ -92,7 +92,7 @@ public class Pause : MonoBehaviour
             playerProgress.TrustBar = 0f;
         }
 
-        SaveData.SavePlayer(0f, 0f);
+        SaveData.DeleteSave();
 
         // Also reset SessionData bars
         if (SessionData.Instance != null)
@@ -100,7 +100,7 @@ public class Pause : MonoBehaviour
             SessionData.Instance.UpdateBars(0f, 0f);
         }
 
-        Debug.Log("Player data has been reset to zero");
+        Debug.Log("Player data has been reset and save file deleted");
     }
 
     public void SurrenderPressed()

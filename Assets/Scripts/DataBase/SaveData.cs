@@ -4,12 +4,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveData
 {
+    private static string SavePath => Application.persistentDataPath + "/player.bimbo";
+
     public static void SavePlayer(float trust, float stress, PlayerProgress player_progress)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
-        string path = Application.persistentDataPath + "/player.bimbo";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        FileStream stream = new FileStream(SavePath, FileMode.Create);
 
         PlayerData data = new PlayerData(player_progress);
         data.TrustData = trust;
@@ -23,8 +24,7 @@ public static class SaveData
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
-        string path = Application.persistentDataPath + "/player.bimbo";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        FileStream stream = new FileStream(SavePath, FileMode.Create);
 
         PlayerData data = new PlayerData(trust, stress);
 
@@ -34,11 +34,10 @@ public static class SaveData
 
     public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/player.bimbo";
-        if (File.Exists(path))
+        if (File.Exists(SavePath))
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            FileStream stream = new FileStream(SavePath, FileMode.Open);
 
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
@@ -47,9 +46,21 @@ public static class SaveData
         }
         else
         {
-            Debug.LogError("Save file not found in: " + path);
+            Debug.LogError("Save file not found in: " + SavePath);
             return null;
         }
     }
 
+    public static bool HasSaveFile()
+    {
+        return File.Exists(SavePath) && new FileInfo(SavePath).Length > 0;
+    }
+
+    public static void DeleteSave()
+    {
+        if (File.Exists(SavePath))
+        {
+            File.Delete(SavePath);
+        }
+    }
 }
