@@ -5,8 +5,8 @@ public class SessionData : MonoBehaviour
     public static SessionData Instance;
 
     [Header("Bar Values")]
-    public float Trust = 50f;
-    public float Stress = 50f;
+    public float Trust;
+    public float Stress;
 
     [Header("Player Position")]
     public Vector3 PlayerPosition = new Vector3(-0.05f, -2.91f, 0);

@@ -3124,8 +3124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5560052c288c3947ade1c61b35cafac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trust: 50
-  Stress: 50
+  Trust: 0
+  Stress: 0
   PlayerPosition: {x: -0.05, y: -2.91, z: 0}
   ElapsedTime: 0
   DayAdder: 1

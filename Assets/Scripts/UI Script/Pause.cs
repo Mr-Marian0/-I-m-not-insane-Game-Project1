@@ -151,9 +151,9 @@ public class Pause : MonoBehaviour
         Application.Quit();
         Debug.Log("Exit");
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     private void SaveGameState()
