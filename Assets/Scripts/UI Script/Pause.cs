@@ -37,6 +37,7 @@ public class Pause : MonoBehaviour
     public Sprite SoundOffSprite;
     public TextMeshProUGUI SoundButton_text;
     private PlayerProgress playerProgress;
+    public Timer timerReference;
 
     public void PausePressed()
     {
@@ -44,6 +45,10 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
         Show_Pause_Menu.SetActive(true);
         Signal1 = true;
+
+        // Save data when pause is pressed
+        SaveGameState();
+
         StartCoroutine(ActivateDelay(0.5f));
     }
 
@@ -135,6 +140,33 @@ public class Pause : MonoBehaviour
 
     public void ExitPressed()
     {
+        // Save data when exit is pressed
+        SaveGameState();
+
+        Time.timeScale = 1;
+        Application.Quit();
+        Debug.Log("Exit");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    private void SaveGameState()
+    {
+        // Get actual timer values from Timer.cs
+        if (timerReference == null)
+            timerReference = FindObjectOfType<Timer>();
+
+        if (timerReference != null && SessionData.Instance != null)
+        {
+            // Sync Timer values into SessionData before saving
+            SessionData.Instance.ElapsedTime = timerReference.elapsedTime;
+            SessionData.Instance.DayAdder = timerReference.DayAdder;
+            SessionData.Instance.DaysText = "DAY " + timerReference.DayAdder;
+        }
+
+        // Now save with the synced data
         if (playerProgress != null)
         {
             playerProgress.SavePlayer(playerProgress.TrustBar, playerProgress.StressBar);
@@ -144,13 +176,8 @@ public class Pause : MonoBehaviour
             SaveData.SavePlayer(0f, 0f);
         }
 
-        Time.timeScale = 1;
-        Application.Quit();
-        Debug.Log("Exit");
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        Debug.Log("Game state saved with Timer values - Time: " + (timerReference != null ? timerReference.elapsedTime : 0) + 
+                  ", Day: " + (timerReference != null ? timerReference.DayAdder : 1));
     }
 
     void Start()

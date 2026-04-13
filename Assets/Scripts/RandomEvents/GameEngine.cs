@@ -119,36 +119,42 @@ public class GameEngine : MonoBehaviour
 
     // ==================== MISSION LOGIC ====================
 
+    // Calculate if missions are active
+    bool mission1Active = (timer.minutes == MissionTime1 || (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2)) && 
+                          !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission1Entered);
+    bool mission2Active = (timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
+                          !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered);
+
     // First Mission - Active for 2 minutes
-    if ((timer.minutes == MissionTime1 || (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2)) && 
-        !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission1Entered))
+    if (mission1Active)
     {
         if (!mission1Activated)
         {
             mission1Activated = true;
             if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
         }
-        EnableDoor.SetActive(true);
     }
     else
     {
         mission1Activated = false;
     }
+
     // Second Mission - Active for 2 minutes
-    if ((timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
-             !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered))
+    if (mission2Active)
     {
         if (!mission2Activated)
         {
             mission2Activated = true;
             if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
         }
-        EnableDoor.SetActive(true);
     }
     else
     {
         mission2Activated = false;
     }
+
+    // Set door active if either mission is active
+    EnableDoor.SetActive(mission1Active || mission2Active);
 
     // ==================== EVENT LOGIC ====================
 

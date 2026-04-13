@@ -27,6 +27,8 @@ public class SessionData : MonoBehaviour
     public bool Event1Triggered = false;
     public bool Event2Triggered = false;
 
+    private PlayerProgress playerProgress;
+
     private void Awake()
     {
         // Only one SessionData ever exists — survives all scene loads
@@ -39,6 +41,41 @@ public class SessionData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        playerProgress = FindObjectOfType<PlayerProgress>();
+    }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            SaveCurrentState();
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        SaveCurrentState();
+    }
+
+    private void SaveCurrentState()
+    {
+        if (playerProgress == null)
+            playerProgress = FindObjectOfType<PlayerProgress>();
+
+        if (playerProgress != null)
+        {
+            SaveData.SavePlayer(Trust, Stress, playerProgress);
+        }
+        else
+        {
+            SaveData.SavePlayer(Trust, Stress);
+        }
+
+        Debug.Log("SessionData auto-saved on pause/quit");
     }
 
     // Called by PressDoor before leaving Scene 1

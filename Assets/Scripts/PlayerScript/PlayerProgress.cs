@@ -47,6 +47,15 @@ public class PlayerProgress : MonoBehaviour
                 SessionData.Instance.MissionTime2 = data.MissionTime2;
                 SessionData.Instance.TimeToTriggerEvent1 = data.TimeToTriggerEvent1;
                 SessionData.Instance.TimeToTriggerEvent2 = data.TimeToTriggerEvent2;
+
+                if (data.PlayerPosition != null && data.PlayerPosition.Length == 3)
+                    SessionData.Instance.PlayerPosition = new Vector3(data.PlayerPosition[0], data.PlayerPosition[1], data.PlayerPosition[2]);
+
+                SessionData.Instance.IsMuted = data.IsMuted;
+                SessionData.Instance.Mission1Entered = data.Mission1Entered;
+                SessionData.Instance.Mission2Entered = data.Mission2Entered;
+                SessionData.Instance.Event1Triggered = data.Event1Triggered;
+                SessionData.Instance.Event2Triggered = data.Event2Triggered;
             }
 
             Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData + ", Time: " + data.ElapsedTime + ", Day: " + data.DayAdder);
