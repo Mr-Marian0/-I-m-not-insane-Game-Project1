@@ -104,6 +104,9 @@ public class Pause : MonoBehaviour
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(0f, 0f);
+            SessionData.Instance.ElapsedTime = 0f;
+            SessionData.Instance.DayAdder = 1;
+            SessionData.Instance.DaysText = "DAY 1";
         }
 
         SceneManager.LoadScene("StartMenu");

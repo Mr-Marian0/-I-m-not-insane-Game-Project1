@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RIddles.unity
     guid: ef9889fffe0a57e409c5a8f85481dacf
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: f849da96f9b717d44bb55a7ff3674363
   m_configObjects: {}

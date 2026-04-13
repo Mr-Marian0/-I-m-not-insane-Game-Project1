@@ -3139,6 +3139,7 @@ MonoBehaviour:
   Mission2Entered: 0
   Event1Triggered: 0
   Event2Triggered: 0
+  NewGame: 0
 --- !u!1 &726544030
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8379,7 @@ MonoBehaviour:
   SoundOnSprite: {fileID: 21300000, guid: 99dcbdea6ebe2fc46a78d9ef58fc1650, type: 3}
   SoundOffSprite: {fileID: 21300000, guid: 0e829642eda51f143bc9b4543be42203, type: 3}
   SoundButton_text: {fileID: 1723968122}
-  timerReference: {fileID: 0}
+  timerReference: {fileID: 11596894}
 --- !u!1 &1908686148
 GameObject:
   m_ObjectHideFlags: 0
