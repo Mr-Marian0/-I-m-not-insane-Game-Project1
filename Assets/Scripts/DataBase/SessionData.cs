@@ -26,6 +26,7 @@ public class SessionData : MonoBehaviour
     public bool Mission2Entered = false;
     public bool Event1Triggered = false;
     public bool Event2Triggered = false;
+    public bool NewGame = false;
 
     private PlayerProgress playerProgress;
 

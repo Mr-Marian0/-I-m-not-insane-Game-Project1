@@ -46,8 +46,6 @@ public class Pause : MonoBehaviour
         Show_Pause_Menu.SetActive(true);
         Signal1 = true;
 
-        // Save data when pause is pressed
-        SaveGameState();
 
         StartCoroutine(ActivateDelay(0.5f));
     }
@@ -95,8 +93,11 @@ public class Pause : MonoBehaviour
             playerProgress.TrustSlider.value = 0f;
             playerProgress.StressBar = 0f;
             playerProgress.TrustBar = 0f;
+            timerReference.elapsedTime = 0f;
+            timerReference.DayAdder = 1;
         }
 
+        SessionData.Instance.NewGame = true;
         SaveData.DeleteSave();
 
         // Also reset SessionData bars
@@ -105,7 +106,7 @@ public class Pause : MonoBehaviour
             SessionData.Instance.UpdateBars(0f, 0f);
         }
 
-        Debug.Log("Player data has been reset and save file deleted");
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void SurrenderPressed()

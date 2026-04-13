@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     {
         bool restored = false;
 
-        if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f)
+        if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f && SessionData.Instance.NewGame == false)
         {
             elapsedTime = SessionData.Instance.ElapsedTime;
             DayAdder = SessionData.Instance.DayAdder;
@@ -37,6 +37,7 @@ public class Timer : MonoBehaviour
         else if (SaveData.HasSaveFile())
         {
             PlayerData savedData = SaveData.LoadPlayer();
+            SessionData.Instance.NewGame = false;
             if (savedData != null)
             {
                 elapsedTime = savedData.ElapsedTime;
