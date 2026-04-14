@@ -10,9 +10,7 @@ public class StartMenuManager : MonoBehaviour
 
     void Start()
     {
-        // Check for existing save data or session data to determine button text
-        Debug.Log(Application.persistentDataPath);
-        if (SaveData.HasSaveFile())
+        if (SaveData.HasSaveFile() && SaveData.HasSaveFile())
         {
             startFunctions.SetButtonText(mainButton, "CONTINUE");
         }

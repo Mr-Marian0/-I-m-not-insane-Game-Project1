@@ -92,9 +92,27 @@ public static class SaveData
 
     public static void DeleteSave()
     {
-        if (File.Exists(SavePath))
+        // Tell SessionData not to auto-save during deletion
+        if (SessionData.Instance != null)
         {
-            File.Delete(SavePath);
+            SessionData.Instance.BeginDataReset();
+        }
+        
+        try
+        {
+            if (File.Exists(SavePath))
+            {
+                File.Delete(SavePath);
+                Debug.Log("Save file deleted successfully");
+            }
+            else
+            {
+                Debug.Log("No save file to delete");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Failed to delete save: {e.Message}");
         }
     }
 }

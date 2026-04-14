@@ -29,6 +29,7 @@ public class SessionData : MonoBehaviour
     public bool NewGame = false;
 
     private PlayerProgress playerProgress;
+    private bool isResettingData = false; // Flag to prevent auto-save during reset
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class SessionData : MonoBehaviour
 
     void OnApplicationPause(bool pauseStatus)
     {
-        if (pauseStatus)
+        if (pauseStatus && !isResettingData && !NewGame)
         {
             SaveCurrentState();
         }
@@ -59,7 +60,23 @@ public class SessionData : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        SaveCurrentState();
+        if (!isResettingData && !NewGame)
+        {
+            SaveCurrentState();
+        }
+    }
+
+    // Call this before resetting data
+    public void BeginDataReset()
+    {
+        isResettingData = true;
+    }
+
+    // Call this after reset is complete (optional)
+    public void EndDataReset()
+    {
+        isResettingData = false;
+        Debug.Log("Data reset complete - auto-save re-enabled");
     }
 
     private void SaveCurrentState()
