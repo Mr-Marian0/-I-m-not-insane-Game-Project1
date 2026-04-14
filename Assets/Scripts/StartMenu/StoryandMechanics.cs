@@ -8,6 +8,7 @@ public class StoryandMechanics : MonoBehaviour
     public RectTransform spinningImage; // Assign the UI Image's RectTransform here
     public AudioSource firstAudioSource;
     public AudioSource secondAudioSource;
+    public AudioSource thirdAudioSource; // Optional, if you want to play a third audio after the second one
     public TMP_Text subtitleText; // Assign the TextMeshPro text object here
 
     private bool isSpinning = false;
@@ -29,6 +30,7 @@ public class StoryandMechanics : MonoBehaviour
 
     private IEnumerator SpinImage()
     {
+        yield return new WaitForSeconds(0.2f);
         while (isSpinning)
         {
             spinningImage.Rotate(0f, 0f, 360f * Time.deltaTime - 1.2f); // Rotate 360 degrees per second
@@ -45,7 +47,11 @@ public class StoryandMechanics : MonoBehaviour
         secondAudioSource.Play();
 
         // Wait for the second audio to finish
-        yield return new WaitForSeconds(secondAudioSource.clip.length);
+        yield return new WaitForSeconds(secondAudioSource.clip.length + 4f);
+
+        thirdAudioSource.Play();
+
+        yield return new WaitForSeconds(thirdAudioSource.clip.length); // Optional delay before playing the third audio
 
         // Stop spinning
         isSpinning = false;

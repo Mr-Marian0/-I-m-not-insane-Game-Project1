@@ -10,7 +10,7 @@ public class StartMenuManager : MonoBehaviour
 
     void Start()
     {
-            // Check for existing save data or session data to determine button text
+        // Check for existing save data or session data to determine button text
         Debug.Log(Application.persistentDataPath);
         if (SaveData.HasSaveFile())
         {
@@ -19,7 +19,6 @@ public class StartMenuManager : MonoBehaviour
         else
         {
             startFunctions.SetButtonText(mainButton, "NEW GAME");
-            
         }
     }
 }
