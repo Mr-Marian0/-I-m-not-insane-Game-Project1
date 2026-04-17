@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class PlayerProgress : MonoBehaviour
 
     public Slider StressSlider;
     public Slider TrustSlider;
+    public TextMeshProUGUI StressPercentageText;
+    public TextMeshProUGUI TrustPercentageText;
     // ASFDASFA 
     
 
@@ -18,7 +21,10 @@ public class PlayerProgress : MonoBehaviour
     {
         StressBar = StressSlider.value;
         TrustBar = TrustSlider.value;
-    }  
+
+        StressPercentageText.text = Mathf.RoundToInt(StressSlider.value) + "%";
+        TrustPercentageText.text = Mathf.RoundToInt(TrustSlider.value) + "%";
+    }   
 
     public void SavePlayer(float trustValue, float stressValue)
     {   

@@ -7,6 +7,7 @@ public class PuzzleEngine : MonoBehaviour
 
     public StartTimer InheritStartTimer;
     public GameObject PuzzleOwn;
+    
 
     public int StartRandomJigsawPuzzle;
     void Start()

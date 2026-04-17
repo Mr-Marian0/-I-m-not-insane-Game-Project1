@@ -121,12 +121,13 @@ public class EventManager : MonoBehaviour
 
         // Also persist to disk via SaveData
         SaveData.SavePlayer(trustBar.value, stressBar.value);
+        
 
         if (MoveTrustPosition != null)
-            MoveTrustPosition.anchoredPosition = new Vector2(-640f, 734.7f);
+            MoveTrustPosition.anchoredPosition = new Vector2(339f, 195.9999f);
 
         if (MoveStressPosition != null)
-            MoveStressPosition.anchoredPosition = new Vector2(1328f, -473f);
+            MoveStressPosition.anchoredPosition = new Vector2(339f, 44.25299f);
 
         foreach (var btn in choiceButtons)
             btn.gameObject.SetActive(false);
