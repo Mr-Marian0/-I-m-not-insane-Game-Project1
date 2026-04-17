@@ -102,8 +102,8 @@ public class CheckAnswer : MonoBehaviour
                 Enemy1.SetActive(false);
         }
 
-            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
-            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
+            MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
             
             // Save the reward values
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
@@ -164,8 +164,8 @@ public class CheckAnswer : MonoBehaviour
                 Enemy1.SetActive(false);
             }
 
-            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
-            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
+            MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
         }
 
         // Save the reward values

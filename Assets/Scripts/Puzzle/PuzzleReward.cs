@@ -51,8 +51,8 @@ public class PuzzleReward : MonoBehaviour
         if(InheritPuzzleKeyColliders.IsFinished == true)
         {
 
-            MoveTrustPosition.anchoredPosition = new Vector2(-968f, 619f);
-            MoveStressPosition.anchoredPosition = new Vector2(994f, -583f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
+            MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
 
             if (!FunctionCallOnce)
             {
@@ -124,9 +124,5 @@ public class PuzzleReward : MonoBehaviour
     public void OnDisable()
     {
         InheritPuzzleKeyColliders.IsFinished = false;
-
-        //RESET THE DEFAULT POSITION
-        if(MoveTrustPosition != null) MoveTrustPosition.anchoredPosition = TrustDefaultPosXY;
-        if(MoveStressPosition != null) MoveStressPosition.anchoredPosition = StressDefaultPosXY;
     }
 }
