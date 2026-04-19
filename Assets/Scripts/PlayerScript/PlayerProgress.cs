@@ -13,6 +13,7 @@ public class PlayerProgress : MonoBehaviour
     public TextMeshProUGUI TrustPercentageText;
     // ASFDASFA 
     
+    public Timer TimerReference;
 
     public float StressBar;
     public float TrustBar;
@@ -24,11 +25,6 @@ public class PlayerProgress : MonoBehaviour
 
         StressPercentageText.text = Mathf.RoundToInt(StressSlider.value) + "%";
         TrustPercentageText.text = Mathf.RoundToInt(TrustSlider.value) + "%";
-    }   
-
-    public void SavePlayer(float trustValue, float stressValue)
-    {   
-        SaveData.SavePlayer(trustValue, stressValue, this);
     }
 
     public void LoadPlayer()
@@ -39,7 +35,11 @@ public class PlayerProgress : MonoBehaviour
         {
             StressBar = data.StressData;
             TrustBar = data.TrustData;
-            
+
+            TimerReference.elapsedTime = data.ElapsedTime;
+            TimerReference.DayAdder = data.DayAdder;
+            TimerReference.Days.text = string.IsNullOrEmpty(data.DaysText) ? "DAY " + data.DayAdder : data.DaysText;
+             
             // Apply values to the sliders
             StressSlider.value = data.StressData;
             TrustSlider.value = data.TrustData;

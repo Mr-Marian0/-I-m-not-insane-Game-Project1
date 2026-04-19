@@ -26,6 +26,19 @@ public class PlayerData
     public bool Event1Triggered;
     public bool Event2Triggered;
 
+    public PlayerData() { }  // Empty constructor - fields will be set manually
+
+    public PlayerData(float elapsedTime, int dayAdder, string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2)
+    {
+        ElapsedTime = elapsedTime;
+        DayAdder = dayAdder;
+        DaysText = daysText;
+        MissionTime1 = missionTime1;
+        MissionTime2 = missionTime2;
+        TimeToTriggerEvent1 = timeToTriggerEvent1;
+        TimeToTriggerEvent2 = timeToTriggerEvent2;
+    }
+
     public PlayerData(PlayerProgress player_progress)
     {
         StressData = player_progress.StressBar;
@@ -60,10 +73,6 @@ public class PlayerData
             ElapsedTime = 0f;
             DayAdder = 1;
             DaysText = "DAY 1";
-            MissionTime1 = 0;
-            MissionTime2 = 0;
-            TimeToTriggerEvent1 = 0;
-            TimeToTriggerEvent2 = 0;
             PlayerPosition = new float[3];
             IsMuted = false;
             Mission1Entered = false;
@@ -81,10 +90,6 @@ public class PlayerData
         ElapsedTime = 0f;
         DayAdder = 1;
         DaysText = "DAY 1";
-        MissionTime1 = 0;
-        MissionTime2 = 0;
-        TimeToTriggerEvent1 = 0;
-        TimeToTriggerEvent2 = 0;
         PlayerPosition = new float[3];
         IsMuted = false;
         Mission1Entered = false;

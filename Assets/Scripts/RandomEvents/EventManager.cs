@@ -29,7 +29,13 @@ public class EventManager : MonoBehaviour
     public Slider stressBar;
     public Slider trustBar;
 
+    [Header("Time and Day")]
+    public GameObject ElapsedTime;
+    public Timer TimerReference;
+    public TextMeshProUGUI dayText;
+
     public GameObject StartEventStarter;
+    public GameEngine GameEngineReference;
 
     private EventData currentEvent;
     private Vector2 originalImagePos;
@@ -117,12 +123,22 @@ public class EventManager : MonoBehaviour
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(trustBar.value, stressBar.value);
+            SessionData.Instance.ElapsedTime = TimerReference.elapsedTime;
+            SessionData.Instance.DayAdder = TimerReference.DayAdder;
+            SessionData.Instance.DaysText = dayText.text;
         }
 
         // Also persist to disk via SaveData
-        SaveData.SavePlayer(trustBar.value, stressBar.value);
+        SaveData.SaveAllGameData(
+            trustBar.value, stressBar.value,
+            TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
+            GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
+            GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
+            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
+            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
+            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
+        );
         
-
         if (MoveTrustPosition != null)
             MoveTrustPosition.anchoredPosition = new Vector2(339f, 195.9999f);
 

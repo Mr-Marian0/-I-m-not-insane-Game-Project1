@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SessionData : MonoBehaviour
 {
@@ -11,10 +13,19 @@ public class SessionData : MonoBehaviour
     [Header("Player Position")]
     public Vector3 PlayerPosition = new Vector3(-0.05f, -2.91f, 0);
 
+    [Header("Bars")]
+    public Slider stressBar;
+    public Slider trustBar;
+
     [Header("Timer")]
     public float ElapsedTime = 0f;
     public int DayAdder = 1;
     public string DaysText = "DAY 1";
+    public TextMeshProUGUI dayText;
+
+    [Header("GameObject References")]
+    public GameEngine GameEngineReference;
+    public Timer TimerReference;
 
     [Header("Audio")]
     public bool IsMuted = false;
@@ -81,19 +92,15 @@ public class SessionData : MonoBehaviour
 
     private void SaveCurrentState()
     {
-        if (playerProgress == null)
-            playerProgress = FindObjectOfType<PlayerProgress>();
-
-        if (playerProgress != null)
-        {
-            SaveData.SavePlayer(Trust, Stress, playerProgress);
-        }
-        else
-        {
-            SaveData.SavePlayer(Trust, Stress);
-        }
-
-        Debug.Log("SessionData auto-saved on pause/quit");
+        SaveData.SaveAllGameData(
+            trustBar.value, stressBar.value,
+            TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
+            GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
+            GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
+            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
+            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
+            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
+        );
     }
 
     // Called by PressDoor before leaving Scene 1

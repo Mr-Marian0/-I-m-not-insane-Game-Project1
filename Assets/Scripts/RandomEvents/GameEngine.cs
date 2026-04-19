@@ -54,18 +54,37 @@ public class GameEngine : MonoBehaviour
             TimeToTriggerEvent2 = SessionData.Instance.TimeToTriggerEvent2;
             event1Triggered = SessionData.Instance.Event1Triggered;
             event2Triggered = SessionData.Instance.Event2Triggered;
+
+            // Restore second event flag so it doesn't re-trigger on scene reload
+            hasTriggeredSecondEvent = SessionData.Instance.Event2Triggered;
+            flagEventAndMissionTriggered = SessionData.Instance.Event1Triggered;
         }
         else if (SaveData.HasSaveFile())
         {
+            Debug.Log("Save file found - Loading mission and event times");
+            
             PlayerData save = SaveData.LoadPlayer();
+
+            Debug.Log($"MissionTime1: {save.MissionTime1}");
+            Debug.Log($"MissionTime2: {save.MissionTime2}");
+            Debug.Log($"TimeToTriggerEvent1: {save.TimeToTriggerEvent1}");
+            Debug.Log($"TimeToTriggerEvent2: {save.TimeToTriggerEvent2}");
+
             if (save != null &&
                 (save.MissionTime1 != 0 || save.MissionTime2 != 0 ||
                  save.TimeToTriggerEvent1 != 0 || save.TimeToTriggerEvent2 != 0))
             {
+
                 MissionTime1 = save.MissionTime1;
                 MissionTime2 = save.MissionTime2;
                 TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
                 TimeToTriggerEvent2 = save.TimeToTriggerEvent2;
+
+                // FIX: Restore event flags from save file so they don't re-trigger
+                event1Triggered = save.Event1Triggered;
+                event2Triggered = save.Event2Triggered;
+                hasTriggeredSecondEvent = save.Event2Triggered;
+                flagEventAndMissionTriggered = save.Event1Triggered;
 
                 if (SessionData.Instance != null)
                 {
@@ -73,11 +92,11 @@ public class GameEngine : MonoBehaviour
                     SessionData.Instance.MissionTime2 = save.MissionTime2;
                     SessionData.Instance.TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
                     SessionData.Instance.TimeToTriggerEvent2 = save.TimeToTriggerEvent2;
+
+                    // FIX: Sync event flags back to SessionData so future scene loads use them
+                    SessionData.Instance.Event1Triggered = save.Event1Triggered;
+                    SessionData.Instance.Event2Triggered = save.Event2Triggered;
                 }
-            }
-            else
-            {
-                GenerateNewTimes();
             }
         }
         else
@@ -95,97 +114,97 @@ public class GameEngine : MonoBehaviour
     }
 
     void Update()
-{
-    // Show UI after intro
-    if (Mathf.FloorToInt(Time.time) == 39)
     {
-        Player.SetActive(true);
-        UI_Object.SetActive(true);
-    }
-
-    if (timer.minutes < 24)
-    {
-        hasGeneratedNewDay = false;
-    }
-
-    if (timer.minutes == 24 && !hasGeneratedNewDay)
-    {
-        GenerateNewTimes();
-        hasGeneratedNewDay = true;
-        hasTriggeredSecondEvent = false;
-        EnableDoor.SetActive(false);
-        Debug.Log("New day started - New missions and events generated");
-    }
-
-    // ==================== MISSION LOGIC ====================
-
-    // Calculate if missions are active
-    bool mission1Active = (timer.minutes == MissionTime1 || (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2)) && 
-                          !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission1Entered);
-    bool mission2Active = (timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
-                          !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered);
-
-    // First Mission - Active for 2 minutes
-    if (mission1Active)
-    {
-        if (!mission1Activated)
+        // Show UI after intro
+        if (Mathf.FloorToInt(Time.time) == 39)
         {
-            mission1Activated = true;
-            if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
+            Player.SetActive(true);
+            UI_Object.SetActive(true);
+        }
+
+        if (timer.minutes < 24)
+        {
+            hasGeneratedNewDay = false;
+        }
+
+        if (timer.minutes == 24 && !hasGeneratedNewDay)
+        {
+            GenerateNewTimes();
+            hasGeneratedNewDay = true;
+            hasTriggeredSecondEvent = false;
+            EnableDoor.SetActive(false);
+            Debug.Log("New day started - New missions and events generated");
+        }
+
+        // ==================== MISSION LOGIC ====================
+
+        // Calculate if missions are active
+        bool mission1Active = (timer.minutes == MissionTime1 || (timer.minutes > MissionTime1 && timer.minutes < MissionTime1 + 2)) && 
+                              !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission1Entered);
+        bool mission2Active = (timer.minutes == MissionTime2 || (timer.minutes > MissionTime2 && timer.minutes < MissionTime2 + 2)) && 
+                              !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered);
+
+        // First Mission - Active for 2 minutes
+        if (mission1Active)
+        {
+            if (!mission1Activated)
+            {
+                mission1Activated = true;
+                if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
+            }
+        }
+        else
+        {
+            mission1Activated = false;
+        }
+
+        // Second Mission - Active for 2 minutes
+        if (mission2Active)
+        {
+            if (!mission2Activated)
+            {
+                mission2Activated = true;
+                if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
+            }
+        }
+        else
+        {
+            mission2Activated = false;
+        }
+
+        // Set door active if either mission is active
+        EnableDoor.SetActive(mission1Active || mission2Active);
+
+        // ==================== EVENT LOGIC ====================
+
+        // First Event
+        if (!flagEventAndMissionTriggered && !event1Triggered && timer.minutes == TimeToTriggerEvent1)
+        {
+            flagEventAndMissionTriggered = true;
+            event1Triggered = true;
+            if (SessionData.Instance != null)
+            {
+                SessionData.Instance.Event1Triggered = true;
+            }
+            eventManager.TriggerRandomEvent();
+            Debug.Log("First Event Triggered at minute: " + TimeToTriggerEvent1);
+            Time.timeScale = 0;
+        }
+
+        // Second Event
+        if (!hasTriggeredSecondEvent && !event2Triggered && timer.minutes == TimeToTriggerEvent2)
+        {
+            hasTriggeredSecondEvent = true;
+            event2Triggered = true;
+            if (SessionData.Instance != null)
+            {
+                SessionData.Instance.Event2Triggered = true;
+            }
+            eventManager.TriggerRandomEvent();
+            Debug.Log("Second Event Triggered at minute: " + TimeToTriggerEvent2);
+            Time.timeScale = 0;
         }
     }
-    else
-    {
-        mission1Activated = false;
-    }
-
-    // Second Mission - Active for 2 minutes
-    if (mission2Active)
-    {
-        if (!mission2Activated)
-        {
-            mission2Activated = true;
-            if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();
-        }
-    }
-    else
-    {
-        mission2Activated = false;
-    }
-
-    // Set door active if either mission is active
-    EnableDoor.SetActive(mission1Active || mission2Active);
-
-    // ==================== EVENT LOGIC ====================
-
-    // First Event
-    if (!flagEventAndMissionTriggered && !event1Triggered && timer.minutes == TimeToTriggerEvent1)
-    {
-        flagEventAndMissionTriggered = true;
-        event1Triggered = true;
-        if (SessionData.Instance != null)
-        {
-            SessionData.Instance.Event1Triggered = true;
-        }
-        eventManager.TriggerRandomEvent();
-        Debug.Log("First Event Triggered at minute: " + TimeToTriggerEvent1);
-        Time.timeScale = 0;
-    }
-
-    // Second Event
-    if (!hasTriggeredSecondEvent && !event2Triggered && timer.minutes == TimeToTriggerEvent2)
-    {
-        hasTriggeredSecondEvent = true;
-        event2Triggered = true;
-        if (SessionData.Instance != null)
-        {
-            SessionData.Instance.Event2Triggered = true;
-        }
-        eventManager.TriggerRandomEvent();
-        Debug.Log("Second Event Triggered at minute: " + TimeToTriggerEvent2);
-        Time.timeScale = 0;
-    }
-}
 
     // Generate new times for both missions and events
     private void GenerateNewTimes()
@@ -207,6 +226,10 @@ public class GameEngine : MonoBehaviour
             SessionData.Instance.Event2Triggered = false;
         }
 
+        // Reset local flags for new day
+        event1Triggered = false;
+        event2Triggered = false;
+        flagEventAndMissionTriggered = false;
         mission1Activated = false;
         mission2Activated = false;
 

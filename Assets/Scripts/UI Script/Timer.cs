@@ -5,7 +5,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] TextMeshProUGUI Days;
+    public TextMeshProUGUI Days;
     [SerializeField] GameObject DayCountUI;
     [SerializeField] float fadeInSpeed = 1f;
     [SerializeField] float textDelay = 3f;
