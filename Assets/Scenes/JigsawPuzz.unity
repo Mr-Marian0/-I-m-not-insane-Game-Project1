@@ -3415,6 +3415,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -8849,6 +8851,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -10264,6 +10268,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -12764,6 +12770,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -12839,6 +12847,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -13229,6 +13239,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -13996,6 +14008,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -18068,6 +18082,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -21892,6 +21908,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -30320,6 +30338,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -36701,6 +36721,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -38510,6 +38532,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -39628,6 +39652,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -42132,6 +42158,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -42947,7 +42975,9 @@ MonoBehaviour:
   SoundOnSprite: {fileID: 21300000, guid: 99dcbdea6ebe2fc46a78d9ef58fc1650, type: 3}
   SoundOffSprite: {fileID: 21300000, guid: 0e829642eda51f143bc9b4543be42203, type: 3}
   SoundButton_text: {fileID: 1442825875}
+  dayText: {fileID: 0}
   timerReference: {fileID: 0}
+  GameEngineReference: {fileID: 0}
 --- !u!114 &1359173998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45377,6 +45407,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -49721,6 +49753,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -58055,6 +58089,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -62644,6 +62680,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -62808,6 +62846,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}
@@ -64987,6 +65027,8 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
+  StressPercentageText: {fileID: 125496002}
+  TrustPercentageText: {fileID: 446030489}
   MoveTrustPosition: {fileID: 833148402}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
   MoveStressPosition: {fileID: 258149243}

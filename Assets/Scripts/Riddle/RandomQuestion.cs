@@ -27,6 +27,8 @@ public class RandomQuestion : MonoBehaviour
     public Slider TrustReward;
     public Slider StressReward;
     public GameObject PauseButton;
+    public TextMeshProUGUI StressPercentageText;
+    public TextMeshProUGUI TrustPercentageText;
 
 
     public int[] AnswerKey50 = new int[50] {0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1};
@@ -84,6 +86,9 @@ public class RandomQuestion : MonoBehaviour
             StressReward.value = data.StressData;
             Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
         }
+
+        StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
+        TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
     }
 
     public void OnEnable()

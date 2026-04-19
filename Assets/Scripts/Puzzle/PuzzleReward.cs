@@ -11,6 +11,8 @@ public class PuzzleReward : MonoBehaviour
 
     public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
+     public TextMeshProUGUI StressPercentageText;
+    public TextMeshProUGUI TrustPercentageText;
 
     //TRUST RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
     public RectTransform MoveTrustPosition;
@@ -42,7 +44,8 @@ public class PuzzleReward : MonoBehaviour
         {
             TrustReward.value = data.TrustData;
             StressReward.value = data.StressData;
-            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
+            StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
+            TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
         }
     }
 

@@ -11,7 +11,6 @@ public class PlayerProgress : MonoBehaviour
     public Slider TrustSlider;
     public TextMeshProUGUI StressPercentageText;
     public TextMeshProUGUI TrustPercentageText;
-    // ASFDASFA 
     
     public Timer TimerReference;
 
