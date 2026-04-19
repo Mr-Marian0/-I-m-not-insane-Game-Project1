@@ -36,8 +36,10 @@ public class Pause : MonoBehaviour
     public Sprite SoundOnSprite;
     public Sprite SoundOffSprite;
     public TextMeshProUGUI SoundButton_text;
+    public TextMeshProUGUI dayText;
     private PlayerProgress playerProgress;
     public Timer timerReference;
+    public GameEngine GameEngineReference;
 
     public void PausePressed()
     {
@@ -173,7 +175,15 @@ public class Pause : MonoBehaviour
         // Now save with the synced data
         if (playerProgress != null)
         {
-            playerProgress.SavePlayer(playerProgress.TrustBar, playerProgress.StressBar);
+            SaveData.SaveAllGameData(
+            TrustReward.value, StressReward.value,
+            timerReference.elapsedTime, timerReference.DayAdder, dayText.text,
+            GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
+            GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
+            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
+            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
+            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
+        );
         }
         else
         {
