@@ -100,6 +100,8 @@ public class CheckAnswer : MonoBehaviour
                 StressTextPoints.color = Color.green;
 
                 Enemy1.SetActive(false);
+                PauseButton.SetActive(false);
+                PauseCanvas.SetActive(false);
         }
 
             MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
@@ -111,9 +113,6 @@ public class CheckAnswer : MonoBehaviour
         }
         else if(PresentPosition == 4 || Choice1.PlayerChooseDoor1 == false && Choice2.PlayerChooseDoor2 == false && Choice3.PlayerChooseDoor3 == false)
         {
-            
-            PauseButton.SetActive(false); //Remove the PauseMenu
-            PauseCanvas.SetActive(false);
 
             CinemachineShake.Instance.ShakeCamera(5f, .1f);
 
@@ -134,6 +133,8 @@ public class CheckAnswer : MonoBehaviour
                 StressTextPoints.text = "+20";
 
                 Enemy1.SetActive(false);
+                PauseButton.SetActive(false);
+                PauseCanvas.SetActive(false);
             }
 
             MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
@@ -152,6 +153,8 @@ public class CheckAnswer : MonoBehaviour
             Door1Col.SetActive(false);
             Door2Col.SetActive(false);
             Door3Col.SetActive(false);
+            PauseButton.SetActive(false);
+            PauseCanvas.SetActive(false);
 
             if(Congratulation.activeSelf == true){
                 TrustReward.value += 0;

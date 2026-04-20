@@ -20,6 +20,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject Door1Col;
     public GameObject Door2Col;
     public GameObject Door3Col;
+    public GameObject PauseButton;
+    public GameObject PauseCanvas;
 
     //UI and game state references
     public Slider TrustReward;
@@ -95,6 +97,8 @@ public class EnemyScript : MonoBehaviour
                 Door1Col.SetActive(false);
                 Door2Col.SetActive(false);
                 Door3Col.SetActive(false);
+                PauseButton.SetActive(false);
+                PauseCanvas.SetActive(false);
 
                 STOP_PLAYER.SetActive(false);
 
