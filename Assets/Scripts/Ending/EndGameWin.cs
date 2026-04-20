@@ -21,6 +21,7 @@ public class EndGameWin : MonoBehaviour
     public GameObject HalucinationReference;
     public GameObject SButtonReference;
     public Transform playerTransformReference;
+    public GameObject ResultLayerReference;
 
     [Header("Endscreen UI")]
     public SpriteRenderer fadeOverlay;
@@ -119,7 +120,8 @@ public class EndGameWin : MonoBehaviour
 
         timer.StopTimer = true;
         
-        if(playerTransformReference != null) playerTransformReference.position = new Vector3(-0.05f, -2.91f, 0f);
+        if (ResultLayerReference != null) ResultLayerReference.SetActive(true);
+        if(playerTransformReference != null) playerTransformReference.position = new Vector3(-0.05f, -3.41f, 0f);
         if (SButtonReference != null) SButtonReference.SetActive(false);
         if (timer != null) timer.enabled = false;
         if (HalucinationReference != null) HalucinationReference.SetActive(false);
