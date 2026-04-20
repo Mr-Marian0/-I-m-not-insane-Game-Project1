@@ -177,9 +177,9 @@ public class EventManager : MonoBehaviour
             current.x -= moveSpeed * Time.unscaledDeltaTime;
             eventImageRect.anchoredPosition = current;
 
-            if (current.x <= -391f)
+            if (current.x <= -326.09f)
             {
-                current.x = -391f;
+                current.x = -326.09f;
                 eventImageRect.anchoredPosition = current;
                 isMovingImage = false;
                 Debug.Log("Image reached left position");
