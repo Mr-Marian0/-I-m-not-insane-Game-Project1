@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
 
     public float waitMin = 1f;
     public float waitMax = 3f;
+    public bool StopTimer = false;
 
     void Start()
     {
@@ -104,7 +105,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator UpdateTimeRandomly()
     {
-        while (true)
+        while (StopTimer == false)
         {
             yield return new WaitForSeconds(Random.Range(waitMin, waitMax));
 

@@ -15,10 +15,12 @@ public class EndGameWin : MonoBehaviour
     public GameObject pauseButton;
     public GameObject clockObject;
     public GameObject DaysObject;
-    public GameObject AMPMObject;
     public GameObject FixedJoystickObject;
     public GameObject GameEngineObject;
     public GameObject GameOverTextObject;
+    public GameObject HalucinationReference;
+    public GameObject SButtonReference;
+    public Transform playerTransformReference;
 
     [Header("Endscreen UI")]
     public SpriteRenderer fadeOverlay;
@@ -115,12 +117,14 @@ public class EndGameWin : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        timer.StopTimer = true;
+        
+        if(playerTransformReference != null) playerTransformReference.position = new Vector3(-0.05f, -2.91f, 0f);
+        if (SButtonReference != null) SButtonReference.SetActive(false);
         if (timer != null) timer.enabled = false;
+        if (HalucinationReference != null) HalucinationReference.SetActive(false);
         if (joystickMovement != null) joystickMovement.enabled = false;
         if (pauseButton != null) pauseButton.SetActive(false);
-        if (clockObject != null) clockObject.SetActive(false);
-        if (DaysObject != null) DaysObject.SetActive(false);
-        if (AMPMObject != null) AMPMObject.SetActive(false);
         if (FixedJoystickObject != null) FixedJoystickObject.SetActive(false);
         if (GameEngineObject != null) GameEngineObject.SetActive(false);
     }
