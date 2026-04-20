@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileScripts : MonoBehaviour
 {
@@ -21,9 +22,13 @@ public class ProjectileScripts : MonoBehaviour
     [SerializeField] private float rightBoundary = 9.32f;
     [SerializeField] private float topBoundary = 5.45f;
     [SerializeField] private float bottomBoundary = -5f;
-    
+
+    [Header("Object References")]
+    public Slider StressBarReference;
+
     private Transform playerTransform;
-    private bool isSpawning = true;
+    private bool isSpawning = false; // Start as false, only spawn when stress >= 40
+    private Coroutine spawnCoroutine;
 
     void Start()
     {
@@ -37,18 +42,27 @@ public class ProjectileScripts : MonoBehaviour
         {
             Debug.LogError("Player not found! Make sure your player has the 'Player' tag.");
         }
-        
-        // Start the infinite spawning coroutine
-        StartCoroutine(SpawnLoop());
     }
     
     void Update()
     {
-        // Optional: You can add a way to stop spawning here
-        // For example: if (Input.GetKeyDown(KeyCode.S)) StopSpawning();
+        // Check stress level and control spawning
+        if (StressBarReference != null)
+        {
+            if (StressBarReference.value >= 40f && !isSpawning)
+            {
+                // Stress is high enough and not spawning - start spawning
+                StartSpawning();
+            }
+            else if (StressBarReference.value < 40f && isSpawning)
+            {
+                // Stress is too low and currently spawning - stop spawning
+                StopSpawning();
+            }
+        }
     }
     
-    // Main spawn loop - runs forever
+    // Main spawn loop - runs forever while active
     private IEnumerator SpawnLoop()
     {
         while (isSpawning)
@@ -57,8 +71,11 @@ public class ProjectileScripts : MonoBehaviour
             float waitTime = Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSeconds(waitTime);
             
-            // Spawn projectiles
-            SpawnProjectileBatch();
+            // Only spawn if stress is still high enough
+            if (StressBarReference != null && StressBarReference.value >= 40f)
+            {
+                SpawnProjectileBatch();
+            }
         }
     }
     
@@ -146,20 +163,27 @@ public class ProjectileScripts : MonoBehaviour
         Destroy(projectile, projectileLifetime);
     }
     
-    // Public method to stop spawning (can be called from other scripts)
+    // Public method to stop spawning
     public void StopSpawning()
     {
-        isSpawning = false;
-        StopAllCoroutines();
+        if (isSpawning)
+        {
+            isSpawning = false;
+            if (spawnCoroutine != null)
+            {
+                StopCoroutine(spawnCoroutine);
+                spawnCoroutine = null;
+            }
+        }
     }
     
-    // Public method to start spawning again
+    // Public method to start spawning
     public void StartSpawning()
     {
         if (!isSpawning)
         {
             isSpawning = true;
-            StartCoroutine(SpawnLoop());
+            spawnCoroutine = StartCoroutine(SpawnLoop());
         }
     }
 }
