@@ -109,6 +109,11 @@ public class Pause : MonoBehaviour
             SessionData.Instance.ElapsedTime = 0f;
             SessionData.Instance.DayAdder = 1;
             SessionData.Instance.DaysText = "DAY 1";
+
+            SessionData.Instance.Event1Triggered = false;
+            SessionData.Instance.Event2Triggered = false;
+            SessionData.Instance.Mission1Entered = false;
+            SessionData.Instance.Mission2Entered = false;
         }
 
         SceneManager.LoadScene("StartMenu");

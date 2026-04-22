@@ -137,6 +137,12 @@ public class GameEngine : MonoBehaviour
             GenerateNewTimes();
         }
 
+        if (SessionData.Instance.NewGame)
+        {
+            GenerateNewTimes();
+            SessionData.Instance.NewGame = false;
+        }
+
         GenerateChallenge = Random.Range(1, 3);
     }
 
