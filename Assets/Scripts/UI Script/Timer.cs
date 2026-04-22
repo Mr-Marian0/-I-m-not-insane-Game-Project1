@@ -69,6 +69,11 @@ public class Timer : MonoBehaviour
         StartCoroutine(UpdateTimeRandomly());
     }
 
+    void Update()
+    {
+
+    }
+
     public void TriggerDayCount(int nextDay)
     {
         StartCoroutine(ShowDayCount(nextDay));
@@ -100,10 +105,9 @@ public class Timer : MonoBehaviour
         }
 
         DayCountUI.SetActive(false);
-        Time.timeScale = 1;
     }
 
-    IEnumerator UpdateTimeRandomly()
+    public IEnumerator UpdateTimeRandomly()
     {
         while (StopTimer == false)
         {
