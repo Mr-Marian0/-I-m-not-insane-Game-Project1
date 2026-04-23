@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameEngine : MonoBehaviour
 {
@@ -323,6 +324,12 @@ public class GameEngine : MonoBehaviour
         {
             TutorialContentReference.SetActive(false);
         }
+    }
+
+    public IEnumerator LoadSceneAfterDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(1.6f);
+        SceneManager.LoadScene(sceneName);
     }
     public void ResetFlagEventTriggered()
     {

@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+//GAME ENGINE LOADS RANDOM TASKS WHEN THE PLAYER INTERACTS WITH THE DOOR TO THE CHALLENGE ROOM
+
 public class PressDoor : MonoBehaviour
 {
     public GameEngine game_engine;
@@ -70,21 +72,16 @@ public class PressDoor : MonoBehaviour
 
         game_engine.UI.sortingOrder = 7;
 
-        if (GameEngineReference.GenerateChallenge == 1) LoadScene("Riddles");
-        else if (GameEngineReference.GenerateChallenge == 2) LoadScene("JigsawPuzz");
+    if (GameEngineReference.GenerateChallenge == 1)
+        GameEngineReference.StartCoroutine(GameEngineReference.LoadSceneAfterDelay("Riddles"));
+    else if (GameEngineReference.GenerateChallenge == 2)
+        GameEngineReference.StartCoroutine(GameEngineReference.LoadSceneAfterDelay("JigsawPuzz"));
     }
 
-    public void LoadScene(string sceneName)
+    private IEnumerator LoadSceneDelayed(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    private IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(2);
-        game_engine.Player.SetActive(false);
-        game_engine.Background.SetActive(false);
-        // Transform Player or Reset
-        PlayerPosition.transform.position = new Vector3(-0.05f, -2.91f, 0);
+        GameEngineReference.StartCoroutine(GameEngineReference.LoadSceneAfterDelay(sceneName));
+    yield break;
+        
     }
 }
