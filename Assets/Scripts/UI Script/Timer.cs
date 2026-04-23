@@ -81,7 +81,6 @@ public class Timer : MonoBehaviour
 
     public IEnumerator ShowDayCount(int nextDay)
     {
-        Time.timeScale = 0;
 
         DayCountUI.SetActive(true);
         CanvasGroup cg = DayCountUI.GetComponent<CanvasGroup>();
