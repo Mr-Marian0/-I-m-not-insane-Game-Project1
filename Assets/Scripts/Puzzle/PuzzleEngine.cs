@@ -7,7 +7,14 @@ public class PuzzleEngine : MonoBehaviour
 
     public StartTimer InheritStartTimer;
     public GameObject PuzzleOwn;
-    
+    public GameObject YouLoseReference;
+    public GameObject YouWinReference;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    public AudioSource audioSourceForCongratulation;
+
+    private bool hasPlayedLoseSound = false;
+    private bool hasPlayedWinSound = false;
 
     public int StartRandomJigsawPuzzle;
     void Start()
@@ -25,6 +32,17 @@ public class PuzzleEngine : MonoBehaviour
 
     void Update()
     {
-
+        if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
+        {
+            audioSourceForCongratulation.clip = loseSound;
+            audioSourceForCongratulation.PlayOneShot(loseSound);
+            hasPlayedLoseSound = true;
+        }
+        else if(YouWinReference.activeSelf == true && !hasPlayedWinSound)
+        {
+            audioSourceForCongratulation.clip = winSound;
+            audioSourceForCongratulation.PlayOneShot(winSound);
+            hasPlayedWinSound = true;
+        }
     }
 }

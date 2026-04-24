@@ -11,7 +11,7 @@ public class StartTimer : MonoBehaviour
     [SerializeField] TextMeshProUGUI TimerMission;
     public GameObject CongratulationReference;
     public GameObject PuzzleReference;
-    public GameObject YouWinReference;
+    public GameObject YouLoseReference;
     public GameObject ConfettiReference;
     public PuzzleReward PuzzleRewardReference;
     public TextMeshProUGUI TrustTextPoints;
@@ -59,7 +59,7 @@ public class StartTimer : MonoBehaviour
             // Save the reward values directly
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
             
-            YouWinReference.SetActive(true);
+            YouLoseReference.SetActive(true);
             ConfettiReference.SetActive(true);
         }
         

@@ -18,6 +18,8 @@ public class RandomQuestion : MonoBehaviour
 
     //Ask the AnswerFadeScript if the animation is finished
     public bool IsAnswerFadeAnimationFinished = false;
+    private bool hasPlayedLoseSound = false;
+    private bool hasPlayedWinSound = false;
 
     public Animator anim;
     public Animator AnsAnim;
@@ -29,7 +31,11 @@ public class RandomQuestion : MonoBehaviour
     public GameObject PauseButton;
     public TextMeshProUGUI StressPercentageText;
     public TextMeshProUGUI TrustPercentageText;
-
+    public GameObject YouLoseReference;
+    public GameObject YouWinReference;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    public AudioSource audioSourceForCongratulation;
 
     public int[] AnswerKey50 = new int[50] {0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1};
 
@@ -114,6 +120,18 @@ public class RandomQuestion : MonoBehaviour
             }
         }
 
+        if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
+        {
+            audioSourceForCongratulation.clip = loseSound;
+            audioSourceForCongratulation.PlayOneShot(loseSound);
+            hasPlayedLoseSound = true;
+        }
+        else if(YouWinReference.activeSelf == true && !hasPlayedWinSound)
+        {
+            audioSourceForCongratulation.clip = winSound;
+            audioSourceForCongratulation.PlayOneShot(winSound);
+            hasPlayedWinSound = true;
+        }
     }
 
     //Set the Parameters to TRUE (Delay)

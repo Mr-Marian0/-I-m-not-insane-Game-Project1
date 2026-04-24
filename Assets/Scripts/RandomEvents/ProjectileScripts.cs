@@ -25,6 +25,8 @@ public class ProjectileScripts : MonoBehaviour
 
     [Header("Object References")]
     public Slider StressBarReference;
+    public AudioClip HallucinationStartSound;
+    public AudioSource audioSourceForHallucination;
 
     private Transform playerTransform;
     private bool isSpawning = false; // Start as false, only spawn when stress >= 40
@@ -52,11 +54,14 @@ public class ProjectileScripts : MonoBehaviour
             if (StressBarReference.value >= 40f && !isSpawning)
             {
                 // Stress is high enough and not spawning - start spawning
+                audioSourceForHallucination.clip = HallucinationStartSound;
+                audioSourceForHallucination.Play();
                 StartSpawning();
             }
             else if (StressBarReference.value < 40f && isSpawning)
             {
                 // Stress is too low and currently spawning - stop spawning
+                audioSourceForHallucination.Stop();
                 StopSpawning();
             }
         }
