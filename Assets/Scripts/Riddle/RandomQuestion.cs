@@ -37,6 +37,14 @@ public class RandomQuestion : MonoBehaviour
     public AudioClip loseSound;
     public AudioSource audioSourceForCongratulation;
 
+    // FOR INTRO OF POP-UP TASKS
+    public GameObject popUpParentIntro;      // Parent object with Image component
+    public GameObject popUpChildTextIntro;       // Child object with Text component
+    public AudioClip popUpSound;        // Sound to play when pop-up appears
+    public float countdownDelay = 1.5f;  // Delay before pop-up appears
+    public float fadeDuration = 1.5f;    // Duration of fade out
+    private bool hasTriggeredPopUp = false;
+
     public int[] AnswerKey50 = new int[50] {0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1};
 
     public string[] Questions1 = new string[50] { "What goes up but never ever comes down?" , "You spot a boat full of people but there isn�t a single person on board. How is that possible?",
@@ -80,7 +88,7 @@ public class RandomQuestion : MonoBehaviour
         "Felines / Clowder / Pawners", "Wild Grizzly Bear Found in Australia / Pregnant Female Nile Crocodile / Hippopotamus with a bite force of 1,800psi!",
         "pandemonium / avifuana / wrablers", "eyes / Feet / Antenna", "12 including the wig feet / 12 / 10", "Black / Gray / During Night it is black and white when its day",
         "House cat / Cheetah / Baby jaguar", "Penguins / Owl / Ostrich", "Caravan / Cameroons / Cargoms", "Red / Purple / Gray", "House turnish cat in Ireland / Zebra / Tiger",
-        "Goat / Cuttlefish / Leaf-tailed geckos", "Nefilus Stone fish / Pufferfish / PurpleFawn JellyFish"}; //Q1 lipat sa Q2 next
+        "Goat / Cuttlefish / Leaf-tailed geckos", "Nefilus Stone fish / Pufferfish / PurpleFawn JellyFish"};
 
     public void Start()
     {
@@ -95,6 +103,9 @@ public class RandomQuestion : MonoBehaviour
 
         StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
         TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
+        
+        // Start the pop-up coroutine
+        StartCoroutine(ShowPopUpWithDelay());
     }
 
     public void OnEnable()
@@ -102,10 +113,126 @@ public class RandomQuestion : MonoBehaviour
         StartCoroutine(DelayTheTextQuestion());
     }
 
+    //Coroutine for pop-up with delay, sound, and fade out
+    IEnumerator ShowPopUpWithDelay()
+    {
+        // Wait for the countdown delay
+        yield return new WaitForSeconds(countdownDelay);
+        
+        // Activate the pop-up
+        if (popUpParentIntro != null)
+            popUpParentIntro.SetActive(true);
+        
+        if (popUpChildTextIntro != null)
+            popUpChildTextIntro.SetActive(true);
+        
+        // Play the pop-up sound
+        if (popUpSound != null && audioSourceForCongratulation != null)
+        {
+            audioSourceForCongratulation.PlayOneShot(popUpSound);
+        }
+        
+        // Start fade out coroutine
+        StartCoroutine(FadeOutPopUp());
+    }
+    
+    // NEW: Coroutine for fade out effect
+    IEnumerator FadeOutPopUp()
+    {
+
+        yield return new WaitForSeconds(1f);
+
+        // Get CanvasGroup for smooth fading
+        CanvasGroup parentCanvasGroup = null;
+        Image parentImage = null;
+        Text childText = null;
+        
+        // Try to get CanvasGroup (best for fading entire objects)
+        if (popUpParentIntro != null)
+        {
+            parentCanvasGroup = popUpParentIntro.GetComponent<CanvasGroup>();
+            if (parentCanvasGroup == null)
+            {
+                parentCanvasGroup = popUpParentIntro.AddComponent<CanvasGroup>();
+            }
+        }
+        
+        // Get individual components as fallback
+        if (popUpParentIntro != null)
+            parentImage = popUpParentIntro.GetComponent<Image>();
+        
+        if (popUpChildTextIntro != null)
+            childText = popUpChildTextIntro.GetComponent<Text>();
+        
+        float elapsedTime = 0f;
+        
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = 1f - (elapsedTime / fadeDuration);
+            
+            // Fade using CanvasGroup (affects parent and children together)
+            if (parentCanvasGroup != null)
+            {
+                parentCanvasGroup.alpha = alpha;
+            }
+            else
+            {
+                // Fallback: fade individually
+                if (parentImage != null)
+                {
+                    Color color = parentImage.color;
+                    color.a = alpha;
+                    parentImage.color = color;
+                }
+                
+                if (childText != null)
+                {
+                    Color color = childText.color;
+                    color.a = alpha;
+                    childText.color = color;
+                }
+            }
+            
+            yield return null;
+        }
+        
+        // After fade completes, deactivate the objects
+        if (popUpParentIntro != null)
+            popUpParentIntro.SetActive(false);
+        
+        if (popUpChildTextIntro != null)
+            popUpChildTextIntro.SetActive(false);
+        
+        // Reset alpha for next time (if needed)
+        if (parentCanvasGroup != null)
+            parentCanvasGroup.alpha = 1f;
+    }
+
     void Update()
     {
 
         PickedQuestions(GenerateQuestion);
+
+        StartCoroutine(DelayBackgroundMove());
+
+        if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
+        {
+            audioSourceForCongratulation.clip = loseSound;
+            audioSourceForCongratulation.PlayOneShot(loseSound);
+            hasPlayedLoseSound = true;
+        }
+        else if(YouWinReference.activeSelf == true && !hasPlayedWinSound)
+        {
+            audioSourceForCongratulation.clip = winSound;
+            audioSourceForCongratulation.PlayOneShot(winSound);
+            hasPlayedWinSound = true;
+        }
+    }
+
+    public IEnumerator DelayBackgroundMove()
+    {
+        yield return new WaitForSeconds(4f);
 
         //Background Move Up
         if (true && RunOnce == true) // ORIGINAL F.((IsAnswerFadeAnimationFinished == true && RunOnce == true))
@@ -120,18 +247,7 @@ public class RandomQuestion : MonoBehaviour
             }
         }
 
-        if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
-        {
-            audioSourceForCongratulation.clip = loseSound;
-            audioSourceForCongratulation.PlayOneShot(loseSound);
-            hasPlayedLoseSound = true;
-        }
-        else if(YouWinReference.activeSelf == true && !hasPlayedWinSound)
-        {
-            audioSourceForCongratulation.clip = winSound;
-            audioSourceForCongratulation.PlayOneShot(winSound);
-            hasPlayedWinSound = true;
-        }
+
     }
 
     //Set the Parameters to TRUE (Delay)
