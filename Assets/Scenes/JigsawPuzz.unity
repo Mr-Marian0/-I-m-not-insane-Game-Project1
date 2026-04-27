@@ -207,8 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &10716522
 Rigidbody2D:
@@ -371,8 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &11015471
 Rigidbody2D:
@@ -619,8 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &20542057
 Rigidbody2D:
@@ -969,8 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &42574364
 Rigidbody2D:
@@ -1211,8 +1203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &51129343
 Rigidbody2D:
@@ -1375,8 +1365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &57886042
 Rigidbody2D:
@@ -1539,8 +1527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &58566697
 Rigidbody2D:
@@ -1907,8 +1893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &78986666
 Rigidbody2D:
@@ -2071,8 +2055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &82764323
 Rigidbody2D:
@@ -2388,8 +2370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &91661812
 Rigidbody2D:
@@ -2691,7 +2671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114779005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2813,10 +2793,10 @@ RectTransform:
   m_Father: {fileID: 1845757279}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326, y: 32.2}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 362.91217, y: -74.0671}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114779009
 MonoBehaviour:
@@ -3132,8 +3112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &116548623
 Rigidbody2D:
@@ -3302,11 +3280,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -3698,8 +3676,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134041280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1777389946}
@@ -4118,12 +4096,12 @@ RectTransform:
   m_Children:
   - {fileID: 280304797}
   m_Father: {fileID: 685233014}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 343.2, y: -157.6}
-  m_SizeDelta: {x: 210.4684, y: 99.1603}
+  m_AnchoredPosition: {x: -0.000005722, y: -167}
+  m_SizeDelta: {x: 90.6537, y: 42.7107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153059596
 MonoBehaviour:
@@ -4364,7 +4342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &159548036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4556,8 +4534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &173392463
 Rigidbody2D:
@@ -4822,8 +4798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &184848687
 Rigidbody2D:
@@ -4986,8 +4960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &188630964
 Rigidbody2D:
@@ -5164,8 +5136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &190075867
 Rigidbody2D:
@@ -5314,8 +5284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &190476362
 Rigidbody2D:
@@ -5478,8 +5446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &199712749
 Rigidbody2D:
@@ -5642,8 +5608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &199989795
 Rigidbody2D:
@@ -6691,12 +6655,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1153320837}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.999878, y: 370}
-  m_SizeDelta: {x: 495.66, y: 495.6622}
+  m_AnchoredPosition: {x: -0.079803, y: 147}
+  m_SizeDelta: {x: 234.0611, y: 234.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229536656
 MonoBehaviour:
@@ -7626,8 +7590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &265239844
 Rigidbody2D:
@@ -8434,8 +8396,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289043462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 305352165}
@@ -8547,11 +8509,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -8753,8 +8715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &297126504
 Rigidbody2D:
@@ -8894,8 +8854,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298771607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1902215083}
@@ -9228,8 +9188,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310104674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662485945}
@@ -9429,8 +9389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &317477576
 Rigidbody2D:
@@ -9593,8 +9551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &317678694
 Rigidbody2D:
@@ -9929,8 +9885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &321450694
 Rigidbody2D:
@@ -10234,11 +10188,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -10620,8 +10574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &338903695
 Rigidbody2D:
@@ -10921,8 +10873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &348132595
 Rigidbody2D:
@@ -11085,8 +11035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &350938201
 Rigidbody2D:
@@ -11829,8 +11777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &370447901
 Rigidbody2D:
@@ -12687,8 +12633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &398653974
 Rigidbody2D:
@@ -12857,11 +12801,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -12934,11 +12878,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -13081,8 +13025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &422442442
 Rigidbody2D:
@@ -13251,11 +13193,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -13688,8 +13630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &433612916
 Rigidbody2D:
@@ -13852,8 +13792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &440586203
 Rigidbody2D:
@@ -14022,11 +13960,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -14469,8 +14407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &460862716
 Rigidbody2D:
@@ -14749,8 +14685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &467602320
 Rigidbody2D:
@@ -15389,8 +15323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &484994360
 Rigidbody2D:
@@ -15553,8 +15485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &488358902
 Rigidbody2D:
@@ -15717,8 +15647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &491610002
 Rigidbody2D:
@@ -16426,8 +16354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &505214960
 Rigidbody2D:
@@ -16688,8 +16614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &508938878
 Rigidbody2D:
@@ -16838,8 +16762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &512137771
 Rigidbody2D:
@@ -17002,8 +16924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &514650191
 Rigidbody2D:
@@ -17374,8 +17294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.153, y: -374}
-  m_SizeDelta: {x: 163.8091, y: 163.8091}
+  m_AnchoredPosition: {x: 0, y: -151}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523099391
 MonoBehaviour:
@@ -17671,8 +17591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &524960173
 Rigidbody2D:
@@ -17835,8 +17753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &530626521
 Rigidbody2D:
@@ -18037,11 +17953,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -18243,8 +18159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &547880174
 Rigidbody2D:
@@ -18627,8 +18541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &562842169
 Rigidbody2D:
@@ -18774,12 +18686,12 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1153320837}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 323}
-  m_SizeDelta: {x: 5.4, y: 3.6}
+  m_AnchoredPosition: {x: -1.3334, y: 126}
+  m_SizeDelta: {x: 2.6669, y: 1.778}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564522676
 MonoBehaviour:
@@ -18867,8 +18779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &570959851
 Rigidbody2D:
@@ -19384,7 +19294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &587052823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19506,10 +19416,10 @@ RectTransform:
   m_Father: {fileID: 1845757279}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26, y: 32.2}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 232.91216, y: -74.0671}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587052827
 MonoBehaviour:
@@ -19646,8 +19556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &591579255
 Rigidbody2D:
@@ -20010,8 +19918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &606816979
 Rigidbody2D:
@@ -20241,8 +20147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &620372873
 Rigidbody2D:
@@ -20811,108 +20715,6 @@ MonoBehaviour:
   positionBlock12: {fileID: 0}
   positionBlock13: {fileID: 0}
   positionBlock14: {fileID: 0}
---- !u!1 &648676798
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 648676799}
-  - component: {fileID: 648676802}
-  - component: {fileID: 648676801}
-  - component: {fileID: 648676800}
-  m_Layer: 5
-  m_Name: TextPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &648676799
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648676798}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1899629159}
-  - {fileID: 1781486647}
-  m_Father: {fileID: 685233014}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &648676800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648676798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &648676801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648676798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &648676802
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648676798}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &649905158
 GameObject:
   m_ObjectHideFlags: 0
@@ -21180,8 +20982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &654984072
 Rigidbody2D:
@@ -21562,8 +21362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &669656595
 Rigidbody2D:
@@ -21900,11 +21698,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -22073,8 +21871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &678929336
 Rigidbody2D:
@@ -22456,15 +22252,16 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1899629159}
+  - {fileID: 1781486647}
   - {fileID: 153059595}
-  - {fileID: 648676799}
   m_Father: {fileID: 1153320837}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000029365552, y: -260}
-  m_SizeDelta: {x: 705.374, y: 349.5147}
+  m_AnchoredPosition: {x: -0.079803, y: -296}
+  m_SizeDelta: {x: 351.1814, y: 174.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685233015
 MonoBehaviour:
@@ -22552,8 +22349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &685592992
 Rigidbody2D:
@@ -22721,8 +22516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &696331751
 Rigidbody2D:
@@ -22862,8 +22655,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701554039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1271848740}
@@ -22956,8 +22749,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.153, y: -105}
-  m_SizeDelta: {x: 240.4139, y: 50}
+  m_AnchoredPosition: {x: 1.4296, y: -64.6}
+  m_SizeDelta: {x: 116.2199, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709897175
 MonoBehaviour:
@@ -23008,8 +22801,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23241,8 +23034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &713748578
 Rigidbody2D:
@@ -23843,8 +23634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &728489299
 Rigidbody2D:
@@ -24766,8 +24555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &760012978
 Rigidbody2D:
@@ -25056,8 +24843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &774044230
 Rigidbody2D:
@@ -25407,8 +25192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &778519754
 Rigidbody2D:
@@ -26168,8 +25951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 310, y: -105}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 132.1, y: -64.6}
+  m_SizeDelta: {x: 116.2199, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811983002
 MonoBehaviour:
@@ -26220,8 +26003,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26318,8 +26101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &816777893
 Rigidbody2D:
@@ -26650,8 +26431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &834899273
 Rigidbody2D:
@@ -27069,8 +26848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &855645261
 Rigidbody2D:
@@ -27233,8 +27010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &856549023
 Rigidbody2D:
@@ -27397,8 +27172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &857210710
 Rigidbody2D:
@@ -27780,8 +27553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &878051162
 Rigidbody2D:
@@ -27944,8 +27715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &878421171
 Rigidbody2D:
@@ -28818,8 +28587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &914872545
 Rigidbody2D:
@@ -29285,8 +29052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &920171475
 Rigidbody2D:
@@ -29745,8 +29510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &938354012
 Rigidbody2D:
@@ -29909,8 +29672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &939443259
 Rigidbody2D:
@@ -30073,8 +29834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &956333252
 Rigidbody2D:
@@ -30504,11 +30263,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -31392,8 +31151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &1006094989
 Rigidbody2D:
@@ -32654,8 +32411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1049987597
 Rigidbody2D:
@@ -32818,8 +32573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1052614360
 Rigidbody2D:
@@ -33310,8 +33063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1066821124
 Rigidbody2D:
@@ -33934,8 +33685,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082648087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2050812679}
@@ -34055,8 +33806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1083877536
 Rigidbody2D:
@@ -34182,8 +33931,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084405888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 984030950}
@@ -34419,8 +34168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098001367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 573128310}
@@ -34848,8 +34597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1108798819
 Rigidbody2D:
@@ -35297,8 +35044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &1115515363
 Rigidbody2D:
@@ -35461,8 +35206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1120630452
 Rigidbody2D:
@@ -35625,8 +35368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1122295344
 Rigidbody2D:
@@ -35789,8 +35530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &1123324853
 Rigidbody2D:
@@ -36115,8 +35854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1146926543
 Rigidbody2D:
@@ -36458,11 +36195,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1488225282}
   - {fileID: 685233014}
   - {fileID: 229536655}
   - {fileID: 564522675}
   - {fileID: 1412073249}
-  - {fileID: 1488225282}
   - {fileID: 1109322444}
   - {fileID: 1359173996}
   - {fileID: 159548036}
@@ -36501,8 +36238,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156669975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 124491756}
@@ -36608,8 +36345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &1158552300
 Rigidbody2D:
@@ -36978,11 +36713,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -37552,8 +37287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &1211649909
 Rigidbody2D:
@@ -37721,8 +37454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &1212327525
 Rigidbody2D:
@@ -37899,8 +37630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &1213624212
 Rigidbody2D:
@@ -38127,8 +37856,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215924695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 151528761}
@@ -38318,8 +38047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &1228600377
 Rigidbody2D:
@@ -38496,8 +38223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &1233322619
 Rigidbody2D:
@@ -38660,8 +38385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1234145369
 Rigidbody2D:
@@ -38795,11 +38518,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -38867,8 +38590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1238399412
 Rigidbody2D:
@@ -39017,8 +38738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1243541889
 Rigidbody2D:
@@ -39244,7 +38963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.61779, y: 13.678}
+  m_AnchoredPosition: {x: 53.2, y: 13.7}
   m_SizeDelta: {x: 46.2536, y: 38.1137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250564138
@@ -39504,8 +39223,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263240553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 462991440}
@@ -39611,8 +39330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1271526667
 Rigidbody2D:
@@ -39960,8 +39677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &1282043351
 Rigidbody2D:
@@ -40130,11 +39845,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -40201,8 +39916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1287607963
 Rigidbody2D:
@@ -40449,8 +40162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1288344281
 Rigidbody2D:
@@ -40715,8 +40426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1290587675
 Rigidbody2D:
@@ -40957,8 +40666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &1296324074
 Rigidbody2D:
@@ -41246,8 +40953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &1300786640
 Rigidbody2D:
@@ -41892,8 +41597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1312413519
 Rigidbody2D:
@@ -42061,8 +41764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1318431762
 Rigidbody2D:
@@ -42474,8 +42175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1333250192
 Rigidbody2D:
@@ -42644,11 +42343,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -42715,8 +42414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &1333830065
 Rigidbody2D:
@@ -43016,8 +42713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &1349498729
 Rigidbody2D:
@@ -43180,8 +42875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &1350015787
 Rigidbody2D:
@@ -43502,10 +43195,10 @@ RectTransform:
   m_Father: {fileID: 1153320837}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 884, y: -462}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -38.80005, y: 36.20001}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359173997
 MonoBehaviour:
@@ -43532,9 +43225,9 @@ MonoBehaviour:
   YouLose: {fileID: 229536654}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  MoveTrustPosition: {fileID: 0}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: 0, y: 0, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 0, y: 0, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -43712,8 +43405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &1360548101
 Rigidbody2D:
@@ -43987,8 +43678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &1369842954
 Rigidbody2D:
@@ -44265,8 +43954,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372584948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2037932271}
@@ -44507,8 +44196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1384140199
 Rigidbody2D:
@@ -44671,8 +44358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1387166785
 Rigidbody2D:
@@ -45158,8 +44843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &1399712660
 Rigidbody2D:
@@ -45424,8 +45107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &1404923004
 Rigidbody2D:
@@ -45825,11 +45506,11 @@ RectTransform:
   - {fileID: 1011251680}
   - {fileID: 886339798}
   m_Father: {fileID: 1153320837}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -156, y: 273}
+  m_AnchoredPosition: {x: -162, y: 89}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1412073251
@@ -46005,11 +45686,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -46077,8 +45758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1419577319
 Rigidbody2D:
@@ -46344,8 +46023,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441580071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1909536814}
@@ -46468,8 +46147,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -46535,8 +46214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -266, y: -105}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -126.7, y: -64.6}
+  m_SizeDelta: {x: 94.2804, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1443590852
 GameObject:
@@ -46797,8 +46476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &1455197966
 Rigidbody2D:
@@ -46961,8 +46638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &1459472056
 Rigidbody2D:
@@ -47139,8 +46814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &1460546634
 Rigidbody2D:
@@ -47931,8 +47604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &1470394022
 Rigidbody2D:
@@ -48095,8 +47766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &1471546407
 Rigidbody2D:
@@ -48229,7 +47898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1488225282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48243,11 +47912,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1153320837}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 363}
+  m_AnchoredPosition: {x: 192, y: -116}
   m_SizeDelta: {x: 270.4637, y: 77.0526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488225283
@@ -48270,13 +47939,13 @@ MonoBehaviour:
   PuzzleRewardReference: {fileID: 0}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  TrustReward: {fileID: 0}
-  StressReward: {fileID: 0}
+  TrustReward: {fileID: 312256632}
+  StressReward: {fileID: 743286238}
   TimeLimit: 60
   minutes: 0
   seconds: 0
-  MoveTrustPosition: {fileID: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveTrustPosition: {fileID: 312256631}
+  MoveStressPosition: {fileID: 743286237}
   PauseTheTimer: 1
 --- !u!114 &1488225284
 MonoBehaviour:
@@ -48327,15 +47996,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -48509,8 +48178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1489813224
 Rigidbody2D:
@@ -48757,8 +48424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &1492040974
 Rigidbody2D:
@@ -49251,8 +48916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &1500287678
 Rigidbody2D:
@@ -49392,8 +49055,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502481268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1184317695}
@@ -49499,8 +49162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1503588846
 Rigidbody2D:
@@ -49663,8 +49324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1506438025
 Rigidbody2D:
@@ -49988,8 +49647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &1521236415
 Rigidbody2D:
@@ -50264,11 +49921,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -50548,8 +50205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1531097254
 Rigidbody2D:
@@ -51477,8 +51132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1557427602
 Rigidbody2D:
@@ -52314,6 +51967,22 @@ PrefabInstance:
       propertyPath: CheckCongratulation
       value: 
       objectReference: {fileID: 1351333339}
+    - target: {fileID: 1782893030164115445, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.571672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030164115445, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 28.252094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030164115445, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030164115445, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3742
+      objectReference: {fileID: 0}
     - target: {fileID: 1782893030192747608, guid: 5a787d48d81343d4fad653445456707a, type: 3}
       propertyPath: CheckCongratulation
       value: 
@@ -52329,6 +51998,22 @@ PrefabInstance:
     - target: {fileID: 1782893030226603282, guid: 5a787d48d81343d4fad653445456707a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030258457859, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.571672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030258457859, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 28.252094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030258457859, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030258457859, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3742
       objectReference: {fileID: 0}
     - target: {fileID: 1782893030302360204, guid: 5a787d48d81343d4fad653445456707a, type: 3}
       propertyPath: CheckCongratulation
@@ -52509,6 +52194,22 @@ PrefabInstance:
     - target: {fileID: 1782893030623562942, guid: 5a787d48d81343d4fad653445456707a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030655683826, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.571672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030655683826, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 28.252094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030655683826, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782893030655683826, guid: 5a787d48d81343d4fad653445456707a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3742
       objectReference: {fileID: 0}
     - target: {fileID: 1782893030685561253, guid: 5a787d48d81343d4fad653445456707a, type: 3}
       propertyPath: m_IsActive
@@ -52884,8 +52585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &1583603162
 Rigidbody2D:
@@ -53048,8 +52747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1589634408
 Rigidbody2D:
@@ -53368,8 +53065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1598039930
 Rigidbody2D:
@@ -53509,8 +53204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598483589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 534954456}
@@ -53751,8 +53446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1616124333
 Rigidbody2D:
@@ -54066,8 +53759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1619227170
 Rigidbody2D:
@@ -54603,8 +54294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &1639915108
 Rigidbody2D:
@@ -54767,8 +54456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1639962352
 Rigidbody2D:
@@ -54931,8 +54618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1640462654
 Rigidbody2D:
@@ -55136,8 +54821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &1661532793
 Rigidbody2D:
@@ -55415,8 +55098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &1666646440
 Rigidbody2D:
@@ -56017,8 +55698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1672848555
 Rigidbody2D:
@@ -56283,8 +55962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &1684455156
 Rigidbody2D:
@@ -56447,8 +56124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1688418254
 Rigidbody2D:
@@ -57079,8 +56754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &1705044687
 Rigidbody2D:
@@ -57243,8 +56916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1710667598
 Rigidbody2D:
@@ -57560,8 +57231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &1715559442
 Rigidbody2D:
@@ -57949,8 +57618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &1732686442
 Rigidbody2D:
@@ -58149,8 +57816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1737364054
 Rigidbody2D:
@@ -58525,8 +58190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &1746472237
 Rigidbody2D:
@@ -58689,8 +58352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1747552964
 Rigidbody2D:
@@ -58859,11 +58520,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -59065,8 +58726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &1755309035
 Rigidbody2D:
@@ -59206,8 +58865,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756659705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 806098768}
@@ -59313,8 +58972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1757329176
 Rigidbody2D:
@@ -59522,7 +59179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1769896484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59644,10 +59301,10 @@ RectTransform:
   m_Father: {fileID: 1845757279}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284, y: 32.2}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 102.912155, y: -74.0671}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769896488
 MonoBehaviour:
@@ -60131,12 +59788,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 648676799}
+  m_Father: {fileID: 685233014}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.3, y: -471.3}
+  m_AnchoredPosition: {x: 100.3, y: -46.3}
   m_SizeDelta: {x: 113.2952, y: 68.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781486648
@@ -60186,8 +59843,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -60574,8 +60231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1791972023
 Rigidbody2D:
@@ -60849,8 +60504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &1796605706
 Rigidbody2D:
@@ -61285,8 +60938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 429418186}
 --- !u!50 &1826319926
 Rigidbody2D:
@@ -61449,8 +61100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &1835821081
 Rigidbody2D:
@@ -61613,8 +61262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1975302693}
 --- !u!50 &1843720687
 Rigidbody2D:
@@ -61777,8 +61424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1845077262
 Rigidbody2D:
@@ -61930,8 +61575,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.153, y: 59}
-  m_SizeDelta: {x: 939.2139, y: 225.6203}
+  m_AnchoredPosition: {x: 1.4296, y: 14.8931}
+  m_SizeDelta: {x: 465.8243, y: 148.1342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845757280
 MonoBehaviour:
@@ -61953,7 +61598,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 220, y: 220}
+  m_CellSize: {x: 70, y: 70}
   m_Spacing: {x: 60, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -62133,8 +61778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1849298338
 Rigidbody2D:
@@ -62892,6 +62535,10 @@ MonoBehaviour:
   popUpSound: {fileID: 8300000, guid: bd004ca23eecc15479fa118c3bf19d43, type: 3}
   countdownDelay: 1.5
   fadeDuration: 1.5
+  TrustReward: {fileID: 312256632}
+  StressReward: {fileID: 743286238}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
   StartRandomJigsawPuzzle: 0
 --- !u!114 &1855317770 stripped
 MonoBehaviour:
@@ -63220,8 +62867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &1860927157
 Rigidbody2D:
@@ -63468,8 +63113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &1864431686
 Rigidbody2D:
@@ -63632,8 +63275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &1864474051
 Rigidbody2D:
@@ -63810,8 +63451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &1868398663
 Rigidbody2D:
@@ -63950,11 +63589,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -64116,11 +63755,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 743286237}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 312256631}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -64187,8 +63826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &1885811403
 Rigidbody2D:
@@ -64351,8 +63988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &1894076027
 Rigidbody2D:
@@ -64573,12 +64208,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 648676799}
+  m_Father: {fileID: 685233014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -401.8, y: -316}
+  m_AnchoredPosition: {x: 100.3, y: 19.7}
   m_SizeDelta: {x: 113.2952, y: 68.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1899629160
@@ -64610,7 +64245,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278244407
   m_fontColor: {r: 0.21474479, g: 0.8301887, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -64628,8 +64263,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -64767,8 +64402,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916688460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0681, y: 0.2906, z: 0.008661412}
-  m_LocalScale: {x: 17.93029, y: 20.055832, z: 19.082367}
+  m_LocalPosition: {x: 3.3363, y: 0.3742, z: 0.008661412}
+  m_LocalScale: {x: 22.571672, y: 28.252094, z: 19.082367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091064017}
@@ -64874,8 +64509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 392655041}
 --- !u!50 &1920040735
 Rigidbody2D:
@@ -65038,8 +64671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 936134382}
 --- !u!50 &1923132757
 Rigidbody2D:
@@ -65356,7 +64987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.90701, y: 10.35499}
+  m_AnchoredPosition: {x: 53.2, y: 10}
   m_SizeDelta: {x: 46.2536, y: 38.1137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926912691
@@ -65714,8 +65345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 685233013}
 --- !u!50 &1944053144
 Rigidbody2D:
@@ -66110,8 +65739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1532177653}
 --- !u!50 &1953909594
 Rigidbody2D:
@@ -66364,11 +65991,11 @@ MonoBehaviour:
   InheritPuzzleKeyColliders: {fileID: 1855317770}
   TrustTextPoints: {fileID: 1899629160}
   StressTextPoints: {fileID: 1781486648}
-  StressPercentageText: {fileID: 0}
-  TrustPercentageText: {fileID: 0}
-  MoveTrustPosition: {fileID: 0}
+  StressPercentageText: {fileID: 1250564138}
+  TrustPercentageText: {fileID: 1926912691}
+  MoveTrustPosition: {fileID: 312256631}
   TrustDefaultPosXY: {x: -1108, y: 1026.9, z: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveStressPosition: {fileID: 743286237}
   StressDefaultPosXY: {x: 377, y: -58.79999, z: 0}
   TrustReward: {fileID: 312256632}
   StressReward: {fileID: 743286238}
@@ -66435,8 +66062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &1963334454
 Rigidbody2D:
@@ -66599,8 +66224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 2060793992}
 --- !u!50 &1972264503
 Rigidbody2D:
@@ -67483,8 +67106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 627560195}
 --- !u!50 &2004840252
 Rigidbody2D:
@@ -67859,8 +67480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &2008367056
 Rigidbody2D:
@@ -68023,8 +67642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1304590216}
 --- !u!50 &2015602484
 Rigidbody2D:
@@ -68298,8 +67915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &2022729807
 Rigidbody2D:
@@ -68764,8 +68379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &2049728397
 Rigidbody2D:
@@ -68942,8 +68555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 663389813}
 --- !u!50 &2050744537
 Rigidbody2D:
@@ -69124,8 +68735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &2051903559
 Rigidbody2D:
@@ -69288,8 +68897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1017713204}
 --- !u!50 &2058145155
 Rigidbody2D:
@@ -70177,8 +69784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 47608968}
 --- !u!50 &2089326699
 Rigidbody2D:
@@ -70499,8 +70104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &2092821224
 Rigidbody2D:
@@ -70867,8 +70470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1292997439}
 --- !u!50 &2106743082
 Rigidbody2D:
@@ -71184,8 +70785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1102590271}
 --- !u!50 &2113542365
 Rigidbody2D:
@@ -71362,8 +70961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1195996304}
 --- !u!50 &2113553436
 Rigidbody2D:
@@ -71512,8 +71109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 78137167}
 --- !u!50 &2115336208
 Rigidbody2D:
@@ -71778,8 +71373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ee8c64f86114d85cc30c24c027b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
   CheckCongratulation: {fileID: 1135324777}
 --- !u!50 &2135143414
 Rigidbody2D:
@@ -71966,8 +71559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.153442, y: 38.89624}
-  m_SizeDelta: {x: 1000, y: 622.0747}
+  m_AnchoredPosition: {x: 0.000013351, y: 0.00000095367}
+  m_SizeDelta: {x: 448.6163, y: 224.3081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146418038
 MonoBehaviour:

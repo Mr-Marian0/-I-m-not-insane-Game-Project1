@@ -104,8 +104,8 @@ public class CheckAnswer : MonoBehaviour
                 PauseCanvas.SetActive(false);
         }
 
-            MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
-            MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
+            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
             
             // Save the reward values
             SaveData.SavePlayer(TrustReward.value, StressReward.value);
@@ -137,8 +137,8 @@ public class CheckAnswer : MonoBehaviour
                 PauseCanvas.SetActive(false);
             }
 
-            MoveStressPosition.anchoredPosition = new Vector2(996.23f, -584f);
-            MoveTrustPosition.anchoredPosition = new Vector2(-973f, 614f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
+            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
         }
         else
         {
@@ -167,8 +167,8 @@ public class CheckAnswer : MonoBehaviour
                 Enemy1.SetActive(false);
             }
 
-            MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
-            MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
+            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
+            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
         }
 
         // Save the reward values
