@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public RectTransform JoyStickHandleTransaform;
+    public RectTransform JoyStickHandleTransform;
     private SpriteRenderer rd;
     private Animator Anim;
+    
+    // Reference to the joystick background to get normalized values
+    public RectTransform JoyStickBackground;
+    private Vector2 joystickInput;
 
-    public enum MovementState{idle, walking};
+    public enum MovementState { idle, walking }
+    
     void Start()
     {
         Anim = GetComponent<Animator>();
@@ -18,38 +23,36 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //IDLE and WALKING
         AnimationStateUpdate();
-
     }
 
-
-    //IDLE and WALKING
     public void AnimationStateUpdate()
     {
-        
         MovementState state;
-        if (JoyStickHandleTransaform.transform.position.x < 248)
+        
+        // Calculate the normalized joystick position (from -1 to 1)
+        Vector2 joystickOffset = JoyStickHandleTransform.anchoredPosition;
+        float maxRadius = JoyStickBackground.rect.width / 2;
+        
+        // Normalize the joystick input
+        float horizontalInput = joystickOffset.x / maxRadius;
+        
+        // Check if there's actual input (beyond a small deadzone)
+        if (Mathf.Abs(horizontalInput) > 0.1f) // Small deadzone threshold
         {
             state = MovementState.walking;
-            rd.flipX = false;
-        }
-        else if(JoyStickHandleTransaform.position.x > 248)
-        {
-            state = MovementState.walking;
-            rd.flipX = true;
-        }
-        else if(JoyStickHandleTransaform.transform.position.x == 248)
-        {
-            state = MovementState.idle;
-            rd.flipX = false;
+            
+            // Flip sprite based on joystick direction
+            if (horizontalInput < 0)
+                rd.flipX = false; // Moving left
+            else
+                rd.flipX = true;  // Moving right
         }
         else
         {
             state = MovementState.idle;
-            rd.flipX = false;
         }
+        
         Anim.SetInteger("state", (int)state);
     }
-
 }
