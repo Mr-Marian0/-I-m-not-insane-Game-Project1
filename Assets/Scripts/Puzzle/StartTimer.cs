@@ -81,8 +81,8 @@ public class StartTimer : MonoBehaviour
             if (puzz.gameObject.activeSelf)
             {
                 
-                MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
-                MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
+                MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
+                MoveStressPosition.anchoredPosition = new Vector2(448.88f, -325.8f);
 
                 ConvertTimeToReward(0);
                 CongratulationReference.SetActive(true);

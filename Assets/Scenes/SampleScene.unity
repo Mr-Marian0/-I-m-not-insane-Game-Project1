@@ -1025,8 +1025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: -103}
-  m_SizeDelta: {x: 113.2952, y: 68.8489}
+  m_AnchoredPosition: {x: 83.7, y: -34.9}
+  m_SizeDelta: {x: 58.1538, y: 35.3398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202925534
 MonoBehaviour:
@@ -1075,8 +1075,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2755,8 +2755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: 49}
-  m_SizeDelta: {x: 113.2952, y: 68.8489}
+  m_AnchoredPosition: {x: 83.7, y: 17.67}
+  m_SizeDelta: {x: 58.1538, y: 35.3398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377336248
 MonoBehaviour:
@@ -2805,8 +2805,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6694,7 +6694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f28eed39162f4249b27c994ce988fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JoyStickHandleTransaform: {fileID: 2929252283900732120}
+  JoyStickHandleTransform: {fileID: 2929252283900732120}
+  JoyStickBackground: {fileID: 2929252284654641442}
 --- !u!114 &990460093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11349,7 +11350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164.16, y: 28.595}
+  m_AnchoredPosition: {x: 127.7, y: 28.595}
   m_SizeDelta: {x: 236.6655, y: 129.8857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897332760

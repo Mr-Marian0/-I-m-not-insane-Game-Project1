@@ -128,8 +128,8 @@ public class Pause : MonoBehaviour
 
         Time.timeScale = 0;
 
-        MoveTrustPosition.anchoredPosition = new Vector2(-14.9f, 83.8f);
-        MoveStressPosition.anchoredPosition = new Vector2(-14.9f, -67.94698f);
+        MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
+        MoveStressPosition.anchoredPosition = new Vector2(448.88f, -325.8f);
 
         CheckCongratulation.SetActive(true);
 
