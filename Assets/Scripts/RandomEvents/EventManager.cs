@@ -140,10 +140,10 @@ public class EventManager : MonoBehaviour
         );
         
         if (MoveTrustPosition != null)
-            MoveTrustPosition.anchoredPosition = new Vector2(339f, 195.9999f);
+            MoveTrustPosition.anchoredPosition = new Vector2(114.6f, -191.7f);
 
         if (MoveStressPosition != null)
-            MoveStressPosition.anchoredPosition = new Vector2(339f, 44.25299f);
+            MoveStressPosition.anchoredPosition = new Vector2(511.1f, -141.9f);
 
         foreach (var btn in choiceButtons)
             btn.gameObject.SetActive(false);
@@ -177,9 +177,9 @@ public class EventManager : MonoBehaviour
             current.x -= moveSpeed * Time.unscaledDeltaTime;
             eventImageRect.anchoredPosition = current;
 
-            if (current.x <= -326.09f)
+            if (current.x <= -115.3f)
             {
-                current.x = -326.09f;
+                current.x = -115.3f;
                 eventImageRect.anchoredPosition = current;
                 isMovingImage = false;
                 Debug.Log("Image reached left position");
