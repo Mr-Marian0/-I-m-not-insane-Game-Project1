@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PuzzleEngine : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class PuzzleEngine : MonoBehaviour
     public AudioClip popUpSound;        // Sound to play when pop-up appears
     public float countdownDelay = 1.5f;  // Delay before pop-up appears
     public float fadeDuration = 1.5f;    // Duration of fade out
+
+    public Slider TrustReward;
+    public Slider StressReward;
+    public TextMeshProUGUI StressPercentageText;
+    public TextMeshProUGUI TrustPercentageText;
     
     private bool hasPlayedLoseSound = false;
     private bool hasPlayedWinSound = false;
@@ -135,6 +141,10 @@ public class PuzzleEngine : MonoBehaviour
     
     void Update()
     {
+
+        StressPercentageText.text = StressReward.value + "%";
+        TrustPercentageText.text = TrustReward.value + "%";
+
         if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
         {
             audioSourceForCongratulation.clip = loseSound;
