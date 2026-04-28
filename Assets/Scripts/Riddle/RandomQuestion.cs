@@ -101,8 +101,8 @@ public class RandomQuestion : MonoBehaviour
             Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
         }
 
-        StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
-        TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
+        StressPercentageText.text = Mathf.RoundToInt(StressReward.value).ToString();
+        TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();
         
         // Start the pop-up coroutine
         StartCoroutine(ShowPopUpWithDelay());
@@ -212,8 +212,8 @@ public class RandomQuestion : MonoBehaviour
     void Update()
     {
 
-        StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
-        TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
+        StressPercentageText.text = Mathf.RoundToInt(StressReward.value).ToString();
+TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();
 
         PickedQuestions(GenerateQuestion);
 

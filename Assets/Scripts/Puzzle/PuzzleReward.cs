@@ -44,8 +44,8 @@ public class PuzzleReward : MonoBehaviour
         {
             TrustReward.value = data.TrustData;
             StressReward.value = data.StressData;
-            StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
-            TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
+            StressPercentageText.text = Mathf.RoundToInt(StressReward.value).ToString();
+            TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();
         }
     }
 

@@ -22,6 +22,7 @@ public class EndGameWin : MonoBehaviour
     public GameObject SButtonReference;
     public Transform playerTransformReference;
     public GameObject ResultLayerReference;
+    public GameObject EventObjectIsActive;
 
     [Header("Endscreen UI")]
     public SpriteRenderer fadeOverlay;
@@ -83,7 +84,7 @@ public class EndGameWin : MonoBehaviour
         if (gameOverTriggered)
             return;
 
-        if (!trustHit100 && trustBar != null && trustBar.value >= 100f)
+        if (!trustHit100 && trustBar != null && trustBar.value >= 100f && !EventObjectIsActive.activeSelf)
         {
             trustHit100 = true;
             trustReached100First = !stressHit100;
@@ -95,7 +96,7 @@ public class EndGameWin : MonoBehaviour
             }
         }
 
-        if (!stressHit100 && stressBar != null && stressBar.value >= 100f)
+        if (!stressHit100 && stressBar != null && stressBar.value >= 100f && !EventObjectIsActive.activeSelf)
         {
             stressHit100 = true;
             bool trustVictory = trustHit100 && trustReached100First;
