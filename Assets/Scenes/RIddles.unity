@@ -281,9 +281,9 @@ MonoBehaviour:
   PauseButton: {fileID: 1446980402}
   PauseCanvas: {fileID: 993460929}
   TrustReward: {fileID: 1333125236}
-  TrustTextPoints: {fileID: 1583848744}
+  TrustTextPoints: {fileID: 1675247531}
   StressReward: {fileID: 1042772549}
-  StressTextPoints: {fileID: 382627526}
+  StressTextPoints: {fileID: 1545823783}
   Enemy1: {fileID: 38128673}
   MoveStressPosition: {fileID: 1042772548}
   MoveTrustPosition: {fileID: 1333125235}
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   Door3Col: {fileID: 521026761}
   PauseButton: {fileID: 1446980402}
   PauseCanvas: {fileID: 993460929}
-  TrustTextPoints: {fileID: 1583848744}
-  StressTextPoints: {fileID: 382627526}
+  TrustTextPoints: {fileID: 1675247531}
+  StressTextPoints: {fileID: 1545823783}
   TrustReward: {fileID: 1333125236}
   StressReward: {fileID: 1042772549}
   Congratulation: {fileID: 1088377653}
@@ -4423,7 +4423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -147.75543, y: -44.892334}
+  m_AnchoredPosition: {x: -175.9, y: -44.892}
   m_SizeDelta: {x: 181.358, y: 77.755}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333125236
@@ -5270,7 +5270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.3, y: -46.3}
+  m_AnchoredPosition: {x: 101.97, y: -34.424}
   m_SizeDelta: {x: 113.2952, y: 68.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1545823783
@@ -5963,7 +5963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.3, y: 19.7}
+  m_AnchoredPosition: {x: 101.97, y: 19.7}
   m_SizeDelta: {x: 113.2952, y: 68.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675247531

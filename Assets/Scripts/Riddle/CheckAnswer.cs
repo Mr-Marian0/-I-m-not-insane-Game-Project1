@@ -106,10 +106,11 @@ public class CheckAnswer : MonoBehaviour
 
             MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
             MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
-            
-            // Save the reward values
-            SaveData.SavePlayer(TrustReward.value, StressReward.value);
-            Debug.Log("Riddle completed - saved Trust: " + TrustReward.value + ", Stress: " + StressReward.value);
+
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
         }
         else if(PresentPosition == 4 || Choice1.PlayerChooseDoor1 == false && Choice2.PlayerChooseDoor2 == false && Choice3.PlayerChooseDoor3 == false)
         {
@@ -139,6 +140,11 @@ public class CheckAnswer : MonoBehaviour
 
             MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
             MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
+
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
         }
         else
         {
@@ -172,7 +178,10 @@ public class CheckAnswer : MonoBehaviour
         }
 
         // Save the reward values
-            SaveData.SavePlayer(TrustReward.value, StressReward.value);
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
     }
 
     public void OnEnable()

@@ -117,7 +117,11 @@ public class EnemyScript : MonoBehaviour
             MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
 
             // Save the reward values
-            SaveData.SavePlayer(TrustReward.value, StressReward.value);
+
+            if (SessionData.Instance != null)
+            {
+                SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+            }
             }
         }
 

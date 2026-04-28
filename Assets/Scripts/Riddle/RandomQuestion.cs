@@ -212,6 +212,9 @@ public class RandomQuestion : MonoBehaviour
     void Update()
     {
 
+        StressPercentageText.text = Mathf.RoundToInt(StressReward.value) + "%";
+        TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value) + "%";
+
         PickedQuestions(GenerateQuestion);
 
         StartCoroutine(DelayBackgroundMove());

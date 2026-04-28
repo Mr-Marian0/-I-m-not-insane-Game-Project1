@@ -55,7 +55,7 @@ public class PuzzleReward : MonoBehaviour
         {
 
             MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
-            MoveStressPosition.anchoredPosition = new Vector2(448.88f, -325.8f);
+            MoveStressPosition.anchoredPosition = new Vector2(478.4f, -325.8f);
 
             if (!FunctionCallOnce)
             {
@@ -66,8 +66,10 @@ public class PuzzleReward : MonoBehaviour
                 ConvertTimeToReward(StoreTheTimeItFinished);
                 
                 // Save the reward values directly
-                SaveData.SavePlayer(TrustReward.value, StressReward.value);
-                Debug.Log("Player data saved!");
+                if (SessionData.Instance != null)
+                {
+                    SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+                }
 
                 //RESET
                 StoreTheTimeItFinished = 0;
@@ -107,6 +109,7 @@ public class PuzzleReward : MonoBehaviour
             StressReward.value += 20;
             StressTextPoints.text = "+20";
         }
+        
     }
 
     public void SavePlayerReward()

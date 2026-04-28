@@ -140,10 +140,10 @@ public class EventManager : MonoBehaviour
         );
         
         if (MoveTrustPosition != null)
-            MoveTrustPosition.anchoredPosition = new Vector2(114.6f, -191.7f);
+            MoveTrustPosition.anchoredPosition = new Vector2(114.6f, -141.9f);
 
         if (MoveStressPosition != null)
-            MoveStressPosition.anchoredPosition = new Vector2(511.1f, -141.9f);
+            MoveStressPosition.anchoredPosition = new Vector2(511.1f, -191.7f);
 
         foreach (var btn in choiceButtons)
             btn.gameObject.SetActive(false);
