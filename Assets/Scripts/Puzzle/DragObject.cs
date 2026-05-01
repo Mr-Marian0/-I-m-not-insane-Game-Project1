@@ -8,6 +8,7 @@ public class DragObject : MonoBehaviour
     private Camera mainCamera;
     
     public GameObject CheckCongratulation;
+    private AutoSnap autoSnap; // Add reference to AutoSnap
     
     // Touch detection variables
     private int touchId = -1;
@@ -17,6 +18,7 @@ public class DragObject : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
+        autoSnap = GetComponent<AutoSnap>(); // Get AutoSnap component
     }
 
     void Update()
@@ -79,6 +81,10 @@ public class DragObject : MonoBehaviour
             isDragging = true;
             touchId = touch.fingerId;
             
+            // Notify AutoSnap that dragging started
+            if (autoSnap != null)
+                autoSnap.OnDragStart();
+            
             // Calculate offset between object position and touch position
             dragOffset = transform.position - new Vector3(touchPos.x, touchPos.y, 0);
         }
@@ -101,7 +107,11 @@ public class DragObject : MonoBehaviour
     {
         isDragging = false;
         touchId = -1;
-        rb.velocity = Vector2.zero; // Stop any residual movement
+        rb.velocity = Vector2.zero;
+        
+        // Notify AutoSnap that dragging ended
+        if (autoSnap != null)
+            autoSnap.OnDragEnd();
     }
 
     void OnMouseDown()
@@ -114,6 +124,10 @@ public class DragObject : MonoBehaviour
         if (hitCollider != null && hitCollider.gameObject == gameObject)
         {
             isDragging = true;
+            
+            // Notify AutoSnap that dragging started
+            if (autoSnap != null)
+                autoSnap.OnDragStart();
             
             // Calculate offset between object position and mouse position
             dragOffset = transform.position - new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0);
@@ -137,5 +151,15 @@ public class DragObject : MonoBehaviour
     {
         isDragging = false;
         rb.velocity = Vector2.zero;
+        
+        // Notify AutoSnap that dragging ended
+        if (autoSnap != null)
+            autoSnap.OnDragEnd();
+    }
+    
+    // Optional: Add this method to check if being dragged (if needed elsewhere)
+    public bool IsBeingDragged()
+    {
+        return isDragging;
     }
 }

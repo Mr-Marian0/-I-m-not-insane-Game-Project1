@@ -22,8 +22,25 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI stressChangeText;
     public TextMeshProUGUI trustChangeText;
 
-    public RectTransform MoveTrustPosition;
-    public RectTransform MoveStressPosition;
+    [Header("Trust & Stress Parent (Grid Layout Group)")]
+    // Assign the TrustAndStress parent GameObject that holds the GridLayoutGroup
+    public RectTransform trustAndStressParent;
+    private GridLayoutGroup trustAndStressGrid;
+
+    // Original RectTransform values of the parent
+    private Vector2 originalParentAnchoredPos;
+    private Vector2 originalParentSizeDelta;
+
+    // Original GridLayoutGroup values
+    private Vector2 originalCellSize;
+    private GridLayoutGroup.Constraint originalConstraint;
+    private int originalConstraintCount;
+
+    // Changed values applied during MakeChoice
+    private readonly Vector2 choiceParentAnchoredPos  = new Vector2(619.1294f, -205f);
+    private readonly Vector2 choiceParentSizeDelta     = new Vector2(291.5371f, 291.5371f);
+    private readonly Vector2 choiceCellSize            = new Vector2(196.8f, 51.6f);
+    private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
 
     [Header("Bars")]
     public Slider stressBar;
@@ -39,17 +56,31 @@ public class EventManager : MonoBehaviour
 
     private EventData currentEvent;
     private Vector2 originalImagePos;
-    private Vector2 originalTrustPos;
-    private Vector2 originalStressPos;
 
     private bool isMovingImage = false;
     private float moveSpeed = 800f;
 
     private void Awake()
     {
-        if (eventImageRect != null) originalImagePos = eventImageRect.anchoredPosition;
-        if (MoveTrustPosition != null) originalTrustPos = MoveTrustPosition.anchoredPosition;
-        if (MoveStressPosition != null) originalStressPos = MoveStressPosition.anchoredPosition;
+        // Store original image position
+        if (eventImageRect != null)
+            originalImagePos = eventImageRect.anchoredPosition;
+
+        // Get GridLayoutGroup from the parent and store all original values
+        if (trustAndStressParent != null)
+        {
+            originalParentAnchoredPos = trustAndStressParent.anchoredPosition;
+            originalParentSizeDelta   = trustAndStressParent.sizeDelta;
+
+            trustAndStressGrid = trustAndStressParent.GetComponent<GridLayoutGroup>();
+
+            if (trustAndStressGrid != null)
+            {
+                originalCellSize       = trustAndStressGrid.cellSize;
+                originalConstraint     = trustAndStressGrid.constraint;
+                originalConstraintCount = trustAndStressGrid.constraintCount;
+            }
+        }
     }
 
     private void Start()
@@ -96,9 +127,24 @@ public class EventManager : MonoBehaviour
 
     private void ResetAllPositions()
     {
-        if (eventImageRect != null) eventImageRect.anchoredPosition = originalImagePos;
-        if (MoveTrustPosition != null) MoveTrustPosition.anchoredPosition = originalTrustPos;
-        if (MoveStressPosition != null) MoveStressPosition.anchoredPosition = originalStressPos;
+        // Reset event image
+        if (eventImageRect != null)
+            eventImageRect.anchoredPosition = originalImagePos;
+
+        // Restore parent RectTransform
+        if (trustAndStressParent != null)
+        {
+            trustAndStressParent.anchoredPosition = originalParentAnchoredPos;
+            trustAndStressParent.sizeDelta        = originalParentSizeDelta;
+        }
+
+        // Restore GridLayoutGroup values
+        if (trustAndStressGrid != null)
+        {
+            trustAndStressGrid.cellSize        = originalCellSize;
+            trustAndStressGrid.constraint      = originalConstraint;
+            trustAndStressGrid.constraintCount = originalConstraintCount;
+        }
     }
 
     public void MakeChoice(int choiceIndex)
@@ -106,29 +152,25 @@ public class EventManager : MonoBehaviour
         Choice chosen = currentEvent.choices[choiceIndex];
 
         stressBar.value = Mathf.Clamp(stressBar.value + chosen.stressChange, 0, 100);
-        trustBar.value = Mathf.Clamp(trustBar.value + chosen.trustChange, 0, 100);
+        trustBar.value  = Mathf.Clamp(trustBar.value  + chosen.trustChange,  0, 100);
 
         bool isPositive = Random.value < chosen.positiveChance;
 
         if (isPositive)
-        {
-            trustBar.value = Mathf.Clamp(trustBar.value + 5, 0, 100);
-        }
+            trustBar.value  = Mathf.Clamp(trustBar.value  + 5, 0, 100);
         else
-        {
             stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100);
-        }
 
         // Update SessionData in memory
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(trustBar.value, stressBar.value);
             SessionData.Instance.ElapsedTime = TimerReference.elapsedTime;
-            SessionData.Instance.DayAdder = TimerReference.DayAdder;
-            SessionData.Instance.DaysText = dayText.text;
+            SessionData.Instance.DayAdder    = TimerReference.DayAdder;
+            SessionData.Instance.DaysText    = dayText.text;
         }
 
-        // Also persist to disk via SaveData
+        // Persist to disk via SaveData
         SaveData.SaveAllGameData(
             trustBar.value, stressBar.value,
             TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
@@ -138,12 +180,21 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
             SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
         );
-        
-        if (MoveTrustPosition != null)
-            MoveTrustPosition.anchoredPosition = new Vector2(114.6f, -141.9f);
 
-        if (MoveStressPosition != null)
-            MoveStressPosition.anchoredPosition = new Vector2(511.1f, -191.7f);
+        // Apply changed RectTransform values to the TrustAndStress parent
+        if (trustAndStressParent != null)
+        {
+            trustAndStressParent.anchoredPosition = choiceParentAnchoredPos;
+            trustAndStressParent.sizeDelta        = choiceParentSizeDelta;
+        }
+
+        // Apply changed GridLayoutGroup values
+        if (trustAndStressGrid != null)
+        {
+            trustAndStressGrid.cellSize        = choiceCellSize;
+            trustAndStressGrid.constraint      = choiceConstraint;
+            trustAndStressGrid.constraintCount = 2;
+        }
 
         foreach (var btn in choiceButtons)
             btn.gameObject.SetActive(false);
@@ -158,10 +209,10 @@ public class EventManager : MonoBehaviour
 
         descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
 
-        stressChangeText.text = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
+        stressChangeText.text  = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
         stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
 
-        trustChangeText.text = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
+        trustChangeText.text  = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
         trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
 
         continueButton.gameObject.SetActive(true);
@@ -177,9 +228,9 @@ public class EventManager : MonoBehaviour
             current.x -= moveSpeed * Time.unscaledDeltaTime;
             eventImageRect.anchoredPosition = current;
 
-            if (current.x <= -115.3f)
+            if (current.x <= -150.15f)
             {
-                current.x = -115.3f;
+                current.x = -150.15f;
                 eventImageRect.anchoredPosition = current;
                 isMovingImage = false;
                 Debug.Log("Image reached left position");
@@ -198,7 +249,7 @@ public class EventManager : MonoBehaviour
 
         ResetAllPositions();
         Time.timeScale = 1f;
-        isMovingImage = false;
+        isMovingImage  = false;
 
         Debug.Log("Event reset");
     }

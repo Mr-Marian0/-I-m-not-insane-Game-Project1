@@ -7,16 +7,17 @@ public class AutoSnap : MonoBehaviour
     public Vector2 gridSize = new Vector2(0.32f, 0.50f);
     
     [Header("Audio Settings")]
-    public AudioSource woodMovedAudioSource; // Just drag your WoodMoved1 object here
+    public AudioSource woodMovedAudioSource;
     
     private Vector3 lastSnappedPosition;
     private float soundCooldown = 0f;
+    private Vector3 unsnappedPosition;
+    private bool needsSnapping = false;
 
     void Start()
     {
         lastSnappedPosition = transform.localPosition;
         
-        // Only try to find it if you forgot to drag it in the inspector
         if (woodMovedAudioSource == null)
         {
             GameObject woodObject = GameObject.Find("WoodMoved1");
@@ -29,32 +30,49 @@ public class AutoSnap : MonoBehaviour
 
     void Update()
     {
-        Vector3 localPos = transform.localPosition;
-        Vector3 snappedPos = new Vector3(
-            Mathf.Round(localPos.x / gridSize.x) * gridSize.x,
-            Mathf.Round(localPos.y / gridSize.y) * gridSize.y,
-            localPos.z
-        );
-        
-        transform.localPosition = snappedPos;
-        
-        if (snappedPos != lastSnappedPosition)
+        // Only apply snap when needed (after drag ends)
+        if (needsSnapping)
         {
-            if (soundCooldown <= 0f)
+            Vector3 snappedPos = new Vector3(
+                Mathf.Round(unsnappedPosition.x / gridSize.x) * gridSize.x,
+                Mathf.Round(unsnappedPosition.y / gridSize.y) * gridSize.y,
+                unsnappedPosition.z
+            );
+            
+            transform.localPosition = snappedPos;
+            
+            if (snappedPos != lastSnappedPosition)
             {
-                // Just play the sound from your existing AudioSource
-                if (woodMovedAudioSource != null)
+                if (soundCooldown <= 0f)
                 {
-                    woodMovedAudioSource.Play();
+                    if (woodMovedAudioSource != null)
+                    {
+                        woodMovedAudioSource.Play();
+                    }
+                    soundCooldown = 0.1f;
                 }
-                soundCooldown = 0.1f;
+                lastSnappedPosition = snappedPos;
             }
-            lastSnappedPosition = snappedPos;
+            
+            needsSnapping = false;
         }
         
         if (soundCooldown > 0f)
         {
             soundCooldown -= Time.deltaTime;
         }
+    }
+    
+    // Call this method when dragging starts
+    public void OnDragStart()
+    {
+        needsSnapping = false;
+    }
+    
+    // Call this method when dragging ends
+    public void OnDragEnd()
+    {
+        unsnappedPosition = transform.localPosition;
+        needsSnapping = true;
     }
 }
