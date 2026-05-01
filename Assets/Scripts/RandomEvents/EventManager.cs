@@ -25,6 +25,12 @@ public class EventManager : MonoBehaviour
     [Header("Trust & Stress Parent (Grid Layout Group)")]
     // Assign the TrustAndStress parent GameObject that holds the GridLayoutGroup
     public RectTransform trustAndStressParent;
+
+    // Assign an empty GameObject sibling placed exactly where you want
+    // the bars to move to — Unity will calculate the correct position
+    // for any screen size automatically
+    public RectTransform choiceTargetPosition;
+
     private GridLayoutGroup trustAndStressGrid;
 
     // Original RectTransform values of the parent
@@ -36,10 +42,10 @@ public class EventManager : MonoBehaviour
     private GridLayoutGroup.Constraint originalConstraint;
     private int originalConstraintCount;
 
-    // Changed values applied during MakeChoice
-    private readonly Vector2 choiceParentAnchoredPos  = new Vector2(619.1294f, -205f);
-    private readonly Vector2 choiceParentSizeDelta     = new Vector2(291.5371f, 291.5371f);
-    private readonly Vector2 choiceCellSize            = new Vector2(196.8f, 51.6f);
+    // Only sizeDelta and cellSize are hardcoded — these are sizes not positions
+    // so they don't change between screen sizes
+    private readonly Vector2 choiceParentSizeDelta = new Vector2(291.5371f, 291.5371f);
+    private readonly Vector2 choiceCellSize        = new Vector2(196.8f, 51.6f);
     private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
 
     [Header("Bars")]
@@ -76,8 +82,8 @@ public class EventManager : MonoBehaviour
 
             if (trustAndStressGrid != null)
             {
-                originalCellSize       = trustAndStressGrid.cellSize;
-                originalConstraint     = trustAndStressGrid.constraint;
+                originalCellSize        = trustAndStressGrid.cellSize;
+                originalConstraint      = trustAndStressGrid.constraint;
                 originalConstraintCount = trustAndStressGrid.constraintCount;
             }
         }
@@ -88,7 +94,7 @@ public class EventManager : MonoBehaviour
         // Restore bar values from SessionData when Scene 1 loads
         if (SessionData.Instance != null)
         {
-            trustBar.value = SessionData.Instance.Trust;
+            trustBar.value  = SessionData.Instance.Trust;
             stressBar.value = SessionData.Instance.Stress;
         }
     }
@@ -101,7 +107,7 @@ public class EventManager : MonoBehaviour
 
         currentEvent = allEvents[Random.Range(0, allEvents.Length)];
 
-        titleText.text = currentEvent.eventTitle;
+        titleText.text       = currentEvent.eventTitle;
         descriptionText.text = currentEvent.eventDescription;
 
         ResetAllPositions();
@@ -181,10 +187,11 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
         );
 
-        // Apply changed RectTransform values to the TrustAndStress parent
-        if (trustAndStressParent != null)
+        // Move the parent to the target position read from the scene at runtime
+        // instead of hardcoded pixel values — this works correctly on any screen size
+        if (trustAndStressParent != null && choiceTargetPosition != null)
         {
-            trustAndStressParent.anchoredPosition = choiceParentAnchoredPos;
+            trustAndStressParent.anchoredPosition = choiceTargetPosition.anchoredPosition;
             trustAndStressParent.sizeDelta        = choiceParentSizeDelta;
         }
 
