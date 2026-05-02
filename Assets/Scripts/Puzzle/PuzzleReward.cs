@@ -11,33 +11,85 @@ public class PuzzleReward : MonoBehaviour
 
     public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
-     public TextMeshProUGUI StressPercentageText;
+    public TextMeshProUGUI StressPercentageText;
     public TextMeshProUGUI TrustPercentageText;
 
-    //TRUST RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
-    public RectTransform MoveTrustPosition;
-    public Vector3 TrustDefaultPosXY;
+    [Header("Bars Parent & Target")]
+    // Assign the parent GameObject that contains both stress and trust bars
+    public RectTransform barsParent;
+    // Assign the empty ChoiceTargetPosBars object placed where you want bars to move.
+    // Set its Anchor Preset to Middle-Center in the Inspector.
+    public RectTransform choiceTargetPosBars;
 
-    //STRESS RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
-    public RectTransform MoveStressPosition;
-    public Vector3 StressDefaultPosXY;
+    // Stored original values of barsParent
+    private Vector2 originalBarsAnchoredPos;
+    private Vector2 originalBarsSizeDelta;
+    private Vector2 originalBarsAnchorMin;
+    private Vector2 originalBarsAnchorMax;
+    private Vector2 originalBarsPivot;
+    private readonly Vector2 choiceCellSize = new Vector2(196.8f, 51.6f);
+    private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
+    public GridLayoutGroup ModifyGridWithBarsParent;
 
-    //SLIDER - GIVE PLAYER A REWARD
+    // Slider - give player a reward
     public Slider TrustReward;
     public Slider StressReward;
     public bool FunctionCallOnce = false;
 
-    //REMAINING TIME AFTER YOU FINISH THE PUZZLE
+    // Remaining time after you finish the puzzle
     public StartTimer InheritStartTimer;
 
-    //SAVES OR STORE THE TIME YOU FINISHED THE GAME
+    // Saves or stores the time you finished the game
     int StoreTheTimeItFinished;
+
+    private void Awake()
+    {
+
+        ModifyGridWithBarsParent = barsParent.GetComponent<GridLayoutGroup>();
+
+        // Store all original barsParent transform values at startup
+        if (barsParent != null)
+        {
+            originalBarsAnchoredPos = barsParent.anchoredPosition;
+            originalBarsSizeDelta = barsParent.sizeDelta;
+            originalBarsAnchorMin = barsParent.anchorMin;
+            originalBarsAnchorMax = barsParent.anchorMax;
+            originalBarsPivot = barsParent.pivot;
+        }
+    }
+
+    // Moves barsParent to the target position by copying all anchor/pivot/position
+    // values from choiceTargetPosBars — works correctly on any screen size
+    private void MoveBarsToTarget()
+    {
+        if (barsParent == null || choiceTargetPosBars == null) return;
+
+        barsParent.anchorMin = choiceTargetPosBars.anchorMin;
+        barsParent.anchorMax = choiceTargetPosBars.anchorMax;
+        barsParent.pivot = choiceTargetPosBars.pivot;
+        barsParent.anchoredPosition = choiceTargetPosBars.anchoredPosition;
+        ModifyGridWithBarsParent.cellSize = choiceCellSize;
+        ModifyGridWithBarsParent.constraint = choiceConstraint;
+        ModifyGridWithBarsParent.constraintCount = 2; 
+    }
+
+    // Restores barsParent to its original position
+    private void ResetBarsPosition()
+    {
+        if (barsParent == null) return;
+
+        barsParent.anchorMin = originalBarsAnchorMin;
+        barsParent.anchorMax = originalBarsAnchorMax;
+        barsParent.pivot = originalBarsPivot;
+        barsParent.anchoredPosition = originalBarsAnchoredPos;
+        barsParent.sizeDelta = originalBarsSizeDelta;
+    }
 
     private void Start()
     {
-        //RESET
+
         FunctionCallOnce = false;
-        
+
         // Load saved values into the sliders so rewards increment properly
         PlayerData data = SaveData.LoadPlayer();
         if (data != null)
@@ -51,11 +103,10 @@ public class PuzzleReward : MonoBehaviour
 
     void Update()
     {
-        if(InheritPuzzleKeyColliders.IsFinished == true)
+        if (InheritPuzzleKeyColliders.IsFinished == true)
         {
-
-            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
-            MoveStressPosition.anchoredPosition = new Vector2(478.4f, -325.8f);
+            // Move bars parent to target — screen-size safe, replaces hardcoded values
+            MoveBarsToTarget();
 
             if (!FunctionCallOnce)
             {
@@ -64,34 +115,28 @@ public class PuzzleReward : MonoBehaviour
                 Debug.Log("TIMEFINISHED! :  " + StoreTheTimeItFinished);
 
                 ConvertTimeToReward(StoreTheTimeItFinished);
-                
-                // Save the reward values directly
                 if (SessionData.Instance != null)
                 {
                     SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
                 }
 
-                //RESET
                 StoreTheTimeItFinished = 0;
             }
-            
-
         }
     }
 
     public void ConvertTimeToReward(int sec)
     {
-        
         if (sec >= 45 && sec <= 60)
         {
             TrustReward.value += 10;
             TrustTextPoints.text = "+10";
 
-            StressReward.value -= 10;
+            StressReward.value = 10;
             StressTextPoints.text = "-10";
             StressTextPoints.color = Color.green;
         }
-        else if(sec >= 6 && sec <= 44)
+        else if (sec >= 6 && sec <= 44)
         {
             TrustReward.value += 5;
             TrustTextPoints.text = "+5";
@@ -100,7 +145,7 @@ public class PuzzleReward : MonoBehaviour
             StressTextPoints.text = "+5";
             StressTextPoints.color = Color.green;
         }
-        else if(sec <= 5)
+        else if (sec <= 5)
         {
             TrustReward.value += 0;
             TrustTextPoints.text = "+0";
@@ -109,7 +154,6 @@ public class PuzzleReward : MonoBehaviour
             StressReward.value += 20;
             StressTextPoints.text = "+20";
         }
-        
     }
 
     public void SavePlayerReward()
@@ -119,7 +163,6 @@ public class PuzzleReward : MonoBehaviour
 
     public void OnEnable()
     {
-        //RESET
         FunctionCallOnce = false;
         TrustTextPoints.text = "";
         StressTextPoints.text = "";
@@ -130,5 +173,8 @@ public class PuzzleReward : MonoBehaviour
     public void OnDisable()
     {
         InheritPuzzleKeyColliders.IsFinished = false;
+
+        // Restore bars to original position when this object is disabled
+        ResetBarsPosition();
     }
 }

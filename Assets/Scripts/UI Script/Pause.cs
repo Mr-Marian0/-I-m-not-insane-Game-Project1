@@ -21,13 +21,26 @@ public class Pause : MonoBehaviour
     public Image Pause_Button_Image;
     public GameObject YouLose;
 
+    [Header("Bars Parent & Target")]
+    // Assign the parent GameObject that contains both stress and trust bars
+    public RectTransform barsParent;
+    public GridLayoutGroup ModifyGridWithBarsParent;
+    // Assign the empty ChoiceTargetPosBars object placed where you want bars to move.
+    // Set its Anchor Preset to Middle-Center in the Inspector.
+    public RectTransform choiceTargetPosBars;
+
+    // Stored original values of barsParent
+    private Vector2 originalBarsAnchoredPos;
+    private Vector2 originalBarsSizeDelta;
+    private Vector2 originalBarsAnchorMin;
+    private Vector2 originalBarsAnchorMax;
+    private Vector2 originalBarsPivot;
+    private readonly Vector2 choiceCellSize = new Vector2(196.8f, 51.6f);
+    private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
+
     // Restart functions to update the sliders
     public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
-    public RectTransform MoveTrustPosition;
-    public Vector3 TrustDefaultPosXY;
-    public RectTransform MoveStressPosition;
-    public Vector3 StressDefaultPosXY;
     public Slider TrustReward;
     public Slider StressReward;
 
@@ -41,13 +54,55 @@ public class Pause : MonoBehaviour
     public Timer timerReference;
     public GameEngine GameEngineReference;
 
+    private void Awake()
+    {
+
+        ModifyGridWithBarsParent = barsParent.GetComponent<GridLayoutGroup>();
+
+        // Store all original barsParent transform values at startup
+        if (barsParent != null)
+        {
+            originalBarsAnchoredPos = barsParent.anchoredPosition;
+            originalBarsSizeDelta = barsParent.sizeDelta;
+            originalBarsAnchorMin = barsParent.anchorMin;
+            originalBarsAnchorMax = barsParent.anchorMax;
+            originalBarsPivot = barsParent.pivot;
+        }
+    }
+
+    // Moves barsParent to the target position by copying all anchor/pivot/position
+    // values from choiceTargetPosBars — works correctly on any screen size
+    private void MoveBarsToTarget()
+    {
+        if (barsParent == null || choiceTargetPosBars == null) return;
+
+        barsParent.anchorMin = choiceTargetPosBars.anchorMin;
+        barsParent.anchorMax = choiceTargetPosBars.anchorMax;
+        barsParent.pivot = choiceTargetPosBars.pivot;
+        barsParent.anchoredPosition = choiceTargetPosBars.anchoredPosition;
+        ModifyGridWithBarsParent.cellSize = choiceCellSize;
+        ModifyGridWithBarsParent.constraint = choiceConstraint;
+        ModifyGridWithBarsParent.constraintCount = 2; 
+    }
+
+    // Restores barsParent to its original position
+    private void ResetBarsPosition()
+    {
+        if (barsParent == null) return;
+
+        barsParent.anchorMin = originalBarsAnchorMin;
+        barsParent.anchorMax = originalBarsAnchorMax;
+        barsParent.pivot = originalBarsPivot;
+        barsParent.anchoredPosition = originalBarsAnchoredPos;
+        barsParent.sizeDelta = originalBarsSizeDelta;
+    }
+
     public void PausePressed()
     {
         Pause_Button_Image.enabled = false;
         Time.timeScale = 0;
         Show_Pause_Menu.SetActive(true);
         Signal1 = true;
-
 
         StartCoroutine(ActivateDelay(0.5f));
     }
@@ -75,7 +130,6 @@ public class Pause : MonoBehaviour
         MuteButtonImage.sprite = isSoundMuted ? SoundOffSprite : SoundOnSprite;
         SoundButton_text.text = isSoundMuted ? "Sound OFF" : "Sound ON";
 
-        // Save mute state to SessionData so it survives scene transitions
         if (SessionData.Instance != null)
         {
             SessionData.Instance.SetMuteState(isSoundMuted);
@@ -102,14 +156,12 @@ public class Pause : MonoBehaviour
         SessionData.Instance.NewGame = true;
         SaveData.DeleteSave();
 
-        // Also reset SessionData bars
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(0f, 0f);
             SessionData.Instance.ElapsedTime = 0f;
             SessionData.Instance.DayAdder = 1;
             SessionData.Instance.DaysText = "DAY 1";
-
             SessionData.Instance.Event1Triggered = false;
             SessionData.Instance.Event2Triggered = false;
             SessionData.Instance.Mission1Entered = false;
@@ -128,8 +180,8 @@ public class Pause : MonoBehaviour
 
         Time.timeScale = 0;
 
-        MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
-        MoveStressPosition.anchoredPosition = new Vector2(478.4f, -325.8f);
+        // Move bars parent to target — screen-size safe, replaces hardcoded values
+        MoveBarsToTarget();
 
         CheckCongratulation.SetActive(true);
 
@@ -142,7 +194,6 @@ public class Pause : MonoBehaviour
 
         SaveData.SavePlayer(TrustReward.value, StressReward.value);
 
-        // Sync surrender result into SessionData
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
@@ -151,7 +202,6 @@ public class Pause : MonoBehaviour
 
     public void ExitPressed()
     {
-        // Save data when exit is pressed
         SaveGameState();
 
         Time.timeScale = 1;
@@ -165,59 +215,51 @@ public class Pause : MonoBehaviour
 
     private void SaveGameState()
     {
-        // Get actual timer values from Timer.cs
         if (timerReference == null)
             timerReference = FindObjectOfType<Timer>();
 
         if (timerReference != null && SessionData.Instance != null)
         {
-            // Sync Timer values into SessionData before saving
             SessionData.Instance.ElapsedTime = timerReference.elapsedTime;
             SessionData.Instance.DayAdder = timerReference.DayAdder;
             SessionData.Instance.DaysText = "DAY " + timerReference.DayAdder;
         }
 
-        // Now save with the synced data
         if (playerProgress != null)
         {
             SaveData.SaveAllGameData(
-            TrustReward.value, StressReward.value,
-            timerReference.elapsedTime, timerReference.DayAdder, dayText.text,
-            GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
-            GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
-            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
-            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
-            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
-        );
+                TrustReward.value, StressReward.value,
+                timerReference.elapsedTime, timerReference.DayAdder, dayText.text,
+                GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
+                GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
+                SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
+                SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
+                SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
+            );
         }
         else
         {
             SaveData.SavePlayer(0f, 0f);
         }
 
-        Debug.Log("Game state saved with Timer values - Time: " + (timerReference != null ? timerReference.elapsedTime : 0) + 
+        Debug.Log("Game state saved - Time: " + (timerReference != null ? timerReference.elapsedTime : 0) +
                   ", Day: " + (timerReference != null ? timerReference.DayAdder : 1));
     }
 
     void Start()
     {
         Pause_Button_Image = Pause_Button.GetComponent<Image>();
-        playerProgress = FindObjectOfType<PlayerProgress>();
+        playerProgress     = FindObjectOfType<PlayerProgress>();
 
         if (Mute != null)
-        {
             MuteButtonImage = Mute.GetComponent<Image>();
-        }
 
         if (MuteButtonImage != null && MuteButtonImage.sprite != null)
-        {
             SoundOnSprite = MuteButtonImage.sprite;
-        }
 
-        // Restore mute state from SessionData when any scene loads
         if (SessionData.Instance != null)
         {
-            isSoundMuted = SessionData.Instance.IsMuted;
+            isSoundMuted        = SessionData.Instance.IsMuted;
             AudioListener.pause = isSoundMuted;
 
             if (MuteButtonImage != null)
@@ -269,5 +311,8 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         if (TrustTextPoints != null) TrustTextPoints.color = Color.green;
+
+        // Restore bars to original position when this object is disabled
+        ResetBarsPosition();
     }
 }

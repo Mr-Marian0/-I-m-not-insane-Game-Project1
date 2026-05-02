@@ -23,29 +23,30 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI trustChangeText;
 
     [Header("Trust & Stress Parent (Grid Layout Group)")]
-    // Assign the TrustAndStress parent GameObject that holds the GridLayoutGroup
     public RectTransform trustAndStressParent;
 
-    // Assign an empty GameObject sibling placed exactly where you want
-    // the bars to move to — Unity will calculate the correct position
-    // for any screen size automatically
+    // Empty GameObject placed exactly where you want the bars to move to.
+    // Set its Anchor Preset to Middle-Center in the Inspector so it is
+    // screen-size independent.
     public RectTransform choiceTargetPosition;
 
     private GridLayoutGroup trustAndStressGrid;
 
-    // Original RectTransform values of the parent
+    // Original RectTransform values
     private Vector2 originalParentAnchoredPos;
     private Vector2 originalParentSizeDelta;
+    private Vector2 originalAnchorMin;
+    private Vector2 originalAnchorMax;
+    private Vector2 originalPivot;
 
     // Original GridLayoutGroup values
     private Vector2 originalCellSize;
     private GridLayoutGroup.Constraint originalConstraint;
     private int originalConstraintCount;
 
-    // Only sizeDelta and cellSize are hardcoded — these are sizes not positions
-    // so they don't change between screen sizes
+    // Only size values are hardcoded — not positions
     private readonly Vector2 choiceParentSizeDelta = new Vector2(291.5371f, 291.5371f);
-    private readonly Vector2 choiceCellSize        = new Vector2(196.8f, 51.6f);
+    private readonly Vector2 choiceCellSize = new Vector2(196.8f, 51.6f);
     private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
 
     [Header("Bars")]
@@ -68,22 +69,24 @@ public class EventManager : MonoBehaviour
 
     private void Awake()
     {
-        // Store original image position
         if (eventImageRect != null)
             originalImagePos = eventImageRect.anchoredPosition;
 
-        // Get GridLayoutGroup from the parent and store all original values
         if (trustAndStressParent != null)
         {
+            // Store ALL transform values so reset is complete
             originalParentAnchoredPos = trustAndStressParent.anchoredPosition;
-            originalParentSizeDelta   = trustAndStressParent.sizeDelta;
+            originalParentSizeDelta = trustAndStressParent.sizeDelta;
+            originalAnchorMin = trustAndStressParent.anchorMin;
+            originalAnchorMax = trustAndStressParent.anchorMax;
+            originalPivot = trustAndStressParent.pivot;
 
             trustAndStressGrid = trustAndStressParent.GetComponent<GridLayoutGroup>();
 
             if (trustAndStressGrid != null)
             {
-                originalCellSize        = trustAndStressGrid.cellSize;
-                originalConstraint      = trustAndStressGrid.constraint;
+                originalCellSize = trustAndStressGrid.cellSize;
+                originalConstraint = trustAndStressGrid.constraint;
                 originalConstraintCount = trustAndStressGrid.constraintCount;
             }
         }
@@ -91,7 +94,6 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        // Restore bar values from SessionData when Scene 1 loads
         if (SessionData.Instance != null)
         {
             trustBar.value  = SessionData.Instance.Trust;
@@ -133,22 +135,23 @@ public class EventManager : MonoBehaviour
 
     private void ResetAllPositions()
     {
-        // Reset event image
         if (eventImageRect != null)
             eventImageRect.anchoredPosition = originalImagePos;
 
-        // Restore parent RectTransform
         if (trustAndStressParent != null)
         {
+            // Restore ALL anchor/pivot/position values
+            trustAndStressParent.anchorMin = originalAnchorMin;
+            trustAndStressParent.anchorMax = originalAnchorMax;
+            trustAndStressParent.pivot = originalPivot;
             trustAndStressParent.anchoredPosition = originalParentAnchoredPos;
-            trustAndStressParent.sizeDelta        = originalParentSizeDelta;
+            trustAndStressParent.sizeDelta = originalParentSizeDelta;
         }
 
-        // Restore GridLayoutGroup values
         if (trustAndStressGrid != null)
         {
-            trustAndStressGrid.cellSize        = originalCellSize;
-            trustAndStressGrid.constraint      = originalConstraint;
+            trustAndStressGrid.cellSize = originalCellSize;
+            trustAndStressGrid.constraint = originalConstraint;
             trustAndStressGrid.constraintCount = originalConstraintCount;
         }
     }
@@ -167,7 +170,6 @@ public class EventManager : MonoBehaviour
         else
             stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100);
 
-        // Update SessionData in memory
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(trustBar.value, stressBar.value);
@@ -176,7 +178,6 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.DaysText    = dayText.text;
         }
 
-        // Persist to disk via SaveData
         SaveData.SaveAllGameData(
             trustBar.value, stressBar.value,
             TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
@@ -187,19 +188,22 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
         );
 
-        // Move the parent to the target position read from the scene at runtime
-        // instead of hardcoded pixel values — this works correctly on any screen size
+        // Copy ALL anchor/pivot/position values from the reference object.
+        // anchorMin and anchorMax are normalized (0-1) so they are the same
+        // on every screen size — this is what makes it screen-safe.
         if (trustAndStressParent != null && choiceTargetPosition != null)
         {
+            trustAndStressParent.anchorMin = choiceTargetPosition.anchorMin;
+            trustAndStressParent.anchorMax = choiceTargetPosition.anchorMax;
+            trustAndStressParent.pivot = choiceTargetPosition.pivot;
             trustAndStressParent.anchoredPosition = choiceTargetPosition.anchoredPosition;
-            trustAndStressParent.sizeDelta        = choiceParentSizeDelta;
+            trustAndStressParent.sizeDelta = choiceParentSizeDelta;
         }
 
-        // Apply changed GridLayoutGroup values
         if (trustAndStressGrid != null)
         {
-            trustAndStressGrid.cellSize        = choiceCellSize;
-            trustAndStressGrid.constraint      = choiceConstraint;
+            trustAndStressGrid.cellSize = choiceCellSize;
+            trustAndStressGrid.constraint = choiceConstraint;
             trustAndStressGrid.constraintCount = 2;
         }
 

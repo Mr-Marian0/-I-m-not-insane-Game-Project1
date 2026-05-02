@@ -22,82 +22,145 @@ public class StartTimer : MonoBehaviour
     public int minutes;
     public int seconds;
 
-    //TRUST RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
-    public RectTransform MoveTrustPosition;
+    [Header("Bars Parent & Target")]
+    public RectTransform barsParent;
+    public RectTransform choiceTargetPosBars;
 
-    //STRESS RECT TRANSFORM POSITIONS - REPLACE TO CONGRATULATION - POSITIONS
-    public RectTransform MoveStressPosition;
+    private Vector2 originalBarsAnchoredPos;
+    private Vector2 originalBarsSizeDelta;
+    private Vector2 originalBarsAnchorMin;
+    private Vector2 originalBarsAnchorMax;
+    private Vector2 originalBarsPivot;
+
+    private GridLayoutGroup barsGrid;
+    private Vector2 originalCellSize;
+    private GridLayoutGroup.Constraint originalConstraint;
+    private int originalConstraintCount;
+
+    private readonly Vector2 choiceCellSize = new Vector2(196.8f, 51.6f);
+    private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
+
+    // When true, Update() keeps applying the target position every frame
+    // so Unity's layout rebuild cannot override it
+    private bool keepBarsAtTarget = false;
 
     public bool PauseTheTimer = true;
-   
+
+    private void Awake()
+    {
+        if (barsParent != null)
+        {
+            originalBarsAnchoredPos = barsParent.anchoredPosition;
+            originalBarsSizeDelta = barsParent.sizeDelta;
+            originalBarsAnchorMin = barsParent.anchorMin;
+            originalBarsAnchorMax = barsParent.anchorMax;
+            originalBarsPivot = barsParent.pivot;
+
+            barsGrid = barsParent.GetComponent<GridLayoutGroup>();
+            if (barsGrid != null)
+            {
+                originalCellSize = barsGrid.cellSize;
+                originalConstraint = barsGrid.constraint;
+                originalConstraintCount = barsGrid.constraintCount;
+            }
+        }
+    }
+
+    private void MoveBarsToTarget()
+    {
+        if (barsParent == null || choiceTargetPosBars == null) return;
+
+        barsParent.anchorMin = choiceTargetPosBars.anchorMin;
+        barsParent.anchorMax = choiceTargetPosBars.anchorMax;
+        barsParent.pivot = choiceTargetPosBars.pivot;
+        barsParent.anchoredPosition = choiceTargetPosBars.anchoredPosition;
+
+        if (barsGrid != null)
+        {
+            barsGrid.cellSize = choiceCellSize;
+            barsGrid.constraint = choiceConstraint;
+            barsGrid.constraintCount = 2;
+        }
+    }
+
+    private void ResetBarsPosition()
+    {
+        if (barsParent == null) return;
+
+        keepBarsAtTarget = false;
+
+        barsParent.anchorMin = originalBarsAnchorMin;
+        barsParent.anchorMax = originalBarsAnchorMax;
+        barsParent.pivot = originalBarsPivot;
+        barsParent.anchoredPosition = originalBarsAnchoredPos;
+        barsParent.sizeDelta = originalBarsSizeDelta;
+
+        if (barsGrid != null)
+        {
+            barsGrid.cellSize = originalCellSize;
+            barsGrid.constraint = originalConstraint;
+            barsGrid.constraintCount = originalConstraintCount;
+        }
+    }
+
     void Update()
     {
+        // Keep applying target position every frame to fight layout rebuilds
+        if (keepBarsAtTarget)
+            MoveBarsToTarget();
 
-        //PAUSE
-        if(PauseTheTimer)
+        if (PauseTheTimer)
         {
             minutes = Mathf.FloorToInt(TimeLimit / 60);
             seconds = Mathf.FloorToInt(TimeLimit % 60);
             TimerMission.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
-        //RESET
-
-
-        //TIMER DURING CHALLENGE
         if (TimeLimit > 0)
         {
             TimeLimit -= Time.deltaTime;
         }
-        // DETECT IF THE TIMER ENDS
         else if (TimeLimit < 0)
         {
             TimeLimit = 0;
             TimerMission.color = Color.red;
-            ActivateCongratulation();
-
-            // Save the reward values directly
-            SaveData.SavePlayer(TrustReward.value, StressReward.value);
-            
-            YouLoseReference.SetActive(true);
-            ConfettiReference.SetActive(true);
+            TimerEnded();
         }
-        
+    }
+
+    private void TimerEnded()
+    {
+        keepBarsAtTarget = true;
+        ConvertTimeToReward(0);
+        ActivateCongratulation();
+        SaveData.SavePlayer(TrustReward.value, StressReward.value);
+    }
+
+    private void ActivateCongratulation()
+    {
+        CongratulationReference.SetActive(true);
+        YouLoseReference.SetActive(true);
+        ConfettiReference.SetActive(true);
+    }
+
+    public void ConvertTimeToReward(int sec)
+    {
+        TrustReward.value += 0;
+        TrustTextPoints.text = "+0";
+
+        StressReward.value += 30;
+        StressTextPoints.text = "+30";
     }
 
     public void OnEnable()
     {
         TimeLimit = 60;
+        keepBarsAtTarget = false;
     }
 
-    public void OnDisable(){
+    public void OnDisable()
+    {
         TimerMission.color = Color.white;
-    }
-
-    void ActivateCongratulation()
-    {
-        foreach (Transform puzz in PuzzleReference.transform)
-        {
-            if (puzz.gameObject.activeSelf)
-            {
-                
-                MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -264.7f);
-                MoveStressPosition.anchoredPosition = new Vector2(448.88f, -325.8f);
-
-                ConvertTimeToReward(0);
-                CongratulationReference.SetActive(true);
-                
-                break;
-            }
-        }
-    }
-
-    public void ConvertTimeToReward(int sec)
-    {
-            TrustReward.value += 0;
-            TrustTextPoints.text = "+0";
-
-            StressReward.value += 30;
-            StressTextPoints.text = "+30";
+        ResetBarsPosition();
     }
 }

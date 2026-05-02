@@ -8,7 +8,6 @@ using static TMPro.TMP_Compatibility;
 
 public class CheckAnswer : MonoBehaviour
 {
-
     public RandomQuestion InheritRandomQuestion;
     public Door1Collider Choice1;
     public Door2Collider Choice2;
@@ -23,28 +22,97 @@ public class CheckAnswer : MonoBehaviour
     public TextMeshProUGUI StressTextPoints;
     public Slider TrustReward;
     public Slider StressReward;
-    //Enable Congratulation
+
     public GameObject Congratulation;
     public GameObject YouWin;
     public GameObject YouLose;
     public GameObject Confetti;
     public GameObject Enemy1;
 
-    //Move Stress and Trust
-    public RectTransform MoveTrustPosition;
-    public RectTransform MoveStressPosition;
-    public Vector3 TrustDefaultPosXY;
-    public Vector3 StressDefaultPosXY;
+    [Header("Bars Parent & Target")]
+    public RectTransform barsParent;
+    public RectTransform choiceTargetPosBars;
+
+    private Vector2 originalBarsAnchoredPos;
+    private Vector2 originalBarsSizeDelta;
+    private Vector2 originalBarsAnchorMin;
+    private Vector2 originalBarsAnchorMax;
+    private Vector2 originalBarsPivot;
+
+    private GridLayoutGroup barsGrid;
+    private Vector2 originalCellSize;
+    private GridLayoutGroup.Constraint originalConstraint;
+    private int originalConstraintCount;
+
+    private readonly Vector2 choiceCellSize = new Vector2(196.8f, 51.6f);
+    private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
+
+    private bool keepBarsAtTarget = false;
 
     public EnemyScript InheritEnemyScript;
 
-    int PresentPosition = 4; //SET TO 4 INCASE PLAYER DIDN"T CHOSE THE A DOOR.
-    //Take the Answer key from RandomQuestion(Script)
+    int PresentPosition = 4;
     int RealAnswer;
+
+    private void Awake()
+    {
+        if (barsParent != null)
+        {
+            originalBarsAnchoredPos = barsParent.anchoredPosition;
+            originalBarsSizeDelta = barsParent.sizeDelta;
+            originalBarsAnchorMin = barsParent.anchorMin;
+            originalBarsAnchorMax = barsParent.anchorMax;
+            originalBarsPivot = barsParent.pivot;
+
+            barsGrid = barsParent.GetComponent<GridLayoutGroup>();
+            if (barsGrid != null)
+            {
+                originalCellSize = barsGrid.cellSize;
+                originalConstraint = barsGrid.constraint;
+                originalConstraintCount = barsGrid.constraintCount;
+            }
+        }
+    }
+
+    private void MoveBarsToTarget()
+    {
+        if (barsParent == null || choiceTargetPosBars == null) return;
+
+        barsParent.anchorMin = choiceTargetPosBars.anchorMin;
+        barsParent.anchorMax = choiceTargetPosBars.anchorMax;
+        barsParent.pivot = choiceTargetPosBars.pivot;
+        barsParent.anchoredPosition = choiceTargetPosBars.anchoredPosition;
+
+        if (barsGrid != null)
+        {
+            barsGrid.cellSize = choiceCellSize;
+            barsGrid.constraint = choiceConstraint;
+            barsGrid.constraintCount = 2;
+        }
+    }
+
+    private void ResetBarsPosition()
+    {
+        if (barsParent == null) return;
+
+        keepBarsAtTarget = false;
+
+        barsParent.anchorMin = originalBarsAnchorMin;
+        barsParent.anchorMax = originalBarsAnchorMax;
+        barsParent.pivot = originalBarsPivot;
+        barsParent.anchoredPosition = originalBarsAnchoredPos;
+        barsParent.sizeDelta = originalBarsSizeDelta;
+
+        if (barsGrid != null)
+        {
+            barsGrid.cellSize = originalCellSize;
+            barsGrid.constraint = originalConstraint;
+            barsGrid.constraintCount = originalConstraintCount;
+        }
+    }
 
     private void Start()
     {
-        // Load saved values into the sliders so rewards increment properly
         PlayerData data = SaveData.LoadPlayer();
         if (data != null)
         {
@@ -56,145 +124,144 @@ public class CheckAnswer : MonoBehaviour
 
     void Update()
     {
+        if (keepBarsAtTarget)
+            MoveBarsToTarget();
 
         if (Choice1.PlayerChooseDoor1 == true)
-        {
             PresentPosition = 0;
-           // Debug.Log("Present Position is: 111111111111");
-        }
-        else if(Choice2.PlayerChooseDoor2 == true)
-        {
+        else if (Choice2.PlayerChooseDoor2 == true)
             PresentPosition = 1;
-            //Debug.Log("Present Position is: 22222222222");
-        }
-        else if(Choice3.PlayerChooseDoor3 == true)
-        {
+        else if (Choice3.PlayerChooseDoor3 == true)
             PresentPosition = 2;
-            //Debug.Log("Present Position is: 333333333333");
-        }
-        
     }
-    
+
     public void CheckTheAnswer()
     {
-        //Check if your A.N.S.W.E.R is correct
-        RealAnswer = InheritRandomQuestion.GenerateQuestion;
-        if (InheritRandomQuestion.AnswerKey50[RealAnswer] == PresentPosition)
+    RealAnswer = InheritRandomQuestion.GenerateQuestion;
+
+    if (InheritRandomQuestion.AnswerKey50[RealAnswer] == PresentPosition)
+    {
+        CorrectAnswer();
+    }
+    else if (PresentPosition == 4 || Choice1.PlayerChooseDoor1 == false && Choice2.PlayerChooseDoor2 == false && Choice3.PlayerChooseDoor3 == false)
+    {
+        NoDoorChosen();
+    }
+    else
+    {
+        WrongAnswer();
+    }
+
+    // Always runs after any outcome — start keeping bars at target every frame
+    keepBarsAtTarget = true;
+    Debug.Log("keepBarsAtTarget set to true");
+
+    if (SessionData.Instance != null)
+        SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+    }
+
+    private void CorrectAnswer()
+    {
+        Debug.Log("CORRECT!!");
+
+        ShowCongratulation();
+        YouWin.SetActive(true);
+
+        if (Congratulation.activeSelf)
         {
-            Debug.Log("CORRECT!!");
+            TrustReward.value += 10;
+            TrustTextPoints.text = "+10";
 
-            Congratulation.SetActive(true);
-            YouWin.SetActive(true);
-            Confetti.SetActive(true);
+            StressReward.value -= 10;
+            StressTextPoints.text = "-10";
+            StressTextPoints.color = Color.green;
 
-            Door1Col.SetActive(false);
-            Door2Col.SetActive(false);
-            Door3Col.SetActive(false);
-
-        if(Congratulation.activeSelf == true){
-                TrustReward.value += 10;
-                TrustTextPoints.text = "+10";
-
-                StressReward.value -= 10;
-                StressTextPoints.text = "-10";
-                StressTextPoints.color = Color.green;
-
-                Enemy1.SetActive(false);
-                PauseButton.SetActive(false);
-                PauseCanvas.SetActive(false);
-        }
-
-            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
-            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
-
-        if (SessionData.Instance != null)
-        {
-            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
-        }
-        }
-        else if(PresentPosition == 4 || Choice1.PlayerChooseDoor1 == false && Choice2.PlayerChooseDoor2 == false && Choice3.PlayerChooseDoor3 == false)
-        {
-
-            CinemachineShake.Instance.ShakeCamera(5f, .1f);
-
-            Congratulation.SetActive(true);
-            YouLose.SetActive(true);
-            Confetti.SetActive(true);
-
-            Door1Col.SetActive(false);
-            Door2Col.SetActive(false);
-            Door3Col.SetActive(false);
-            
-            if(Congratulation.activeSelf == true){
-                TrustReward.value += 0;
-                TrustTextPoints.text = "+0";
-                TrustTextPoints.color = Color.gray;
-
-                StressReward.value += 20;
-                StressTextPoints.text = "+20";
-
-                Enemy1.SetActive(false);
-                PauseButton.SetActive(false);
-                PauseCanvas.SetActive(false);
-            }
-
-            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
-            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
-
-        if (SessionData.Instance != null)
-        {
-            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
-        }
-        }
-        else
-        {
-            Debug.Log("WRONG!!!");
-            InheritEnemyScript.speed = 2f;
-            CinemachineShake.Instance.ShakeCamera(5f, .1f);
-
-            Congratulation.SetActive(true);
-            YouLose.SetActive(true);
-            Confetti.SetActive(true);
-
-            Door1Col.SetActive(false);
-            Door2Col.SetActive(false);
-            Door3Col.SetActive(false);
+            Enemy1.SetActive(false);
             PauseButton.SetActive(false);
             PauseCanvas.SetActive(false);
-
-            if(Congratulation.activeSelf == true){
-                TrustReward.value += 0;
-                TrustTextPoints.text = "+0";
-                TrustTextPoints.color = Color.gray;
-
-                StressReward.value += 20;
-                StressTextPoints.text = "+20";
-
-                Enemy1.SetActive(false);
-            }
-
-            MoveTrustPosition.anchoredPosition = new Vector2(-8.8f, -261.2f);
-            MoveStressPosition.anchoredPosition = new Vector2(474.6f, -325.8f);
         }
 
-        // Save the reward values
+        keepBarsAtTarget = true;
+
         if (SessionData.Instance != null)
-        {
             SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+    }
+
+    private void NoDoorChosen()
+    {
+        CinemachineShake.Instance.ShakeCamera(5f, .1f);
+
+        ShowCongratulation();
+        YouLose.SetActive(true);
+
+        if (Congratulation.activeSelf)
+        {
+            TrustReward.value += 0;
+            TrustTextPoints.text = "+0";
+            TrustTextPoints.color = Color.gray;
+
+            StressReward.value += 20;
+            StressTextPoints.text = "+20";
+
+            Enemy1.SetActive(false);
+            PauseButton.SetActive(false);
+            PauseCanvas.SetActive(false);
         }
+
+        keepBarsAtTarget = true;
+
+        if (SessionData.Instance != null)
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+    }
+
+    private void WrongAnswer()
+    {
+        Debug.Log("WRONG!!!");
+        InheritEnemyScript.speed = 2f;
+        CinemachineShake.Instance.ShakeCamera(5f, .1f);
+
+        ShowCongratulation();
+        YouLose.SetActive(true);
+
+        PauseButton.SetActive(false);
+        PauseCanvas.SetActive(false);
+
+        if (Congratulation.activeSelf)
+        {
+            TrustReward.value += 0;
+            TrustTextPoints.text = "+0";
+            TrustTextPoints.color = Color.gray;
+
+            StressReward.value += 20;
+            StressTextPoints.text = "+20";
+
+            Enemy1.SetActive(false);
+        }
+
+        keepBarsAtTarget = true;
+    }
+
+    private void ShowCongratulation()
+    {
+        Congratulation.SetActive(true);
+        Confetti.SetActive(true);
+        Door1Col.SetActive(false);
+        Door2Col.SetActive(false);
+        Door3Col.SetActive(false);
     }
 
     public void OnEnable()
     {
-        //RESET
+        keepBarsAtTarget = false;
         TrustTextPoints.text = "";
         StressTextPoints.text = "";
         StressTextPoints.color = Color.red;
         TrustTextPoints.color = Color.green;
     }
 
-    public void OnDisable(){
+    public void OnDisable()
+    {
         InheritEnemyScript.speed = 1.5f;
+        ResetBarsPosition();
     }
-
 }
