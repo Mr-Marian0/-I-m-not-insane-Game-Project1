@@ -19,8 +19,8 @@ public class EventManager : MonoBehaviour
 
     [Header("Result Panel")]
     public GameObject resultPanel;
-    public TextMeshProUGUI stressChangeText;
     public TextMeshProUGUI trustChangeText;
+    public TextMeshProUGUI stressChangeText;
 
     [Header("Trust & Stress Parent (Grid Layout Group)")]
     public RectTransform trustAndStressParent;

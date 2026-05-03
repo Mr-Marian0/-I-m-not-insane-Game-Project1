@@ -3295,8 +3295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -8701,8 +8701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -10202,8 +10202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -12662,8 +12662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -12738,8 +12738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -13052,8 +13052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -13818,8 +13818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -17773,8 +17773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -21517,8 +21517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -29997,8 +29997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -36785,8 +36785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -38602,8 +38602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -39806,8 +39806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -42379,8 +42379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -43281,8 +43281,8 @@ MonoBehaviour:
   barsParent: {fileID: 314422402}
   ModifyGridWithBarsParent: {fileID: 314422403}
   choiceTargetPosBars: {fileID: 848928342}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   TrustReward: {fileID: 1343325638}
   StressReward: {fileID: 1794709578}
   SoundOnSprite: {fileID: 21300000, guid: 99dcbdea6ebe2fc46a78d9ef58fc1650, type: 3}
@@ -45886,8 +45886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -48227,8 +48227,8 @@ MonoBehaviour:
   YouLoseReference: {fileID: 229536654}
   ConfettiReference: {fileID: 1412073248}
   PuzzleRewardReference: {fileID: 0}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   TrustReward: {fileID: 1343325638}
   StressReward: {fileID: 1794709578}
   TimeLimit: 60
@@ -50222,8 +50222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -58909,8 +58909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -63986,8 +63986,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -64151,8 +64151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}
@@ -66340,8 +66340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InheritPuzzleKeyColliders: {fileID: 1855317770}
-  TrustTextPoints: {fileID: 1899629160}
-  StressTextPoints: {fileID: 1781486648}
+  StressTextPoints: {fileID: 1899629160}
+  TrustTextPoints: {fileID: 1781486648}
   StressPercentageText: {fileID: 1413469594}
   TrustPercentageText: {fileID: 1091200811}
   barsParent: {fileID: 314422402}

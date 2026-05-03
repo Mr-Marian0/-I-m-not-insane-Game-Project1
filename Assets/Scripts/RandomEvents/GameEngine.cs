@@ -197,7 +197,7 @@ public class GameEngine : MonoBehaviour
                               !flagMissionDoor && (SessionData.Instance == null || !SessionData.Instance.Mission2Entered);
 
         // First Mission - Active for 2 minutes
-        if (mission1Active)
+        if (mission1Active && pressToSleepReference.IsSleeping == true)
         {
             if (!mission1Activated)
             {
@@ -213,7 +213,7 @@ public class GameEngine : MonoBehaviour
         // Second Mission - Active for 2 minutes
         if (mission2Active)
         {
-            if (!mission2Activated)
+            if (!mission2Activated && pressToSleepReference.IsSleeping == true)
             {
                 mission2Activated = true;
                 if (pressToSleepReference.isActiveAndEnabled) pressToSleepReference.SleepButtonPressed();

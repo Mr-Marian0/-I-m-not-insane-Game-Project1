@@ -39,8 +39,8 @@ public class Pause : MonoBehaviour
     private const GridLayoutGroup.Constraint choiceConstraint = GridLayoutGroup.Constraint.FixedRowCount;
 
     // Restart functions to update the sliders
-    public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
+    public TextMeshProUGUI TrustTextPoints;
     public Slider TrustReward;
     public Slider StressReward;
 

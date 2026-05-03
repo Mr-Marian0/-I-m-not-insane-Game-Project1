@@ -23,9 +23,9 @@ public class EnemyScript : MonoBehaviour
     public GameObject JoyStickDisable;
 
     public Slider TrustReward;
-    public TextMeshProUGUI TrustTextPoints;
-    public Slider StressReward;
     public TextMeshProUGUI StressTextPoints;
+    public Slider StressReward;
+    public TextMeshProUGUI TrustTextPoints;
     public GameObject Enemy1;
 
     [Header("Bars Parent & Target")]

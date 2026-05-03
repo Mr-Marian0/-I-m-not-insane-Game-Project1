@@ -317,15 +317,14 @@ MonoBehaviour:
   Door3Col: {fileID: 521026761}
   PauseButton: {fileID: 1446980402}
   PauseCanvas: {fileID: 993460929}
+  JoyStickDisable: {fileID: 1430758120}
   TrustReward: {fileID: 515743103}
-  TrustTextPoints: {fileID: 1675247531}
+  StressTextPoints: {fileID: 1675247531}
   StressReward: {fileID: 625122910}
-  StressTextPoints: {fileID: 1545823783}
+  TrustTextPoints: {fileID: 1545823783}
   Enemy1: {fileID: 38128673}
-  MoveStressPosition: {fileID: 625122909}
-  MoveTrustPosition: {fileID: 515743102}
-  TrustDefaultPosXY: {x: 0, y: 0, z: 0}
-  StressDefaultPosXY: {x: 0, y: 0, z: 0}
+  barsParent: {fileID: 668504001}
+  choiceTargetPosBars: {fileID: 1427605130}
   EnemyObject: {fileID: 38128673}
   InheritRandomQuestion: {fileID: 1929097778}
 --- !u!1 &42547556
@@ -972,8 +971,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrustDefaultPosition: {x: -1108, y: 1026.9, z: 0}
   StressDefualtPosition: {x: 377, y: -58.79999, z: 0}
-  MoveTrustPosition: {fileID: 0}
-  MoveStressPosition: {fileID: 0}
+  MoveTrustPosition: {fileID: 515743102}
+  MoveStressPosition: {fileID: 625122909}
 --- !u!114 &195796027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1037,6 @@ GameObject:
   - component: {fileID: 343190744}
   - component: {fileID: 343190743}
   - component: {fileID: 343190745}
-  - component: {fileID: 343190746}
   - component: {fileID: 343190747}
   m_Layer: 0
   m_Name: DoorButton
@@ -1149,7 +1147,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343190746}
+      - m_Target: {fileID: 1929097780}
         m_TargetAssemblyTypeName: CheckAnswer, Assembly-CSharp
         m_MethodName: CheckTheAnswer
         m_Mode: 1
@@ -1161,41 +1159,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &343190746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343190741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599a44c445606c1448f704234de4ff7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InheritRandomQuestion: {fileID: 1929097778}
-  Choice1: {fileID: 1984491894}
-  Choice2: {fileID: 649715555}
-  Choice3: {fileID: 521026764}
-  Door1Col: {fileID: 1984491891}
-  Door2Col: {fileID: 649715552}
-  Door3Col: {fileID: 521026761}
-  PauseButton: {fileID: 1446980402}
-  PauseCanvas: {fileID: 993460929}
-  TrustTextPoints: {fileID: 1675247531}
-  StressTextPoints: {fileID: 1545823783}
-  TrustReward: {fileID: 515743103}
-  StressReward: {fileID: 625122910}
-  Congratulation: {fileID: 1088377653}
-  YouWin: {fileID: 150098267}
-  YouLose: {fileID: 1925844402}
-  Confetti: {fileID: 891242362}
-  Enemy1: {fileID: 38128673}
-  MoveTrustPosition: {fileID: 515743102}
-  MoveStressPosition: {fileID: 625122909}
-  TrustDefaultPosXY: {x: 0, y: 0, z: 0}
-  StressDefaultPosXY: {x: 0, y: 0, z: 0}
-  InheritEnemyScript: {fileID: 38128678}
 --- !u!114 &343190747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3203,7 +3166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &857752200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5699,8 +5662,8 @@ MonoBehaviour:
   barsParent: {fileID: 668504001}
   ModifyGridWithBarsParent: {fileID: 668504002}
   choiceTargetPosBars: {fileID: 1427605130}
-  TrustTextPoints: {fileID: 1675247531}
   StressTextPoints: {fileID: 1545823783}
+  TrustTextPoints: {fileID: 1675247531}
   TrustReward: {fileID: 515743103}
   StressReward: {fileID: 625122910}
   SoundOnSprite: {fileID: 21300000, guid: 99dcbdea6ebe2fc46a78d9ef58fc1650, type: 3}
@@ -6156,7 +6119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343190746}
+      - m_Target: {fileID: 1929097780}
         m_TargetAssemblyTypeName: CheckAnswer, Assembly-CSharp
         m_MethodName: CheckTheAnswer
         m_Mode: 1
@@ -7243,6 +7206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929097779}
   - component: {fileID: 1929097778}
+  - component: {fileID: 1929097780}
   m_Layer: 0
   m_Name: GameEngine
   m_TagString: Untagged
@@ -7412,6 +7376,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929097780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929097777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599a44c445606c1448f704234de4ff7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InheritRandomQuestion: {fileID: 1929097778}
+  Choice1: {fileID: 1984491894}
+  Choice2: {fileID: 649715555}
+  Choice3: {fileID: 521026764}
+  Door1Col: {fileID: 1984491891}
+  Door2Col: {fileID: 649715552}
+  Door3Col: {fileID: 521026761}
+  PauseButton: {fileID: 1446980402}
+  PauseCanvas: {fileID: 993460929}
+  TrustTextPoints: {fileID: 1545823783}
+  StressTextPoints: {fileID: 1675247531}
+  TrustReward: {fileID: 515743103}
+  StressReward: {fileID: 625122910}
+  Congratulation: {fileID: 1088377653}
+  YouWin: {fileID: 150098267}
+  YouLose: {fileID: 1925844402}
+  Confetti: {fileID: 891242362}
+  Enemy1: {fileID: 38128673}
+  JoyStickReference: {fileID: 1430758120}
+  barsParent: {fileID: 668504001}
+  choiceTargetPosBars: {fileID: 1427605130}
+  InheritEnemyScript: {fileID: 38128678}
 --- !u!1 &1984491891
 GameObject:
   m_ObjectHideFlags: 0

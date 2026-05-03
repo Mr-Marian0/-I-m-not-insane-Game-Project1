@@ -9,8 +9,8 @@ public class PuzzleReward : MonoBehaviour
 {
     public PuzzlesKeyColliders InheritPuzzleKeyColliders;
 
-    public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
+    public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressPercentageText;
     public TextMeshProUGUI TrustPercentageText;
 

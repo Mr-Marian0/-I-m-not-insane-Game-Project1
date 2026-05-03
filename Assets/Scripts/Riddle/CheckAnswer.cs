@@ -28,6 +28,7 @@ public class CheckAnswer : MonoBehaviour
     public GameObject YouLose;
     public GameObject Confetti;
     public GameObject Enemy1;
+    public GameObject JoyStickReference;
 
     [Header("Bars Parent & Target")]
     public RectTransform barsParent;
@@ -179,6 +180,7 @@ public class CheckAnswer : MonoBehaviour
             Enemy1.SetActive(false);
             PauseButton.SetActive(false);
             PauseCanvas.SetActive(false);
+            JoyStickReference.SetActive(false);
         }
 
         keepBarsAtTarget = true;
@@ -206,6 +208,7 @@ public class CheckAnswer : MonoBehaviour
             Enemy1.SetActive(false);
             PauseButton.SetActive(false);
             PauseCanvas.SetActive(false);
+            JoyStickReference.SetActive(false);
         }
 
         keepBarsAtTarget = true;
@@ -225,6 +228,7 @@ public class CheckAnswer : MonoBehaviour
 
         PauseButton.SetActive(false);
         PauseCanvas.SetActive(false);
+        JoyStickReference.SetActive(false);
 
         if (Congratulation.activeSelf)
         {

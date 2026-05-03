@@ -14,8 +14,8 @@ public class StartTimer : MonoBehaviour
     public GameObject YouLoseReference;
     public GameObject ConfettiReference;
     public PuzzleReward PuzzleRewardReference;
-    public TextMeshProUGUI TrustTextPoints;
     public TextMeshProUGUI StressTextPoints;
+    public TextMeshProUGUI TrustTextPoints;
     public Slider TrustReward;
     public Slider StressReward;
     public float TimeLimit;
