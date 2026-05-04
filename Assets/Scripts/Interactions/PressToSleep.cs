@@ -18,7 +18,7 @@ public class PressToSleep : MonoBehaviour
     [Header("Animator")]
     public Animator Anim;
 
-    private Vector3 buttonOriginalPos;
+    public Vector3 buttonOriginalPos;
 
     void Start()
     {
