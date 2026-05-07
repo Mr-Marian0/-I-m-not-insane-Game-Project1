@@ -133,7 +133,12 @@ public class StartTimer : MonoBehaviour
         keepBarsAtTarget = true;
         ConvertTimeToReward(0);
         ActivateCongratulation();
-        SaveData.SavePlayer(TrustReward.value, StressReward.value);
+
+        if(SessionData.Instance != null)
+        {
+            SessionData.Instance.stressBar.value = StressReward.value;
+            SessionData.Instance.trustBar.value = TrustReward.value;
+        }
     }
 
     private void ActivateCongratulation()

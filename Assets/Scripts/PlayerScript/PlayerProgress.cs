@@ -29,7 +29,7 @@ public class PlayerProgress : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData data = SaveData.LoadPlayer();
-        
+
         if (data != null)
         {
             StressBar = data.StressData;
@@ -70,6 +70,14 @@ public class PlayerProgress : MonoBehaviour
     public void Start()
     {
         LoadPlayer();
+
+        if(SessionData.Instance != null && SessionData.Instance.FlagToLoadSessionData == true)
+        {
+            StressSlider.value = SessionData.Instance.Stress;
+            TrustSlider.value = SessionData.Instance.Trust;
+            StressBar = SessionData.Instance.Stress;
+            TrustBar = SessionData.Instance.Trust;
+        }
     }
 
 }

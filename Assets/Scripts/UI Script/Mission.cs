@@ -8,22 +8,4 @@ using Unity.VisualScripting;
 public class Mission : MonoBehaviour
 {
 
-    [SerializeField] Slider StressBar;
-    [SerializeField] Slider TrustBar;
-
-    private void Start()
-    {
-        
-        
-    }
-
-    void Update()
-    {
-
-
-
-       
-
-    }
-
 }

@@ -50,7 +50,7 @@ public class Pause : MonoBehaviour
     public Sprite SoundOffSprite;
     public TextMeshProUGUI SoundButton_text;
     public TextMeshProUGUI dayText;
-    private PlayerProgress playerProgress;
+    public PlayerProgress playerProgress;
     public Timer timerReference;
     public GameEngine GameEngineReference;
 
@@ -104,6 +104,10 @@ public class Pause : MonoBehaviour
         Show_Pause_Menu.SetActive(true);
         Signal1 = true;
 
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
         StartCoroutine(ActivateDelay(0.5f));
     }
 
@@ -192,8 +196,6 @@ public class Pause : MonoBehaviour
         StressReward.value += 20;
         StressTextPoints.text = "+20";
 
-        SaveData.SavePlayer(TrustReward.value, StressReward.value);
-
         if (SessionData.Instance != null)
         {
             SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
@@ -206,7 +208,6 @@ public class Pause : MonoBehaviour
 
         Time.timeScale = 1;
         Application.Quit();
-        Debug.Log("Exit");
 
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
@@ -225,8 +226,9 @@ public class Pause : MonoBehaviour
             SessionData.Instance.DaysText = "DAY " + timerReference.DayAdder;
         }
 
-        if (playerProgress != null)
+        if (playerProgress != null && SessionData.Instance.FlagToLoadSessionData == true)
         {
+            Debug.Log("SAVING THE FILES AFTER EXIT");
             SaveData.SaveAllGameData(
                 TrustReward.value, StressReward.value,
                 timerReference.elapsedTime, timerReference.DayAdder, dayText.text,
@@ -236,10 +238,6 @@ public class Pause : MonoBehaviour
                 SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
                 SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
             );
-        }
-        else
-        {
-            SaveData.SavePlayer(0f, 0f);
         }
 
         Debug.Log("Game state saved - Time: " + (timerReference != null ? timerReference.elapsedTime : 0) +
@@ -259,7 +257,7 @@ public class Pause : MonoBehaviour
 
         if (SessionData.Instance != null)
         {
-            isSoundMuted        = SessionData.Instance.IsMuted;
+            isSoundMuted = SessionData.Instance.IsMuted;
             AudioListener.pause = isSoundMuted;
 
             if (MuteButtonImage != null)

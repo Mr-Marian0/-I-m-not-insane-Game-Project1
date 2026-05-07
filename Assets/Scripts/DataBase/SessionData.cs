@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class SessionData : MonoBehaviour
     public static SessionData Instance;
 
     [Header("Bar Values")]
-    public float Trust;
+    public float Trust = 99f;
     public float Stress;
 
     [Header("Player Position")]
@@ -40,6 +41,7 @@ public class SessionData : MonoBehaviour
     public bool NewGame = false;
 
     private PlayerProgress playerProgress;
+    public bool FlagToLoadSessionData = false;
     private bool isResettingData = false; // Flag to prevent auto-save during reset
 
     private void Awake()
@@ -71,7 +73,7 @@ public class SessionData : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        if (!isResettingData && !NewGame)
+        if (!isResettingData && !NewGame && FlagToLoadSessionData == true)
         {
             SaveCurrentState();
         }
@@ -105,7 +107,7 @@ public class SessionData : MonoBehaviour
 
     // Called by PressDoor before leaving Scene 1
     public void SaveScene1State(float trust, float stress, Vector3 playerPos, float elapsedTime, int dayAdder, 
-    string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2, bool mission1Entered, bool mission2Entered, bool event1Triggered, bool event2Triggered)
+    string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2, bool mission1Entered, bool mission2Entered, bool event1Triggered, bool event2Triggered, bool flagToSaveSessionData)
     {
         Trust = trust;
         Stress = stress;
@@ -121,6 +123,7 @@ public class SessionData : MonoBehaviour
         Mission2Entered = mission2Entered;
         Event1Triggered = event1Triggered;
         Event2Triggered = event2Triggered;
+        FlagToLoadSessionData = flagToSaveSessionData;
     }
 
     // Called by EventManager after every choice

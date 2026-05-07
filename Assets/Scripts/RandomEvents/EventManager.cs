@@ -31,6 +31,7 @@ public class EventManager : MonoBehaviour
     public RectTransform choiceTargetPosition;
 
     private GridLayoutGroup trustAndStressGrid;
+    public PlayerProgress playerProgress;
 
     // Original RectTransform values
     private Vector2 originalParentAnchoredPos;
@@ -94,7 +95,7 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        if (SessionData.Instance != null)
+        if (SessionData.Instance != null && SessionData.Instance.FlagToLoadSessionData == true)
         {
             trustBar.value  = SessionData.Instance.Trust;
             stressBar.value = SessionData.Instance.Stress;
@@ -109,10 +110,11 @@ public class EventManager : MonoBehaviour
 
         currentEvent = allEvents[Random.Range(0, allEvents.Length)];
 
-        titleText.text       = currentEvent.eventTitle;
+        titleText.text = currentEvent.eventTitle;
         descriptionText.text = currentEvent.eventDescription;
 
         ResetAllPositions();
+        SavePlayerProgress(stressBar.value, trustBar.value);
 
         if (eventImage != null && currentEvent.eventImage != null)
         {
@@ -178,7 +180,9 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.DaysText    = dayText.text;
         }
 
-        SaveData.SaveAllGameData(
+        if(SessionData.Instance.FlagToLoadSessionData == true)
+        {
+           SaveData.SaveAllGameData(
             trustBar.value, stressBar.value,
             TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
             GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
@@ -186,7 +190,9 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
             SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
             SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
-        );
+            ); 
+        }
+        
 
         // Copy ALL anchor/pivot/position values from the reference object.
         // anchorMin and anchorMax are normalized (0-1) so they are the same
@@ -263,5 +269,11 @@ public class EventManager : MonoBehaviour
         isMovingImage  = false;
 
         Debug.Log("Event reset");
+    }
+
+    public void SavePlayerProgress(float stressValue, float trustValue)
+    {
+        playerProgress.StressSlider.value = stressValue;
+        playerProgress.TrustSlider.value = trustValue;
     }
 }

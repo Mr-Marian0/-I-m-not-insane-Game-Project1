@@ -70,7 +70,7 @@ public class GameEngine : MonoBehaviour
 
     void Start()
     {
-        bool hasSessionTimes = SessionData.Instance != null &&
+        bool hasSessionTimes = SessionData.Instance != null && SessionData.Instance.FlagToLoadSessionData == true &&
             (SessionData.Instance.MissionTime1 != 0 || SessionData.Instance.MissionTime2 != 0 ||
              SessionData.Instance.TimeToTriggerEvent1 != 0 || SessionData.Instance.TimeToTriggerEvent2 != 0);
 
@@ -114,7 +114,7 @@ public class GameEngine : MonoBehaviour
                 hasTriggeredSecondEvent = save.Event2Triggered;
                 flagEventAndMissionTriggered = save.Event1Triggered;
 
-                if (SessionData.Instance != null)
+                if (SessionData.Instance != null && SessionData.Instance.FlagToLoadSessionData == true)
                 {
                     SessionData.Instance.MissionTime1 = save.MissionTime1;
                     SessionData.Instance.MissionTime2 = save.MissionTime2;

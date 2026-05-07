@@ -41,36 +41,6 @@ public static class SaveData
         stream.Close();
     }
 
-    //This FUNCTION REPLACES THE OLD SAVED FILES.
-    public static void SavePlayer(float trust, float stress)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-
-        FileStream stream = new FileStream(SavePath, FileMode.Create);
-
-        PlayerData data = new PlayerData(trust, stress);
-
-        if (SessionData.Instance != null)
-        {
-            data.ElapsedTime = SessionData.Instance.ElapsedTime;
-            data.DayAdder = SessionData.Instance.DayAdder;
-            data.DaysText = SessionData.Instance.DaysText;
-            data.MissionTime1 = SessionData.Instance.MissionTime1;
-            data.MissionTime2 = SessionData.Instance.MissionTime2;
-            data.TimeToTriggerEvent1 = SessionData.Instance.TimeToTriggerEvent1;
-            data.TimeToTriggerEvent2 = SessionData.Instance.TimeToTriggerEvent2;
-            data.PlayerPosition = new float[3] { SessionData.Instance.PlayerPosition.x, SessionData.Instance.PlayerPosition.y, SessionData.Instance.PlayerPosition.z };
-            data.IsMuted = SessionData.Instance.IsMuted;
-            data.Mission1Entered = SessionData.Instance.Mission1Entered;
-            data.Mission2Entered = SessionData.Instance.Mission2Entered;
-            data.Event1Triggered = SessionData.Instance.Event1Triggered;
-            data.Event2Triggered = SessionData.Instance.Event2Triggered;
-        }
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-    }
-
     public static PlayerData LoadPlayer()
     {
         if (File.Exists(SavePath))

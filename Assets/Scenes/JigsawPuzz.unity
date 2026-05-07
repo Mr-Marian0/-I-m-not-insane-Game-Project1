@@ -43289,6 +43289,7 @@ MonoBehaviour:
   SoundOffSprite: {fileID: 21300000, guid: 0e829642eda51f143bc9b4543be42203, type: 3}
   SoundButton_text: {fileID: 1442825875}
   dayText: {fileID: 0}
+  playerProgress: {fileID: 0}
   timerReference: {fileID: 0}
   GameEngineReference: {fileID: 0}
 --- !u!114 &1359173998

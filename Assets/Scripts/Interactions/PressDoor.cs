@@ -58,7 +58,8 @@ public class PressDoor : MonoBehaviour
                 mission1Entered,
                 mission2Entered,
                 event1Triggered,
-                event2Triggered
+                event2Triggered,
+                true
             );
 
             
