@@ -41,7 +41,6 @@ public class SessionData : MonoBehaviour
     public bool NewGame = false;
 
     private PlayerProgress playerProgress;
-    public bool FlagToLoadSessionData = false;
     private bool isResettingData = false; // Flag to prevent auto-save during reset
 
     private void Awake()
@@ -73,7 +72,7 @@ public class SessionData : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        if (!isResettingData && !NewGame && FlagToLoadSessionData == true)
+        if (!isResettingData && !NewGame)
         {
             SaveCurrentState();
         }
@@ -107,7 +106,7 @@ public class SessionData : MonoBehaviour
 
     // Called by PressDoor before leaving Scene 1
     public void SaveScene1State(float trust, float stress, Vector3 playerPos, float elapsedTime, int dayAdder, 
-    string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2, bool mission1Entered, bool mission2Entered, bool event1Triggered, bool event2Triggered, bool flagToSaveSessionData)
+    string daysText, int missionTime1, int missionTime2, int timeToTriggerEvent1, int timeToTriggerEvent2, bool mission1Entered, bool mission2Entered, bool event1Triggered, bool event2Triggered)
     {
         Trust = trust;
         Stress = stress;
@@ -123,7 +122,6 @@ public class SessionData : MonoBehaviour
         Mission2Entered = mission2Entered;
         Event1Triggered = event1Triggered;
         Event2Triggered = event2Triggered;
-        FlagToLoadSessionData = flagToSaveSessionData;
     }
 
     // Called by EventManager after every choice

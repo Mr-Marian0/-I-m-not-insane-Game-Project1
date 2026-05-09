@@ -34,6 +34,9 @@ public class PuzzleEngine : MonoBehaviour
     
     void Start()
     {
+        //Used to load the saved stress and trust bar
+        SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+
         StartRandomJigsawPuzzle = Random.Range(1, 21);
         Debug.Log("Random Puzzle: " + StartRandomJigsawPuzzle);
         
@@ -142,8 +145,8 @@ public class PuzzleEngine : MonoBehaviour
     void Update()
     {
 
-        StressPercentageText.text = StressReward.value + "%";
-        TrustPercentageText.text = TrustReward.value + "%";
+        StressPercentageText.text = StressReward.value.ToString();
+        TrustPercentageText.text = TrustReward.value.ToString();
 
         if(YouLoseReference.activeSelf == true && !hasPlayedLoseSound)
         {

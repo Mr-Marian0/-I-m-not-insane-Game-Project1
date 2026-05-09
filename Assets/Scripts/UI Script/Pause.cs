@@ -151,8 +151,6 @@ public class Pause : MonoBehaviour
         {
             playerProgress.StressSlider.value = 0f;
             playerProgress.TrustSlider.value = 0f;
-            playerProgress.StressBar = 0f;
-            playerProgress.TrustBar = 0f;
             timerReference.elapsedTime = 0f;
             timerReference.DayAdder = 1;
         }
@@ -226,7 +224,7 @@ public class Pause : MonoBehaviour
             SessionData.Instance.DaysText = "DAY " + timerReference.DayAdder;
         }
 
-        if (playerProgress != null && SessionData.Instance.FlagToLoadSessionData == true)
+        if (playerProgress != null)
         {
             Debug.Log("SAVING THE FILES AFTER EXIT");
             SaveData.SaveAllGameData(

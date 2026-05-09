@@ -4541,7 +4541,6 @@ MonoBehaviour:
   Event1Triggered: 0
   Event2Triggered: 0
   NewGame: 0
-  FlagToLoadSessionData: 0
 --- !u!1 &726544030
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,8 +6722,6 @@ MonoBehaviour:
   StressPercentageText: {fileID: 1260557861}
   TrustPercentageText: {fileID: 1746200159}
   TimerReference: {fileID: 11596894}
-  StressBar: 0
-  TrustBar: 0
 --- !u!114 &990460094
 MonoBehaviour:
   m_ObjectHideFlags: 0

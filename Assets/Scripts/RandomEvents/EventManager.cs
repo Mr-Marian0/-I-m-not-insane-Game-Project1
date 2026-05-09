@@ -95,7 +95,7 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        if (SessionData.Instance != null && SessionData.Instance.FlagToLoadSessionData == true)
+        if (SessionData.Instance != null)
         {
             trustBar.value  = SessionData.Instance.Trust;
             stressBar.value = SessionData.Instance.Stress;
@@ -180,8 +180,6 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.DaysText    = dayText.text;
         }
 
-        if(SessionData.Instance.FlagToLoadSessionData == true)
-        {
            SaveData.SaveAllGameData(
             trustBar.value, stressBar.value,
             TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
@@ -190,8 +188,7 @@ public class EventManager : MonoBehaviour
             SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
             SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
             SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
-            ); 
-        }
+            );
         
 
         // Copy ALL anchor/pivot/position values from the reference object.

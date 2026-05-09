@@ -92,14 +92,14 @@ public class RandomQuestion : MonoBehaviour
 
     public void Start()
     {
-        // Load saved values into the sliders so rewards increment properly
-        PlayerData data = SaveData.LoadPlayer();
-        if (data != null)
+        if(SessionData.Instance != null)
         {
-            TrustReward.value = data.TrustData;
-            StressReward.value = data.StressData;
-            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
+            TrustReward.value = SessionData.Instance.Trust;
+            StressReward.value = SessionData.Instance.Stress;
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
         }
+        TrustReward.value = SessionData.Instance.Trust;
+        StressReward.value = SessionData.Instance.Stress;
 
         StressPercentageText.text = Mathf.RoundToInt(StressReward.value).ToString();
         TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();

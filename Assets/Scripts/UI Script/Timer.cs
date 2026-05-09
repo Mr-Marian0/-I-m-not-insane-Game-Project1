@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
     {
         bool restored = false;
 
-        if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f && SessionData.Instance.NewGame == false && SessionData.Instance.FlagToLoadSessionData == true)
+        if (SessionData.Instance != null && SessionData.Instance.ElapsedTime > 0f)
         {
             elapsedTime = SessionData.Instance.ElapsedTime;
             DayAdder = SessionData.Instance.DayAdder;
@@ -37,25 +37,25 @@ public class Timer : MonoBehaviour
         }
         else if (SaveData.HasSaveFile())
         {
-            PlayerData savedData = SaveData.LoadPlayer();
-            SessionData.Instance.NewGame = false;
-            if (savedData != null)
-            {
-                elapsedTime = savedData.ElapsedTime;
-                DayAdder = savedData.DayAdder > 0 ? savedData.DayAdder : 1;
+            // PlayerData savedData = SaveData.LoadPlayer();
+            // SessionData.Instance.NewGame = false;
+            // if (savedData != null)
+            // {
+            //     elapsedTime = savedData.ElapsedTime;
+            //     DayAdder = savedData.DayAdder > 0 ? savedData.DayAdder : 1;
 
-                if (Days != null)
-                    Days.text = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
+            //     if (Days != null)
+            //         Days.text = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
 
-                if (SessionData.Instance != null)
-                {
-                    SessionData.Instance.ElapsedTime = elapsedTime;
-                    SessionData.Instance.DayAdder = DayAdder;
-                    SessionData.Instance.DaysText = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
-                }
+            //     if (SessionData.Instance != null)
+            //     {
+            //         SessionData.Instance.ElapsedTime = elapsedTime;
+            //         SessionData.Instance.DayAdder = DayAdder;
+            //         SessionData.Instance.DaysText = string.IsNullOrEmpty(savedData.DaysText) ? "DAY " + DayAdder : savedData.DaysText;
+            //     }
 
-                restored = true;
-            }
+            //     restored = true;
+            // }
         }
 
         if (restored)
