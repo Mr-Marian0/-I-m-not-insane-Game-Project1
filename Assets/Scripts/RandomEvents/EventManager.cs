@@ -216,7 +216,6 @@ public class EventManager : MonoBehaviour
         if (eventImageRect != null)
         {
             isMovingImage = true;
-            Debug.Log("Starting image movement");
         }
 
         resultPanel.SetActive(true);
@@ -247,15 +246,12 @@ public class EventManager : MonoBehaviour
                 current.x = -150.15f;
                 eventImageRect.anchoredPosition = current;
                 isMovingImage = false;
-                Debug.Log("Image reached left position");
             }
         }
     }
 
     public void OnContinue()
     {
-        Debug.Log("Continue clicked");
-
         resultPanel.SetActive(false);
         if (eventImage != null) eventImage.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
@@ -264,8 +260,6 @@ public class EventManager : MonoBehaviour
         ResetAllPositions();
         Time.timeScale = 1f;
         isMovingImage  = false;
-
-        Debug.Log("Event reset");
     }
 
     public void SavePlayerProgress(float stressValue, float trustValue)
