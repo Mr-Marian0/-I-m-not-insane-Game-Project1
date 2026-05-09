@@ -52,7 +52,6 @@ public class GameEngine : MonoBehaviour
     {
         // Save exists - keep disabled (already disabled in Inspector)
         Time.timeScale = 1;
-        Debug.Log("Save found - Intro stays disabled");
         Player.SetActive(true);
         UI_Object.SetActive(true);
     }
@@ -60,7 +59,6 @@ public class GameEngine : MonoBehaviour
     {
         // NO save - ENABLE the intro
         timer.StopTimer = true; // Stop the timer until the intro finishes
-        Debug.Log("New game - Enabling intro");
         if (IntroSceneReference != null)
             IntroSceneReference.SetActive(true);  // THIS enables it
         Player.SetActive(false);
@@ -153,7 +151,6 @@ public class GameEngine : MonoBehaviour
     {
         if (directorReference != null && directorReference.state != PlayState.Playing && IntroSceneReference != null)
     {
-        Debug.Log("Intro timeline finished - Starting game");
         // Intro finished - show UI but keep timescale 0
         Player.SetActive(true);
         UI_Object.SetActive(true);
@@ -187,7 +184,6 @@ public class GameEngine : MonoBehaviour
             hasGeneratedNewDay = true;
             hasTriggeredSecondEvent = false;
             EnableDoor.SetActive(false);
-            Debug.Log("New day started - New missions and events generated");
         }
 
         // ==================== MISSION LOGIC ====================
@@ -241,7 +237,6 @@ public class GameEngine : MonoBehaviour
                 SessionData.Instance.Event1Triggered = true;
             }
             eventManager.TriggerRandomEvent();
-            Debug.Log("First Event Triggered at minute: " + TimeToTriggerEvent1);
             if(UI_Object.activeInHierarchy) Time.timeScale = 0;
         }
 
@@ -255,7 +250,6 @@ public class GameEngine : MonoBehaviour
                 SessionData.Instance.Event2Triggered = true;
             }
             eventManager.TriggerRandomEvent();
-            Debug.Log("Second Event Triggered at minute: " + TimeToTriggerEvent2);
             if(UI_Object.activeInHierarchy) Time.timeScale = 0;
         }
     }
