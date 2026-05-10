@@ -119,7 +119,6 @@ public class CheckAnswer : MonoBehaviour
         {
             TrustReward.value = data.TrustData;
             StressReward.value = data.StressData;
-            Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData);
         }
     }
 
@@ -155,7 +154,6 @@ public class CheckAnswer : MonoBehaviour
 
     // Always runs after any outcome — start keeping bars at target every frame
     keepBarsAtTarget = true;
-    Debug.Log("keepBarsAtTarget set to true");
 
     if (SessionData.Instance != null)
         SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
@@ -163,7 +161,6 @@ public class CheckAnswer : MonoBehaviour
 
     private void CorrectAnswer()
     {
-        Debug.Log("CORRECT!!");
 
         ShowCongratulation();
         YouWin.SetActive(true);
@@ -219,7 +216,6 @@ public class CheckAnswer : MonoBehaviour
 
     private void WrongAnswer()
     {
-        Debug.Log("WRONG!!!");
         InheritEnemyScript.speed = 2f;
         CinemachineShake.Instance.ShakeCamera(5f, .1f);
 

@@ -112,7 +112,6 @@ public class PuzzleReward : MonoBehaviour
             {
                 FunctionCallOnce = true;
                 StoreTheTimeItFinished = InheritStartTimer.seconds;
-                Debug.Log("TIMEFINISHED! :  " + StoreTheTimeItFinished);
 
                 ConvertTimeToReward(StoreTheTimeItFinished);
                 if (SessionData.Instance != null)

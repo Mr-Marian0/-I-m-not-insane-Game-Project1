@@ -38,7 +38,6 @@ public class PuzzleEngine : MonoBehaviour
         SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
 
         StartRandomJigsawPuzzle = Random.Range(1, 21);
-        Debug.Log("Random Puzzle: " + StartRandomJigsawPuzzle);
         
         // Activate the corresponding child
         Transform chosenPuzzle = transform.GetChild(StartRandomJigsawPuzzle - 1);

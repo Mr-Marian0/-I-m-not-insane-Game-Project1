@@ -40,10 +40,6 @@ public class ProjectileScripts : MonoBehaviour
         {
             playerTransform = player.transform;
         }
-        else
-        {
-            Debug.LogError("Player not found! Make sure your player has the 'Player' tag.");
-        }
     }
     
     void Update()
@@ -100,13 +96,11 @@ public class ProjectileScripts : MonoBehaviour
     {
         if (projectilePrefab == null)
         {
-            Debug.LogError("Projectile prefab not assigned!");
             return;
         }
         
         if (playerTransform == null)
         {
-            Debug.LogError("Player transform missing!");
             return;
         }
         

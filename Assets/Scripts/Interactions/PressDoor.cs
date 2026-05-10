@@ -43,7 +43,6 @@ public class PressDoor : MonoBehaviour
         // Save everything into SessionData before leaving Scene 1
         if (SessionData.Instance != null && SceneTimer != null && eventManager != null)
         {
-            Debug.Log("Elapsed TIME SAVED: "+SceneTimer.elapsedTime+" | DayAdder SAVED: "+SceneTimer.DayAdder);
             SessionData.Instance.SaveScene1State(
                 eventManager.trustBar.value,
                 eventManager.stressBar.value,

@@ -50,7 +50,6 @@ public class HowToPlay : MonoBehaviour
         yScale = 0;
         Signal1 = false;
       } else {
-        Debug.Log(Time.deltaTime);
         yScale += Time.deltaTime;
         Back1.localScale = new Vector3(Back1.localScale.x, yScale, Back1.localScale.z);
         

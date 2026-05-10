@@ -20,8 +20,6 @@ public class OkButton : MonoBehaviour
 
     public void Okay()
     {
-
-        Debug.Log("NAPINDOT YUNG BUTTON 4!!!!!!!!!");
         InheritStartTimer.PauseTheTimer = true;
 
         AnyCongratulation.SetActive(false);

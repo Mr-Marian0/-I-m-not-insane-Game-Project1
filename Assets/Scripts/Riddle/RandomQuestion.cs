@@ -257,7 +257,6 @@ TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();
     public IEnumerator DelayTheTextQuestion()
     {
         GenerateQuestion = Random.Range(0, 49);
-        Debug.Log("The Question is: " + GenerateQuestion);
 
         yield return new WaitForSeconds(2);
         anim.SetBool("QueFadeIn", true);

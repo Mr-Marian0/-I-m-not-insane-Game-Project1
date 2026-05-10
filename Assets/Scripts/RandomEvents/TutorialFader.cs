@@ -138,8 +138,6 @@ public class TutorialFader : MonoBehaviour
     timerReference.StopTimer = false;
     timerReference.StopAllCoroutines();
     StartCoroutine(timerReference.UpdateTimeRandomly());
-
-    Debug.Log("Tutorial complete - Game started!");
 }
 
     

@@ -50,8 +50,6 @@ public class PlayerProgress : MonoBehaviour
             //     SessionData.Instance.Event1Triggered = data.Event1Triggered;
             //     SessionData.Instance.Event2Triggered = data.Event2Triggered;
             // }
-
-            // Debug.Log("Loaded saved values - Trust: " + data.TrustData + ", Stress: " + data.StressData + ", Time: " + data.ElapsedTime + ", Day: " + data.DayAdder);
         }
     }
     

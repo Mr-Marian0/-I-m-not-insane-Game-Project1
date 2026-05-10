@@ -59,7 +59,6 @@ public class StartFunctions : MonoBehaviour
     public void OnExitButton()
     {
         Application.Quit();
-        Debug.Log("Exiting game...");
     }
 
     public void SetButtonText(Button button, string text)
