@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameEngine : MonoBehaviour
 {
@@ -24,6 +26,9 @@ public class GameEngine : MonoBehaviour
     public GameObject TutorialContentReference;
     public PressToSleep pressToSleepReference;
     public TutorialFader tutorialFader;
+    public Slider TrustSlider;
+    public Slider StressSlider;
+    public TextMeshProUGUI dayText;
 
     // Mission Times
     public int MissionTime1;      // First mission (3-11)
@@ -74,7 +79,12 @@ public class GameEngine : MonoBehaviour
 
         if (hasSessionTimes)
         {
+            //Save everything 1st in SessionData after we go back in lobby;
+            SaveCurrentState();
+
             Debug.Log("HAS SESSION TIMES : TRUE");
+            StressSlider.value = SessionData.Instance.Stress;
+            TrustSlider.value = SessionData.Instance.Trust;
             MissionTime1 = SessionData.Instance.MissionTime1;
             MissionTime2 = SessionData.Instance.MissionTime2;
             TimeToTriggerEvent1 = SessionData.Instance.TimeToTriggerEvent1;
@@ -101,7 +111,10 @@ public class GameEngine : MonoBehaviour
                 (save.MissionTime1 != 0 || save.MissionTime2 != 0 ||
                  save.TimeToTriggerEvent1 != 0 || save.TimeToTriggerEvent2 != 0))
             {
+                Debug.Log("Player data or save has files! : -------------------------------------------");
 
+                StressSlider.value = save.StressData;
+                TrustSlider.value = save.TrustData;
                 MissionTime1 = save.MissionTime1;
                 MissionTime2 = save.MissionTime2;
                 TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
@@ -116,6 +129,8 @@ public class GameEngine : MonoBehaviour
                 if (SessionData.Instance != null)
                 {
                     Debug.Log("SessionData is not null - Syncing loaded times and flags to SessionData");
+                    SessionData.Instance.Stress = save.StressData;
+                    SessionData.Instance.Trust = save.TrustData;
                     SessionData.Instance.MissionTime1 = save.MissionTime1;
                     SessionData.Instance.MissionTime2 = save.MissionTime2;
                     SessionData.Instance.TimeToTriggerEvent1 = save.TimeToTriggerEvent1;
@@ -252,6 +267,7 @@ public class GameEngine : MonoBehaviour
             eventManager.TriggerRandomEvent();
             if(UI_Object.activeInHierarchy) Time.timeScale = 0;
         }
+        
     }
 
     // Generate new times for both missions and events
@@ -274,6 +290,14 @@ public class GameEngine : MonoBehaviour
             SessionData.Instance.Event2Triggered = false;
         }
 
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.MissionTime1 = MissionTime1;
+            SessionData.Instance.MissionTime2 = MissionTime2;
+            SessionData.Instance.TimeToTriggerEvent1 = TimeToTriggerEvent1;
+            SessionData.Instance.TimeToTriggerEvent2 = TimeToTriggerEvent2;
+        }
+
         // Reset local flags for new day
         event1Triggered = false;
         event2Triggered = false;
@@ -286,6 +310,19 @@ public class GameEngine : MonoBehaviour
         Debug.Log("Mission 2: " + MissionTime2);
         Debug.Log("Event 1  : " + TimeToTriggerEvent1);
         Debug.Log("Event 2  : " + TimeToTriggerEvent2);
+    }
+
+    private void SaveCurrentState()
+    {
+        SaveData.SaveAllGameData(
+            SessionData.Instance.Trust, SessionData.Instance.Stress,
+            SessionData.Instance.ElapsedTime, SessionData.Instance.DayAdder, SessionData.Instance.DaysText,
+            SessionData.Instance.MissionTime1, SessionData.Instance.MissionTime2,
+            SessionData.Instance.TimeToTriggerEvent1, SessionData.Instance.TimeToTriggerEvent2,
+            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
+            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
+            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
+        );
     }
 
     private IEnumerator FadeInUI(CanvasGroup uiCanvasGroup)

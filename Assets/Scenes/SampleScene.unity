@@ -4877,6 +4877,8 @@ MonoBehaviour:
   TutorialContentReference: {fileID: 2027667129}
   pressToSleepReference: {fileID: 11596897}
   tutorialFader: {fileID: 764401902}
+  TrustSlider: {fileID: 2087499123}
+  StressSlider: {fileID: 1754972460}
   MissionTime1: 0
   MissionTime2: 0
   TimeToTriggerEvent1: 0

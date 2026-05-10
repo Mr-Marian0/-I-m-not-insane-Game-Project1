@@ -8,7 +8,7 @@ public class SessionData : MonoBehaviour
     public static SessionData Instance;
 
     [Header("Bar Values")]
-    public float Trust = 99f;
+    public float Trust;
     public float Stress;
 
     [Header("Player Position")]
@@ -93,15 +93,18 @@ public class SessionData : MonoBehaviour
 
     private void SaveCurrentState()
     {
+
+        PlayerData save = SaveData.LoadPlayer();
+
         SaveData.SaveAllGameData(
-            trustBar.value, stressBar.value,
-            TimerReference.elapsedTime, TimerReference.DayAdder, dayText.text,
-            GameEngineReference.MissionTime1, GameEngineReference.MissionTime2,
-            GameEngineReference.TimeToTriggerEvent1, GameEngineReference.TimeToTriggerEvent2,
-            SessionData.Instance.Mission1Entered, SessionData.Instance.Mission2Entered,
-            SessionData.Instance.Event1Triggered, SessionData.Instance.Event2Triggered,
-            SessionData.Instance.PlayerPosition, SessionData.Instance.IsMuted
-        );
+        save.TrustData, save.StressData,
+        SessionData.Instance.ElapsedTime, SessionData.Instance.DayAdder, SessionData.Instance.DaysText,
+        save.MissionTime1, save.MissionTime2,
+        save.TimeToTriggerEvent1, save.TimeToTriggerEvent2,
+        save.Mission1Entered, save.Mission2Entered,
+        save.Event1Triggered, save.Event2Triggered,
+        SessionData.Instance.PlayerPosition, save.IsMuted
+    );
     }
 
     // Called by PressDoor before leaving Scene 1

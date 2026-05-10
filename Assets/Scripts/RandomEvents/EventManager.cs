@@ -95,11 +95,7 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        if (SessionData.Instance != null)
-        {
-            trustBar.value  = SessionData.Instance.Trust;
-            stressBar.value = SessionData.Instance.Stress;
-        }
+
     }
 
     public void TriggerRandomEvent()

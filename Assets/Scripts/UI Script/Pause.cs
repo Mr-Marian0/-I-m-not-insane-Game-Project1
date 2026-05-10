@@ -226,7 +226,19 @@ public class Pause : MonoBehaviour
 
         if (playerProgress != null)
         {
-            Debug.Log("SAVING THE FILES AFTER EXIT");
+            Debug.Log("SAVING THE FILES AFTER EXIT ---------------------------------------------");
+
+
+            Debug.Log("Trust Reward Value: "+ TrustReward.value);
+            Debug.Log("Stress Reward Value: "+ StressReward.value);
+            Debug.Log("Elapsed Time: "+ timerReference.elapsedTime);
+            Debug.Log("Day Adder: "+ timerReference.DayAdder);
+            Debug.Log("Days Text: "+ dayText.text);
+            Debug.Log("Mission Time 1: "+ GameEngineReference.MissionTime1);
+            Debug.Log("Mission Time 2: "+ GameEngineReference.MissionTime2);
+            Debug.Log("Time To Trigger Event 1: "+ GameEngineReference.TimeToTriggerEvent1);
+            Debug.Log("Time To Trigger Event 2: "+ GameEngineReference.TimeToTriggerEvent2);
+
             SaveData.SaveAllGameData(
                 TrustReward.value, StressReward.value,
                 timerReference.elapsedTime, timerReference.DayAdder, dayText.text,

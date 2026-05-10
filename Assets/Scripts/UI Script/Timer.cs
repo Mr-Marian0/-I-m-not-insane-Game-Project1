@@ -71,7 +71,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
+        if (SessionData.Instance != null)
+        {
+            SessionData.Instance.ElapsedTime = elapsedTime;
+            SessionData.Instance.DayAdder = DayAdder;
+        }
     }
 
     public void TriggerDayCount(int nextDay)
