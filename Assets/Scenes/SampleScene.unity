@@ -4879,6 +4879,7 @@ MonoBehaviour:
   tutorialFader: {fileID: 764401902}
   TrustSlider: {fileID: 2087499123}
   StressSlider: {fileID: 1754972460}
+  dayText: {fileID: 274047135}
   MissionTime1: 0
   MissionTime2: 0
   TimeToTriggerEvent1: 0
@@ -4901,6 +4902,43 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d637a7421edd3144ba9ba0a8fc0b6669, type: 2}
   - {fileID: 11400000, guid: 03a2ed3011a668d43a7bb1ea415a5c5b, type: 2}
   - {fileID: 11400000, guid: 956d101488250334c93da1e404a437ec, type: 2}
+  - {fileID: 11400000, guid: ecac2d8a5e2aec64cb3591a600a38f82, type: 2}
+  - {fileID: 11400000, guid: 6eaa58c2565958943a4f3ba0c485231e, type: 2}
+  - {fileID: 11400000, guid: 84f1f2c6975b2f742a505ee22f8c5438, type: 2}
+  - {fileID: 11400000, guid: 97d14238483b51649addabbe1547bdda, type: 2}
+  - {fileID: 11400000, guid: af4973baa1f94374481a8cb97819d8f4, type: 2}
+  - {fileID: 11400000, guid: 195ef64084a1ba6479a0945f8b01118d, type: 2}
+  - {fileID: 11400000, guid: 8a489b696bfe7ea44ab2ca85db983952, type: 2}
+  - {fileID: 11400000, guid: b0d6cb7b784a9884985fe32d7585344f, type: 2}
+  - {fileID: 11400000, guid: 323cd4935d83179468fa9d95a5789f9b, type: 2}
+  - {fileID: 11400000, guid: f96878b0902436741b46f81a4d85a292, type: 2}
+  - {fileID: 11400000, guid: f847d0b63feb5594e8b05365f718120d, type: 2}
+  - {fileID: 11400000, guid: 982d797da9637cc48b23ca5f57cf746f, type: 2}
+  - {fileID: 11400000, guid: 215af5032b6c76248a7449bfc745fe64, type: 2}
+  - {fileID: 11400000, guid: ec0e545bdabc2f445bd4e29f9c98b2c4, type: 2}
+  - {fileID: 11400000, guid: c1e8afefec9880247807e0b9403b706c, type: 2}
+  - {fileID: 11400000, guid: 3a2d90847bce48b478bb872228830817, type: 2}
+  - {fileID: 11400000, guid: 97655dfeed10ac54a8a9661af6a7e887, type: 2}
+  - {fileID: 11400000, guid: f9506ace12cbd2149a36705c62691adf, type: 2}
+  - {fileID: 11400000, guid: d76c269839fee9042bc67d1be5c154ac, type: 2}
+  - {fileID: 11400000, guid: 4630fa9b28a18894a875aa34d904eee9, type: 2}
+  - {fileID: 11400000, guid: c60fae27147b67648b006dbeca94e658, type: 2}
+  - {fileID: 11400000, guid: 61c60ce0c2693ba4da219a75dd392225, type: 2}
+  - {fileID: 11400000, guid: 093cf65187e4d6e4ea6aa897ab8d7056, type: 2}
+  - {fileID: 11400000, guid: e39ae68142fd8014680acf8dcca6495b, type: 2}
+  - {fileID: 11400000, guid: 006eedf6676f48544b5da1e65bfa7987, type: 2}
+  - {fileID: 11400000, guid: 686b626b82d331a449b6b3d12f3ce962, type: 2}
+  - {fileID: 11400000, guid: 683598ec771879d4793e163063207f6c, type: 2}
+  - {fileID: 11400000, guid: c2d75376ac3876840ae2abed5426ce38, type: 2}
+  - {fileID: 11400000, guid: 153cebba1e87087438b6b0334b60e1ef, type: 2}
+  - {fileID: 11400000, guid: 6e21565c0408e0a41b084c16ea02853a, type: 2}
+  - {fileID: 11400000, guid: e78f0085af8bf4b4894214f3843f04b1, type: 2}
+  - {fileID: 11400000, guid: 78a2890b771b40949837c0ff67fd4969, type: 2}
+  - {fileID: 11400000, guid: 0fad349783f91b6479a19e8c05489578, type: 2}
+  - {fileID: 11400000, guid: 565443d39a4aaf64b90c6b2d11c95896, type: 2}
+  - {fileID: 11400000, guid: 6801019e47a31ec42ab75e86c5f462aa, type: 2}
+  - {fileID: 11400000, guid: 15b61f19070fbe84a94746f4fd31ec0f, type: 2}
+  - {fileID: 11400000, guid: 9a3390fff6c28624a83708a9a471d5d6, type: 2}
   titleText: {fileID: 1932465661}
   descriptionText: {fileID: 293029280}
   eventImage: {fileID: 1519895753}
@@ -8097,6 +8135,7 @@ GameObject:
   - component: {fileID: 1196311676}
   - component: {fileID: 1196311675}
   - component: {fileID: 1196311674}
+  - component: {fileID: 1196311677}
   m_Layer: 5
   m_Name: GameOverContinue
   m_TagString: Untagged
@@ -8231,6 +8270,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196311672}
   m_CullTransparentMesh: 1
+--- !u!114 &1196311677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196311672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49fae0a8dbc72c4a8f2dae32d3718ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressScale: 0.9
+  animationDuration: 0.1
 --- !u!1 &1260557859
 GameObject:
   m_ObjectHideFlags: 0

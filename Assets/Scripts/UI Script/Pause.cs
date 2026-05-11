@@ -147,6 +147,7 @@ public class Pause : MonoBehaviour
 
     public void ResetDataPressed()
     {
+        Debug.Log("Resetting game data...");
         if (playerProgress != null)
         {
             playerProgress.StressSlider.value = 0f;

@@ -12,25 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: ShadowEvent
   m_EditorClassIdentifier: 
-  eventTitle: Meal Time
-  eventDescription: Hospital meal tray arrived but food smelled rotten.
-  eventImage: {fileID: 0}
+  eventTitle: Something on the Window
+  eventDescription: Moving shadows outside your window during the storm.
+  eventImage: {fileID: 21300000, guid: 0aacac30ec2f7ce4a9436f022b75ccd4, type: 3}
   choices:
-  - choiceText: Refuse the meal and ask for a new one.
-    stressChange: -10
-    trustChange: -5
-    positiveOutcome: Nurse brings fresh food and apologizes.
-    negativeOutcome: "Kitchen is closed because of the storm \u2013 no food at all."
-    positiveChance: 0.5
-  - choiceText: Throw the tray away and go back to sleep.
-    stressChange: 10
-    trustChange: -20
-    positiveOutcome: You avoid food poisoning completely.
-    negativeOutcome: You become very hungry and dizzy by morning.
-    positiveChance: 0.5
-  - choiceText: Eat only the safe parts (bread and water).
+  - choiceText: Close the curtain tightly and hide under the blanket.
     stressChange: -5
-    trustChange: 10
-    positiveOutcome: You stay full enough and avoid sickness.
-    negativeOutcome: "You\u2019re still hungry and feel weak later."
+    trustChange: 5
+    positiveOutcome: You feel safe and eventually fall asleep.
+    negativeOutcome: Your imagination makes it worse and you stay awake all night.
     positiveChance: 0.5
+  - choiceText: Call the nurse and tell them about the shadows.
+    stressChange: 10
+    trustChange: -10
+    positiveOutcome: Nurse checks outside and reassures you.
+    negativeOutcome: "Nurse says you\u2019re \u201Cseeing things\u201D and you feel
+      crazy."
+    positiveChance: 0.4
+  - choiceText: Open the curtain wider to see what it is.
+    stressChange: -10
+    trustChange: 0
+    positiveOutcome: "It\u2019s only tree branches \u2013 you laugh and feel silly."
+    negativeOutcome: You see a scary figure and scream in terror.
+    positiveChance: 0.6

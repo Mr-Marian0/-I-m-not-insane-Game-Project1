@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Injection!
   eventDescription: Male nurse says you need a painful injection right now.
-  eventImage: {fileID: 0}
+  eventImage: {fileID: 21300000, guid: 56a4ad65075945e4db6379925c9bd1a6, type: 3}
   choices:
   - choiceText: "Tell him you\u2019re scared and ask him to wait 5 minutes."
     stressChange: -5
@@ -23,14 +23,14 @@ MonoBehaviour:
     negativeOutcome: "He says there\u2019s no time and forces the injection."
     positiveChance: 0.8
   - choiceText: Ask if there is another way (pill or cream).
-    stressChange: 10
+    stressChange: 5
     trustChange: 10
     positiveOutcome: He agrees and gives you a painless option.
     negativeOutcome: He refuses and gets angry.
     positiveChance: 0.7
   - choiceText: Agree and let him give the injection.
     stressChange: 10
-    trustChange: -10
+    trustChange: 10
     positiveOutcome: Medicine works and your pain disappears.
     negativeOutcome: Injection hurts a lot and leaves a big bruise.
     positiveChance: 0.5

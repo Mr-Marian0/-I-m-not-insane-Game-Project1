@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: BreadEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Food or not anymore
+  eventDescription: You find an old piece of bread hidden under your bed.
+  eventImage: {fileID: 21300000, guid: da6d0a9f09d8f6b47bd93451fb17506f, type: 3}
+  choices:
+  - choiceText: Throw it away.
+    stressChange: -10
+    trustChange: -5
+    positiveOutcome: Your cell feels cleaner.
+    negativeOutcome: You feel hungry later.
+    positiveChance: 0.5
+  - choiceText: Eat the bread.
+    stressChange: -5
+    trustChange: -5
+    positiveOutcome: Your hunger decreases.
+    negativeOutcome: It tastes bad and your stomach feels heavy.
+    positiveChance: 0.3
+  - choiceText: Save it for later.
+    stressChange: -10
+    trustChange: 5
+    positiveOutcome: You feel prepared.
+    negativeOutcome: You keep worrying it will go bad.
+    positiveChance: 0.4

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: FloorEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Wet Floor
+  eventDescription: The stone floor feels unusually cold and wet under your feet.
+  eventImage: {fileID: 21300000, guid: 64c0475da3e0f9b4eaed0927e3291e5f, type: 3}
+  choices:
+  - choiceText: Check under the bed.
+    stressChange: -5
+    trustChange: 5
+    positiveOutcome: Just a small leak.
+    negativeOutcome: You saw a black oily leak.
+    positiveChance: 0.5
+  - choiceText: Stay on the bed and ignore it.
+    stressChange: -10
+    trustChange: 0
+    positiveOutcome: Nothing bad happens.
+    negativeOutcome: The wet area keeps growing.
+    positiveChance: 0.5
+  - choiceText: Call the guard.
+    stressChange: -10
+    trustChange: 5
+    positiveOutcome: Guard mops the floor.
+    negativeOutcome: "Guard says it\u2019s normal and walks away."
+    positiveChance: 0.5

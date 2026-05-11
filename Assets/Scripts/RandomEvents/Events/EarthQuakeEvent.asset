@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: EarthQuakeEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Walls and ground are moving
+  eventDescription: A short earthquake tremor shakes the building. Dust falls from
+    ceiling and walls.
+  eventImage: {fileID: 21300000, guid: 301e791a1c8d31f469da747e342e3529, type: 3}
+  choices:
+  - choiceText: Stand in the corner.
+    stressChange: 15
+    trustChange: 5
+    positiveOutcome: Nothing falls on you.
+    negativeOutcome: You feel very scared.
+    positiveChance: 0.2
+  - choiceText: Shout for guards.
+    stressChange: 15
+    trustChange: -10
+    positiveOutcome: They check on you.
+    negativeOutcome: Everyone is busy.
+    positiveChance: 0.5
+  - choiceText: Get under the bed.
+    stressChange: -10
+    trustChange: 10
+    positiveOutcome: You feel protected.
+    negativeOutcome: Dust covers you.
+    positiveChance: 0.7

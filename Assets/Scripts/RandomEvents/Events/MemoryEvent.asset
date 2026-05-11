@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: MemoryEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Real or not?
+  eventDescription: You suddenly remember a happy memory from childhood, but it feels
+    unreal.
+  eventImage: {fileID: 21300000, guid: 7ca81aadca07bcd4bba6b91addf5a1da, type: 3}
+  choices:
+  - choiceText: "Tell yourself it\u2019s not real."
+    stressChange: -5
+    trustChange: 0
+    positiveOutcome: You feel more grounded.
+    negativeOutcome: You start doubting other memories.
+    positiveChance: 0.5
+  - choiceText: Shake your head to clear it.
+    stressChange: -5
+    trustChange: 0
+    positiveOutcome: The memory fades and you feel normal.
+    negativeOutcome: You feel empty and sad.
+    positiveChance: 0.4
+  - choiceText: Focus on the happy memory.
+    stressChange: -20
+    trustChange: 0
+    positiveOutcome: You feel a little warmer inside.
+    negativeOutcome: The memory suddenly turns dark.
+    positiveChance: 0.5

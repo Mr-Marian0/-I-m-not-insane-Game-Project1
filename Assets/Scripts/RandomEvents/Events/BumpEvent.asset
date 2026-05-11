@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: BumpEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Something on the Window
+  eventDescription: While touching the stone wall, you feel a strange bump.
+  eventImage: {fileID: 21300000, guid: fd2db42854c493e4497d66949eb30aa8, type: 3}
+  choices:
+  - choiceText: Scratch the bump with your nail.
+    stressChange: -5
+    trustChange: 5
+    positiveOutcome: A small nail falls out.
+    negativeOutcome: Your nail breaks.
+    positiveChance: 0.3
+  - choiceText: Ignore the bump.
+    stressChange: 0
+    trustChange: 5
+    positiveOutcome: Nothing bad happens.
+    negativeOutcome: You feel uneasy about it.
+    positiveChance: 0.7
+  - choiceText: Hit the bump with your fist.
+    stressChange: 10
+    trustChange: 10
+    positiveOutcome: The bump breaks off.
+    negativeOutcome: Your hand hurts.
+    positiveChance: 0.2

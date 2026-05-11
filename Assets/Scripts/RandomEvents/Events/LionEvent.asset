@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Lion?
   eventDescription: Loud scratching sounds coming from inside the wall.
-  eventImage: {fileID: 0}
+  eventImage: {fileID: 21300000, guid: 2d00e1996a91845458e63146fe45e936, type: 3}
   choices:
   - choiceText: Bang on the wall to scare whatever is making the sound.
     stressChange: 10

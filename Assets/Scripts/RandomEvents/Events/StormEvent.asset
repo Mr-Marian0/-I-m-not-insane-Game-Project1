@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: StormEvent
   m_EditorClassIdentifier: 
-  eventTitle: Strong Storm
+  eventTitle: Storm and Shadow
   eventDescription: Strong storm with thunders, winds and leaks bothering you.
   eventImage: {fileID: 21300000, guid: 94895a846a775414db55e7e7943589ec, type: 3}
   choices:

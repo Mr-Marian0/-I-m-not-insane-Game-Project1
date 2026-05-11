@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
   m_Name: BoredEvent
   m_EditorClassIdentifier: 
-  eventTitle: What do should I do hmmm...
+  eventTitle: What should I do hmmm...
   eventDescription: You got bored, ran around, and now have ankle pain.
   eventImage: {fileID: 21300000, guid: 84ea88d217012e64ba3395e6bf7314f6, type: 3}
   choices:

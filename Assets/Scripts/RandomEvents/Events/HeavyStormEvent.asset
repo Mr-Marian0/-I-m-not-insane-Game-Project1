@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6ff8ef28c054c8a9624f9dacedcb, type: 3}
+  m_Name: HeavyStormEvent
+  m_EditorClassIdentifier: 
+  eventTitle: Something on the Window
+  eventDescription: Heavy snowstorm outside. Asylum becomes freezing and wind whistles
+    loudly.
+  eventImage: {fileID: 21300000, guid: 26e7270e748491c41a2eb39388e3eabc, type: 3}
+  choices:
+  - choiceText: Wrap feet with extra cloth.
+    stressChange: -10
+    trustChange: 10
+    positiveOutcome: Feet stay warm.
+    negativeOutcome: Hands get cold instead.
+    positiveChance: 0.5
+  - choiceText: Walk around the cell.
+    stressChange: -10
+    trustChange: 5
+    positiveOutcome: Blood circulates.
+    negativeOutcome: You feel more tired.
+    positiveChance: 0.4
+  - choiceText: Ask for extra blanket.
+    stressChange: -5
+    trustChange: 5
+    positiveOutcome: Guard helps.
+    negativeOutcome: Ignored.
+    positiveChance: 0.5
