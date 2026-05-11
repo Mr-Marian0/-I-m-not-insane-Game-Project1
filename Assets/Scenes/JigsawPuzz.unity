@@ -62928,7 +62928,7 @@ MonoBehaviour:
   YouLoseReference: {fileID: 229536654}
   YouWinReference: {fileID: 564522674}
   winSound: {fileID: 8300000, guid: 94225cd6974c3944fa62ad0461e04476, type: 3}
-  loseSound: {fileID: 8300000, guid: 87f0fab04476aef49be7eb486a971332, type: 3}
+  loseSound: {fileID: 8300000, guid: 56b51adc09602e449b3bcedb3ee939bd, type: 3}
   audioSourceForCongratulation: {fileID: 1860561341}
   popUpParentIntro: {fileID: 159548035}
   popUpChildTextIntro: {fileID: 1814466490}

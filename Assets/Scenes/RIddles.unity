@@ -1426,7 +1426,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87f0fab04476aef49be7eb486a971332, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 56b51adc09602e449b3bcedb3ee939bd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5670,6 +5670,7 @@ MonoBehaviour:
   SoundOffSprite: {fileID: 21300000, guid: 0e829642eda51f143bc9b4543be42203, type: 3}
   SoundButton_text: {fileID: 42547557}
   dayText: {fileID: 0}
+  playerProgress: {fileID: 0}
   timerReference: {fileID: 0}
   GameEngineReference: {fileID: 0}
 --- !u!114 &1446980405
@@ -7245,7 +7246,7 @@ MonoBehaviour:
   YouLoseReference: {fileID: 1925844402}
   YouWinReference: {fileID: 150098267}
   winSound: {fileID: 8300000, guid: 94225cd6974c3944fa62ad0461e04476, type: 3}
-  loseSound: {fileID: 8300000, guid: 87f0fab04476aef49be7eb486a971332, type: 3}
+  loseSound: {fileID: 8300000, guid: 56b51adc09602e449b3bcedb3ee939bd, type: 3}
   audioSourceForCongratulation: {fileID: 1710856901}
   popUpParentIntro: {fileID: 857752199}
   popUpChildTextIntro: {fileID: 901290481}

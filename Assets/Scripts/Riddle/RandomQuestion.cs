@@ -98,8 +98,6 @@ public class RandomQuestion : MonoBehaviour
             StressReward.value = SessionData.Instance.Stress;
             SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
         }
-        TrustReward.value = SessionData.Instance.Trust;
-        StressReward.value = SessionData.Instance.Stress;
 
         StressPercentageText.text = Mathf.RoundToInt(StressReward.value).ToString();
         TrustPercentageText.text = Mathf.RoundToInt(TrustReward.value).ToString();

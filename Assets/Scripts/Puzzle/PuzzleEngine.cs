@@ -35,7 +35,10 @@ public class PuzzleEngine : MonoBehaviour
     void Start()
     {
         //Used to load the saved stress and trust bar
-        SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        if(SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
 
         StartRandomJigsawPuzzle = Random.Range(1, 21);
         
