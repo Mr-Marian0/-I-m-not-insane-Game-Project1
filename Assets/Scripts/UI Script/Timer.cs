@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     public int minutes;
     public int seconds;
     public GameEngine gameEngineReference;
+    public AudioClip dayCountAudioClip;
+    public AudioSource audioSourceForDayCount;
 
     [SerializeField] public float elapsedTime;
     public int FastForward = 8;
@@ -101,8 +103,11 @@ public class Timer : MonoBehaviour
         TextMeshProUGUI dayText = DayCountUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         if (dayText != null)
         {
+            audioSourceForDayCount.clip = dayCountAudioClip;
+            audioSourceForDayCount.PlayOneShot(dayCountAudioClip);
             dayText.text = "Day";
             yield return new WaitForSecondsRealtime(textDelay);
+            
             dayText.text = "Day " + nextDay;
             yield return new WaitForSecondsRealtime(textDelay);
         }

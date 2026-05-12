@@ -4224,6 +4224,8 @@ MonoBehaviour:
   headerText: {fileID: 1314361721}
   bodyText: {fileID: 1506572943}
   continueButton: {fileID: 1196311672}
+  EndingAudioClip1: {fileID: 8300000, guid: 5df35fa1abc12224c9820f29a081edcc, type: 3}
+  audioSourceForEnding: {fileID: 363322338}
   fadeDuration: 1.5
   typeSpeed: 0.05
   failureMessages:
@@ -4880,6 +4882,8 @@ MonoBehaviour:
   TrustSlider: {fileID: 2087499123}
   StressSlider: {fileID: 1754972460}
   dayText: {fileID: 274047135}
+  EventAudioClip: {fileID: 8300000, guid: 4ca1b24e85b3bb64c862e91df3e1cd56, type: 3}
+  audioSourceForEvent: {fileID: 363322338}
   MissionTime1: 0
   MissionTime2: 0
   TimeToTriggerEvent1: 0
@@ -4952,6 +4956,9 @@ MonoBehaviour:
   trustChangeText: {fileID: 202925534}
   stressChangeText: {fileID: 377336248}
   trustAndStressParent: {fileID: 443012929}
+  PositiveEventAudioClip: {fileID: 8300000, guid: cd6cfc172f0d4204eb4e41a8710621fa, type: 3}
+  NegativeEventAudioClip: {fileID: 8300000, guid: cba0a371e58a11c478781435dd97e896, type: 3}
+  audioSourceForEventChoice: {fileID: 363322338}
   choiceTargetPosition: {fileID: 895889969}
   playerProgress: {fileID: 990460093}
   stressBar: {fileID: 1754972460}
@@ -12226,6 +12233,7 @@ GameObject:
   - component: {fileID: 2037545502}
   - component: {fileID: 2037545501}
   - component: {fileID: 2037545500}
+  - component: {fileID: 2037545503}
   m_Layer: 0
   m_Name: TutorialContinue
   m_TagString: Untagged
@@ -12348,6 +12356,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037545498}
   m_CullTransparentMesh: 1
+--- !u!114 &2037545503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037545498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49fae0a8dbc72c4a8f2dae32d3718ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressScale: 0.9
+  animationDuration: 0.1
 --- !u!1 &2057554248
 GameObject:
   m_ObjectHideFlags: 0

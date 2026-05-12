@@ -160,9 +160,6 @@ public class EnemyScript : MonoBehaviour
             STOP_PLAYER.SetActive(false);
 
             keepBarsAtTarget = true;
-
-            if (SessionData.Instance != null)
-                SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
             
             if (Congratulation.activeSelf)
             {
@@ -173,6 +170,11 @@ public class EnemyScript : MonoBehaviour
                 StressReward.value += 20;
                 StressTextPoints.text = "+20";
             }
+
+            if (SessionData.Instance != null)
+        {
+            SessionData.Instance.UpdateBars(TrustReward.value, StressReward.value);
+        }
 
         }
     }
