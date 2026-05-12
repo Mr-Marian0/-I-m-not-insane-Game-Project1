@@ -234,6 +234,7 @@ public class CheckAnswer : MonoBehaviour
 
             StressReward.value += 20;
             StressTextPoints.text = "+20";
+            StressTextPoints.color = Color.red;
 
             Enemy1.SetActive(false);
         }

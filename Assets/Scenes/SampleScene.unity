@@ -261,6 +261,8 @@ MonoBehaviour:
   minutes: 0
   seconds: 0
   gameEngineReference: {fileID: 764401900}
+  dayCountAudioClip: {fileID: 8300000, guid: bd004ca23eecc15479fa118c3bf19d43, type: 3}
+  audioSourceForDayCount: {fileID: 363322338}
   elapsedTime: 0
   FastForward: 8
   waitMin: 1
