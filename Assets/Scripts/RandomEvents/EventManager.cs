@@ -21,9 +21,13 @@ public class EventManager : MonoBehaviour
     public GameObject resultPanel;
     public TextMeshProUGUI trustChangeText;
     public TextMeshProUGUI stressChangeText;
-
     [Header("Trust & Stress Parent (Grid Layout Group)")]
     public RectTransform trustAndStressParent;
+
+    [Header("Event Audio")]
+    public AudioClip PositiveEventAudioClip;
+    public AudioClip NegativeEventAudioClip;
+    public AudioSource audioSourceForEventChoice;
 
     // Empty GameObject placed exactly where you want the bars to move to.
     // Set its Anchor Preset to Middle-Center in the Inspector so it is
@@ -164,9 +168,17 @@ public class EventManager : MonoBehaviour
         bool isPositive = Random.value < chosen.positiveChance;
 
         if (isPositive)
+        {
             trustBar.value  = Mathf.Clamp(trustBar.value  + 5, 0, 100);
+            audioSourceForEventChoice.clip = PositiveEventAudioClip;
+            audioSourceForEventChoice.PlayOneShot(PositiveEventAudioClip);
+        }
         else
+        {
             stressBar.value = Mathf.Clamp(stressBar.value + 5, 0, 100);
+            audioSourceForEventChoice.clip = NegativeEventAudioClip;
+            audioSourceForEventChoice.PlayOneShot(NegativeEventAudioClip);
+        }
 
         if (SessionData.Instance != null)
         {

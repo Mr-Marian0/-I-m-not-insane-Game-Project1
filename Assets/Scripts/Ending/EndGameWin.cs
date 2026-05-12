@@ -29,6 +29,8 @@ public class EndGameWin : MonoBehaviour
     public TextMeshProUGUI headerText;
     public TextMeshProUGUI bodyText;
     public GameObject continueButton;
+    public AudioClip EndingAudioClip1;
+    public AudioSource audioSourceForEnding;
 
     [Header("Fade Settings")]
     public float fadeDuration = 0.01f;
@@ -98,6 +100,11 @@ public class EndGameWin : MonoBehaviour
 
         if (!stressHit100 && stressBar != null && stressBar.value >= 100f && !EventObjectIsActive.activeSelf)
         {
+
+            audioSourceForEnding.clip = EndingAudioClip1;
+            audioSourceForEnding.Play();
+            audioSourceForEnding.loop = true;
+
             stressHit100 = true;
             bool trustVictory = trustHit100 && trustReached100First;
             TriggerEndGame(trustVictory);

@@ -29,6 +29,9 @@ public class GameEngine : MonoBehaviour
     public Slider TrustSlider;
     public Slider StressSlider;
     public TextMeshProUGUI dayText;
+    public AudioClip EventAudioClip;
+    public AudioSource audioSourceForEvent;
+
 
     // Mission Times
     public int MissionTime1;      // First mission (3-11)
@@ -247,6 +250,10 @@ public class GameEngine : MonoBehaviour
         {
             flagEventAndMissionTriggered = true;
             event1Triggered = true;
+
+            audioSourceForEvent.clip = EventAudioClip;
+            audioSourceForEvent.PlayOneShot(EventAudioClip);
+
             if (SessionData.Instance != null)
             {
                 SessionData.Instance.Event1Triggered = true;
@@ -260,6 +267,10 @@ public class GameEngine : MonoBehaviour
         {
             hasTriggeredSecondEvent = true;
             event2Triggered = true;
+
+            audioSourceForEvent.clip = EventAudioClip;
+            audioSourceForEvent.PlayOneShot(EventAudioClip);
+
             if (SessionData.Instance != null)
             {
                 SessionData.Instance.Event2Triggered = true;
