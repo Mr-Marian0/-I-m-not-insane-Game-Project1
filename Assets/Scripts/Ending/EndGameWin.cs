@@ -88,6 +88,11 @@ public class EndGameWin : MonoBehaviour
 
         if (!trustHit100 && trustBar != null && trustBar.value >= 100f && !EventObjectIsActive.activeSelf)
         {
+
+            audioSourceForEnding.clip = EndingAudioClip1;
+            audioSourceForEnding.Play();
+            audioSourceForEnding.loop = true;
+
             trustHit100 = true;
             trustReached100First = !stressHit100;
 
