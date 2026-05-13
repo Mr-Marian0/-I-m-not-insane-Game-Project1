@@ -230,11 +230,14 @@ public class EventManager : MonoBehaviour
 
         descriptionText.text = isPositive ? chosen.positiveOutcome : chosen.negativeOutcome;
 
-        stressChangeText.text  = (chosen.stressChange >= 0 ? "+" : "") + chosen.stressChange;
-        stressChangeText.color = chosen.stressChange >= 0 ? Color.red : Color.green;
+        float netStressChange = chosen.stressChange + (isPositive ? 0 : 5);
+        float netTrustChange  = chosen.trustChange  + (isPositive ? 5 : 0);
 
-        trustChangeText.text  = (chosen.trustChange >= 0 ? "+" : "") + chosen.trustChange;
-        trustChangeText.color = chosen.trustChange >= 0 ? Color.green : Color.red;
+        stressChangeText.text  = (netStressChange >= 0 ? "+" : "") + netStressChange;
+        stressChangeText.color = netStressChange >= 0 ? Color.red : Color.green;
+
+        trustChangeText.text  = (netTrustChange >= 0 ? "+" : "") + netTrustChange;
+        trustChangeText.color = netTrustChange >= 0 ? Color.green : Color.red;
 
         continueButton.gameObject.SetActive(true);
         continueButton.onClick.RemoveAllListeners();

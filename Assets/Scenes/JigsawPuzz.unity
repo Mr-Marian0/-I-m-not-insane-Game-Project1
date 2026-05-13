@@ -2243,6 +2243,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1135324777}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &90006002
@@ -4165,6 +4166,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 685233013}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 1153320833}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &153059597
@@ -7492,6 +7494,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1020500673}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &263240107
@@ -7807,6 +7810,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1017713204}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &270409080
@@ -11229,6 +11233,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 47608968}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &352641922
@@ -14817,6 +14822,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 663389813}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &474842749
@@ -21946,6 +21952,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 627560195}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &683202293
@@ -25210,6 +25217,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1292997439}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &779428815
@@ -28255,6 +28263,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 392655041}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &906152853
@@ -34095,6 +34104,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 2060793992}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1096461660
@@ -39496,6 +39506,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 936134382}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1272535063
@@ -47438,6 +47449,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 78137167}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1466246125
@@ -47591,6 +47603,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1102590271}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1467920087
@@ -56896,6 +56909,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1975302693}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1702027743
@@ -57479,6 +57493,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1532177653}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1711021588
@@ -57794,6 +57809,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1195996304}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1730238499
@@ -60219,6 +60235,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 429418186}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &1784299754
@@ -70992,6 +71009,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1304590216}
   YouWIn: {fileID: 564522674}
   Conffeti: {fileID: 1412073248}
+  UIReference: {fileID: 0}
   InheritStartTimer: {fileID: 1488225283}
   InheritPuzzleKeyCollliders: {fileID: 1855317770}
 --- !u!114 &2112270843
