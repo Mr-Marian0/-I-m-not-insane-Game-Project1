@@ -10,7 +10,7 @@ public class OKButton1 : MonoBehaviour
     public GameObject AnyCongratulation;
     public GameObject YouWIn;
     public GameObject Conffeti;
-
+    public GameObject UIReference;
     public GameObject Answers;
     public GameObject Questions;
     public GameObject Players;
@@ -29,6 +29,8 @@ public class OKButton1 : MonoBehaviour
       Enemy.SetActive(false);
 
       LoadScene("SampleScene");
+
+      UIReference.SetActive(false);
     }
 
     public void LoadScene(string sceneName){

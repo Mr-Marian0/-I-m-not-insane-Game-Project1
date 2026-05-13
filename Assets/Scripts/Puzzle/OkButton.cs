@@ -11,6 +11,7 @@ public class OkButton : MonoBehaviour
     public GameObject AnyCongratulation;
     public GameObject YouWIn;
     public GameObject Conffeti;
+    public GameObject UIReference;
 
     //USED TO CONTINUE THE TIMER
     public StartTimer InheritStartTimer;
@@ -32,6 +33,7 @@ public class OkButton : MonoBehaviour
 
         LoadScene("SampleScene");
 
+        UIReference.SetActive(false);
     }
 
     public void LoadScene(string sceneName){

@@ -851,7 +851,6 @@ GameObject:
   - component: {fileID: 195796024}
   - component: {fileID: 195796023}
   - component: {fileID: 195796025}
-  - component: {fileID: 195796026}
   - component: {fileID: 195796027}
   m_Layer: 0
   m_Name: ChoiceRoom
@@ -957,22 +956,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &195796026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195796022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ee0db079a72c409a2c0b146bbfce7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrustDefaultPosition: {x: -1108, y: 1026.9, z: 0}
-  StressDefualtPosition: {x: 377, y: -58.79999, z: 0}
-  MoveTrustPosition: {fileID: 515743102}
-  MoveStressPosition: {fileID: 625122909}
 --- !u!114 &195796027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4104,6 +4087,7 @@ MonoBehaviour:
   AnyCongratulation: {fileID: 1088377653}
   YouWIn: {fileID: 150098267}
   Conffeti: {fileID: 891242362}
+  UIReference: {fileID: 128835543}
   Answers: {fileID: 1766165694}
   Questions: {fileID: 2018180045}
   Players: {fileID: 609554443}
@@ -4592,7 +4576,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

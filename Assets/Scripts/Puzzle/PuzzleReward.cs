@@ -73,18 +73,6 @@ public class PuzzleReward : MonoBehaviour
         ModifyGridWithBarsParent.constraintCount = 2; 
     }
 
-    // Restores barsParent to its original position
-    private void ResetBarsPosition()
-    {
-        if (barsParent == null) return;
-
-        barsParent.anchorMin = originalBarsAnchorMin;
-        barsParent.anchorMax = originalBarsAnchorMax;
-        barsParent.pivot = originalBarsPivot;
-        barsParent.anchoredPosition = originalBarsAnchoredPos;
-        barsParent.sizeDelta = originalBarsSizeDelta;
-    }
-
     private void Start()
     {
 
@@ -172,8 +160,5 @@ public class PuzzleReward : MonoBehaviour
     public void OnDisable()
     {
         InheritPuzzleKeyColliders.IsFinished = false;
-
-        // Restore bars to original position when this object is disabled
-        ResetBarsPosition();
     }
 }

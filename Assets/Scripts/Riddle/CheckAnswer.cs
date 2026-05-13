@@ -92,26 +92,6 @@ public class CheckAnswer : MonoBehaviour
         }
     }
 
-    private void ResetBarsPosition()
-    {
-        if (barsParent == null) return;
-
-        keepBarsAtTarget = false;
-
-        barsParent.anchorMin = originalBarsAnchorMin;
-        barsParent.anchorMax = originalBarsAnchorMax;
-        barsParent.pivot = originalBarsPivot;
-        barsParent.anchoredPosition = originalBarsAnchoredPos;
-        barsParent.sizeDelta = originalBarsSizeDelta;
-
-        if (barsGrid != null)
-        {
-            barsGrid.cellSize = originalCellSize;
-            barsGrid.constraint = originalConstraint;
-            barsGrid.constraintCount = originalConstraintCount;
-        }
-    }
-
     private void Start()
     {
         PlayerData data = SaveData.LoadPlayer();
@@ -260,9 +240,4 @@ public class CheckAnswer : MonoBehaviour
         TrustTextPoints.color = Color.green;
     }
 
-    public void OnDisable()
-    {
-        InheritEnemyScript.speed = 1.5f;
-        ResetBarsPosition();
-    }
 }

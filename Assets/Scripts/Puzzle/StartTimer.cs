@@ -83,26 +83,6 @@ public class StartTimer : MonoBehaviour
         }
     }
 
-    private void ResetBarsPosition()
-    {
-        if (barsParent == null) return;
-
-        keepBarsAtTarget = false;
-
-        barsParent.anchorMin = originalBarsAnchorMin;
-        barsParent.anchorMax = originalBarsAnchorMax;
-        barsParent.pivot = originalBarsPivot;
-        barsParent.anchoredPosition = originalBarsAnchoredPos;
-        barsParent.sizeDelta = originalBarsSizeDelta;
-
-        if (barsGrid != null)
-        {
-            barsGrid.cellSize = originalCellSize;
-            barsGrid.constraint = originalConstraint;
-            barsGrid.constraintCount = originalConstraintCount;
-        }
-    }
-
     void Update()
     {
         // Keep applying target position every frame to fight layout rebuilds
@@ -160,11 +140,5 @@ public class StartTimer : MonoBehaviour
     {
         TimeLimit = 60;
         keepBarsAtTarget = false;
-    }
-
-    public void OnDisable()
-    {
-        TimerMission.color = Color.white;
-        ResetBarsPosition();
     }
 }

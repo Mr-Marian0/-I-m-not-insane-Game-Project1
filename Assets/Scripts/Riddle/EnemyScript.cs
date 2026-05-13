@@ -91,26 +91,6 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void ResetBarsPosition()
-    {
-        if (barsParent == null) return;
-
-        keepBarsAtTarget = false;
-
-        barsParent.anchorMin = originalBarsAnchorMin;
-        barsParent.anchorMax = originalBarsAnchorMax;
-        barsParent.pivot = originalBarsPivot;
-        barsParent.anchoredPosition = originalBarsAnchoredPos;
-        barsParent.sizeDelta = originalBarsSizeDelta;
-
-        if (barsGrid != null)
-        {
-            barsGrid.cellSize = originalCellSize;
-            barsGrid.constraint = originalConstraint;
-            barsGrid.constraintCount = originalConstraintCount;
-        }
-    }
-
     void Start()
     {
         Xposition = Random.Range(-7.66f, 7.41f);
@@ -185,10 +165,5 @@ public class EnemyScript : MonoBehaviour
         TrustTextPoints.text = "";
         StressTextPoints.text = "";
         TrustTextPoints.color = Color.green;
-    }
-
-    public void OnDisable()
-    {
-        ResetBarsPosition();
     }
 }
