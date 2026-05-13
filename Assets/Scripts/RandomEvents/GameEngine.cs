@@ -56,7 +56,7 @@ public class GameEngine : MonoBehaviour
     void Awake()
     {
 
-    if (SaveData.HasSaveFile())
+    if (SaveData.HasSaveFile() || SessionData.Instance.ElapsedTime > 0)
     {
         // Save exists - keep disabled (already disabled in Inspector)
         Time.timeScale = 1;
