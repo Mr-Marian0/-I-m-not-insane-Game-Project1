@@ -18,6 +18,10 @@ public class PressToSleep : MonoBehaviour
     [Header("Animator")]
     public Animator Anim;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip timeClickingSound;
+
     public Vector3 buttonOriginalPos;
 
     void Start()
@@ -35,6 +39,7 @@ public class PressToSleep : MonoBehaviour
         {
             WakeUP();
 
+            audioSource.Stop();
             IsSleeping = false;
             return;
         }
@@ -51,9 +56,13 @@ public class PressToSleep : MonoBehaviour
         StartCoroutine(StartDelay());
     }
 
-    // ✅ YOUR ORIGINAL CODE (UNCHANGED)
     IEnumerator StartDelay()
     {
+
+        audioSource.clip = timeClickingSound;
+        audioSource.Play();
+        audioSource.loop = true;
+
         isGoingToBed = true;
 
         Anim.SetBool("EnterExit", true);
