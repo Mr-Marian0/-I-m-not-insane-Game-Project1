@@ -112,6 +112,7 @@ public class Timer : MonoBehaviour
             yield return new WaitForSecondsRealtime(textDelay);
         }
 
+        Time.timeScale = 1f;
         DayCountUI.SetActive(false);
     }
 
@@ -138,6 +139,9 @@ public class Timer : MonoBehaviour
 
             if (minutes >= 24)
             {
+
+                Time.timeScale = 0f;
+
                 minutes = 24;
                 seconds = 0;
                 timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);

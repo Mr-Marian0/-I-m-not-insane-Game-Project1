@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(RectTransform))]
-public class FillParentWithPadding : MonoBehaviour
+public class FullscreenImageFitter2 : MonoBehaviour
 {
 
     // THIS SCRIPT IS USED TO FIT SCREEN ACCORDING TO "UI" GAME OBJECT
