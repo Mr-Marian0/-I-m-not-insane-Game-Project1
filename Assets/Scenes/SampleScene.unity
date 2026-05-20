@@ -6227,7 +6227,6 @@ GameObject:
   - component: {fileID: 956479456}
   - component: {fileID: 956479455}
   - component: {fileID: 956479457}
-  - component: {fileID: 956479458}
   m_Layer: 0
   m_Name: BarsHighlight
   m_TagString: Untagged
@@ -6255,7 +6254,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 3607.0261, y: 592.69226}
-  m_SizeDelta: {x: 988.2784, y: 496.3167}
+  m_SizeDelta: {x: 1095.176, y: 496.3167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956479455
 MonoBehaviour:
@@ -6307,20 +6306,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &956479458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956479453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfa9a4b433bc654484778f388f0b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
-  image: {fileID: 0}
 --- !u!1 &969889682
 GameObject:
   m_ObjectHideFlags: 0
